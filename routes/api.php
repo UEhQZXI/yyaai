@@ -21,3 +21,10 @@ $api->version('v1', function($api) {
         return response('this is version v1');
     });
 });
+
+$api->version('v2', function($api) {
+    // 查询当前接口版本
+    $api->get('version', function() {
+        return response('this is version v2');
+    });
+});
