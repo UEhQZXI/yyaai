@@ -19,6 +19,11 @@ class Controller extends BaseController
      */
     public function test()
     {
-        return User::with(['Article','ArticleComment'])->find(1);
+        // 获取全部案例信息并统计它们下面评论的数量
+//        $Articles = Article::withCount('ArticleComment')->get();
+
+        // 获取id为1的案例信息并统计它下面评论的数量
+        $Articles = Article::withCount('ArticleComment')->find(1);
+        return $Articles;
     }
 }
