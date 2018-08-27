@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\User;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -18,6 +19,6 @@ class Controller extends BaseController
      */
     public function test()
     {
-        return User::with('article')->find(1);
+        return User::with(['Article','ArticleComment'])->find(1);
     }
 }

@@ -27,4 +27,13 @@ class Article extends Model
     {
         return $this->hasMany('App\Models\ArticleComment','article_id');
     }
+
+    /**
+     * 关联分类表
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function ArticleClassify()
+    {
+        return $this->belongsTo('App\Models\ArticleClassify','classify_id');
+    }
 }
