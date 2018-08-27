@@ -14,7 +14,7 @@ class User extends Model
      * 关联案例表
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function Article ()
+    public function Article()
     {
         return $this->hasMany('App\Models\Article','user_id');
     }
@@ -23,7 +23,7 @@ class User extends Model
      * 关联咨询表
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function Advisory ()
+    public function Advisory()
     {
         return $this->hasMany('App\Models\Advisory','user_id');
     }
@@ -32,7 +32,7 @@ class User extends Model
      * 关联案例评论表
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function ArticleComment ()
+    public function ArticleComment()
     {
         return $this->hasMany('App\Models\ArticleComment','user_id');
     }
@@ -41,7 +41,7 @@ class User extends Model
      * 关联案例子评论表
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function ArticleChildComment ()
+    public function ArticleChildComment()
     {
         return $this->hasMany('App\Models\ArticleChildComment','user_id');
     }
@@ -50,7 +50,7 @@ class User extends Model
      * 关联咨询评论表
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function AdvisoryComment ()
+    public function AdvisoryComment()
     {
         return $this->hasMany('App\Models\AdvisoryComment','user_id');
     }
@@ -59,7 +59,7 @@ class User extends Model
      * 关联咨询子评论表
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function AdvisoryChildComment ()
+    public function AdvisoryChildComment()
     {
         return $this->hasMany('App\Models\AdvisoryChildComment','user_id');
     }
