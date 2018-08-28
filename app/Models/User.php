@@ -9,6 +9,7 @@ class User extends Model
     public $table = 'app_users';
     public $primaryKey = 'id';
     public $timestamps = FALSE;
+    protected $fillable = ['phone', 'name', 'password', 'create_time'];
 
     /**
      * 关联案例表
