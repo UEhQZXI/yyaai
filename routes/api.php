@@ -36,6 +36,13 @@ $api->version('v1', [
         // 登录
         $api->post('authorizations','AuthorizationsController@store')
             ->name('api.authorizations.store');
+
+        /**
+         * 访问以下接口需要token认证
+         */
+        $api->group(['middleware' => 'api.auth'], function ($api) {
+
+        });
     });
 
 });
