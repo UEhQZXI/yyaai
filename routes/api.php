@@ -15,16 +15,10 @@ use Illuminate\Http\Request;
 
 $api = app('Dingo\Api\Routing\Router');
 
-$api->version('v1', function($api) {
-    // 查询当前接口版本
-    $api->get('version', function() {
-        return response('this is version v1');
-    });
-});
-// 测试git
-$api->version('v2', function($api) {
-    // 查询当前接口版本
-    $api->get('version', function() {
-        return response('this is version v2');
-    });
+$api->version('v1', [
+    'namespace' => 'App\Http\Controllers\Api\V1'
+], function($api) {
+    // 发送短信验证码
+    $api->post('verificationCodes','VerificationCodesController@store')
+        ->name('api.verificationCodes.store');
 });
