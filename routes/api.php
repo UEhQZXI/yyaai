@@ -20,7 +20,11 @@ $api->version('v1', [
 ], function($api) {
 
     // 接口节流处理
-    $api->group(['middleware' =>  'api.throttle', 'limit' => config('api.rate_limits.sign.limit'), 'expires' => config('api.rate_limits.sign.expires'),], function ($api) {
+    $api->group([
+        'middleware' =>  'api.throttle',
+        'limit' => config('api.rate_limits.sign.limit'),
+        'expires' => config('api.rate_limits.sign.expires'),
+    ], function ($api) {
         // 发送短信验证码
         $api->post('verificationCodes','VerificationCodesController@store')
             ->name('api.verificationCodes.store');
