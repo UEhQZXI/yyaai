@@ -15,7 +15,7 @@ class ArticleClassify extends Model
      * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function Article()
+    public function article()
     {
         return $this->hasMany('App\Models\Article','classify_id');
     }
@@ -25,7 +25,7 @@ class ArticleClassify extends Model
      * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function Advisory()
+    public function advisory()
     {
         return $this->hasMany('App\Models\Advisory','classify_id');
     }

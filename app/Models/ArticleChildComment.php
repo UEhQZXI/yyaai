@@ -15,7 +15,7 @@ class ArticleChildComment extends Model
      * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function User()
+    public function user()
     {
         return $this->belongsTo('App\Models\User','user_id');
     }
@@ -25,7 +25,7 @@ class ArticleChildComment extends Model
      * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function ArticleComment()
+    public function articleComment()
     {
         return $this->belongsTo('App\Models\ArticleComment','article_comment_id');
     }

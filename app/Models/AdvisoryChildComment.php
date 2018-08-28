@@ -15,7 +15,7 @@ class AdvisoryChildComment extends Model
      * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function User()
+    public function user()
     {
         return $this->belongsTo('App\Models\User','user_id');
     }
@@ -25,7 +25,7 @@ class AdvisoryChildComment extends Model
      * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function AdvisoryComment()
+    public function advisoryComment()
     {
         return $this->belongsTo('App\Models\AdvisoryComment','advisory_comment_id');
     }

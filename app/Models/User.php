@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Tymon\JWTAuth\Contracts\JWTSubject;
+use Auth;
 
-class User extends Model
+class User extends Authenticatable implements JWTSubject
 {
     public $table = 'app_users';
     public $primaryKey = 'id';
@@ -16,7 +18,7 @@ class User extends Model
      * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function Article()
+    public function article()
     {
         return $this->hasMany('App\Models\Article','user_id');
     }
@@ -26,7 +28,7 @@ class User extends Model
      * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function Advisory()
+    public function advisory()
     {
         return $this->hasMany('App\Models\Advisory','user_id');
     }
@@ -36,7 +38,7 @@ class User extends Model
      * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function ArticleComment()
+    public function articleComment()
     {
         return $this->hasMany('App\Models\ArticleComment','user_id');
     }
@@ -46,7 +48,7 @@ class User extends Model
      * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function ArticleChildComment()
+    public function articleChildComment()
     {
         return $this->hasMany('App\Models\ArticleChildComment','user_id');
     }
@@ -56,7 +58,7 @@ class User extends Model
      * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function AdvisoryComment()
+    public function advisoryComment()
     {
         return $this->hasMany('App\Models\AdvisoryComment','user_id');
     }
@@ -66,8 +68,22 @@ class User extends Model
      * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function AdvisoryChildComment()
+    public function advisoryChildComment()
     {
         return $this->hasMany('App\Models\AdvisoryChildComment','user_id');
+    }
+
+
+    /**
+     * @return mixed 返回user id
+     */
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
     }
 }

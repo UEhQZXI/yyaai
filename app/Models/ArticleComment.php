@@ -15,7 +15,7 @@ class ArticleComment extends Model
      * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function User()
+    public function user()
     {
         return $this->belongsTo('App\Models\User','user_id');
     }
@@ -25,7 +25,7 @@ class ArticleComment extends Model
      * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function Article()
+    public function article()
     {
         return $this->belongsTo('App\Models\Article','article_id');
     }
@@ -35,7 +35,7 @@ class ArticleComment extends Model
      * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function ArticleChildComment()
+    public function articleChildComment()
     {
         return $this->hasMany('App\Models\ArticleChildComment','article_comment_id');
     }

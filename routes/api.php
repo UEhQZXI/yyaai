@@ -32,6 +32,10 @@ $api->version('v1', [
         // 用户注册
         $api->post('users','UsersController@store')
             ->name('api.users.store');
+
+        // 登录
+        $api->post('authorizations','AuthorizationsController@store')
+            ->name('api.authorizations.store');
     });
 
 });
