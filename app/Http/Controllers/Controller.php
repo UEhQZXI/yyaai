@@ -23,7 +23,7 @@ class Controller extends BaseController
 //        $Articles = Article::withCount('ArticleComment')->get();
 
         // 获取id为1的案例信息并统计它下面评论的数量
-        $Articles = Article::withCount('ArticleComment')->find(1);
+        $Articles = User::with('Article.ArticleComment.ArticleChildComment')->get();
         return $Articles;
     }
 }

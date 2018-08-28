@@ -12,6 +12,7 @@ class ArticleComment extends Model
 
     /**
      * 关联用户表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function User()
@@ -21,6 +22,7 @@ class ArticleComment extends Model
 
     /**
      * 关联案例表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function Article()
@@ -30,6 +32,7 @@ class ArticleComment extends Model
 
     /**
      * 关联子评论表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function ArticleChildComment()

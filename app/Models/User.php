@@ -12,6 +12,7 @@ class User extends Model
 
     /**
      * 关联案例表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function Article()
@@ -21,6 +22,7 @@ class User extends Model
 
     /**
      * 关联咨询表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function Advisory()
@@ -30,6 +32,7 @@ class User extends Model
 
     /**
      * 关联案例评论表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function ArticleComment()
@@ -39,6 +42,7 @@ class User extends Model
 
     /**
      * 关联案例子评论表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function ArticleChildComment()
@@ -48,6 +52,7 @@ class User extends Model
 
     /**
      * 关联咨询评论表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function AdvisoryComment()
@@ -57,6 +62,7 @@ class User extends Model
 
     /**
      * 关联咨询子评论表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function AdvisoryChildComment()

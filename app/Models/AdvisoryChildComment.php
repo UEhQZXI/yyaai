@@ -12,6 +12,7 @@ class AdvisoryChildComment extends Model
 
     /**
      * 关联用户表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function User()
@@ -21,6 +22,7 @@ class AdvisoryChildComment extends Model
 
     /**
      * 关联父评论表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function AdvisoryComment()

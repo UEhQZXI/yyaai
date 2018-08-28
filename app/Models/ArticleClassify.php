@@ -12,6 +12,7 @@ class ArticleClassify extends Model
 
     /**
      * 关联案例表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function Article()
@@ -21,6 +22,7 @@ class ArticleClassify extends Model
 
     /**
      * 关联咨询表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function Advisory()
