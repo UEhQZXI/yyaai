@@ -15,10 +15,10 @@ class ArticleTransformer extends TransformerAbstract
             'title' => $article->title,
             'content' => $article->content,
             'user_id' => (int) $article->user_id,
-            'pageviews' => $article->pageviews ? $article->pageviews : 0,
-            'likes' => $article->likes ? $article->likes : 0,
+            'pageviews' => (int) $article->pageviews ? $article->pageviews : 0,
+            'likes' => (int) $article->likes ? $article->likes : 0,
             'create_time' => date('Y-m-d H:i:s', $article->create_time),
-            'status' => $article->status,
+            'status' => (int) $article->status ? $article->status : 0,
             'before' => $article->before,
             'after' => $article->after,
         ];

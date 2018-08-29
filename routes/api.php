@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', [
-    'namespace' => 'App\Http\Controllers\Api\V1'
+    'namespace' => 'App\Http\Controllers\Api\V1',
 ], function($api) {
 
     // 接口节流处理
@@ -40,7 +40,13 @@ $api->version('v1', [
          * 访问以下接口需要token认证
          */
         $api->group(['middleware' => 'api.auth'], function ($api) {
-            $api->post('article', 'ArticleController@store');
+            //文章
+            $api->post('article', 'ArticleController@store')
+                ->name('api.article.stroe');
+            $api->patch('article/{article}', 'ArticleController@update')
+                ->name('api.article.update');
+            $api->delete('article/{article}', 'ArticleController@destroy')
+                ->name('api.article.destroy');
         });
     });
 
