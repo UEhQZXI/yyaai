@@ -75,12 +75,16 @@ $api->version('v1', [
                 ->name('api.article.destroy');
 
             // 发布咨询
-            $api->post('advisory','AdvisoryController@store')
+            $api->post('advisory', 'AdvisoryController@store')
                 ->name('api.advisory.store');
 
             // 编辑咨询
-            $api->patch('advisory/{advisory}','AdvisoryController@update')
+            $api->patch('advisory/{advisory}', 'AdvisoryController@update')
                 ->name('api.advisory.update');
+
+            // 删除咨询
+            $api->delete('advisory/{advisory}', 'AdvisoryController@destroy')
+                ->name('api.advisory.destroy');
         });
     });
 });

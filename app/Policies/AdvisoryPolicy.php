@@ -24,4 +24,9 @@ class AdvisoryPolicy
     {
         return $user->id === $advisory->user_id;
     }
+
+    public function destroy(User $user, Advisory $advisory)
+    {
+        return $user->id === $advisory->user_id;
+    }
 }

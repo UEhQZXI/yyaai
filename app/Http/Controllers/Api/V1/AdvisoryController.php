@@ -27,4 +27,13 @@ class AdvisoryController extends Controller
         $advisory->update($request->all());
         return $this->response->item($advisory, new AdvisoryTransformer());
     }
+
+    public function destroy(Advisory $advisory)
+    {
+        $this->authorize('destroy', $advisory);
+
+        $advisory->delete();
+
+        return $this->response->noContent();
+    }
 }
