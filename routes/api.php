@@ -67,12 +67,18 @@ $api->version('v1', [
             //添加文章
             $api->post('article', 'ArticleController@store')
                 ->name('api.article.stroe');
+
             //修改文章
             $api->patch('article/{article}', 'ArticleController@update')
                 ->name('api.article.update');
+
             //删除文章
             $api->delete('article/{article}', 'ArticleController@destroy')
                 ->name('api.article.destroy');
+
+            //添加文章回复
+            $api->post('article/comment/{article}', 'articleCommentController@store')
+                ->name('api.articleComment.store');
 
             // 发布咨询
             $api->post('advisory', 'AdvisoryController@store')
