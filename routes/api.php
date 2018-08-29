@@ -20,7 +20,7 @@ $api->version('v1', [
 
     // 接口节流处理
     $api->group([
-        'middleware' =>  'api.throttle',
+        'middleware' =>  ['api.throttle', 'serializer:array'],
         'limit' => config('api.rate_limits.sign.limit'),
         'expires' => config('api.rate_limits.sign.expires'),
     ], function ($api) {
@@ -46,6 +46,12 @@ $api->version('v1', [
          * 访问以下接口需要token认证
          */
         $api->group(['middleware' => 'api.auth'], function ($api) {
+
+            // 登录用户信息获取
+            $api->get('user','UsersController@me')
+                ->name('api.user.show');
+
+
             //文章
             $api->post('article', 'ArticleController@store')
                 ->name('api.article.stroe');
