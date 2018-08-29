@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Api\V1;
-// use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Transformers\ArticleTransformer;
 use App\Http\Requests\Api\V1\ArticleRequest;
+use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
@@ -34,8 +34,25 @@ class ArticleController extends Controller
     	return $this->response->noContent();
     }
 
-    public function tests(Request $request)
+    public function index(Request $request, Article $article)
     {
-    	echo 'Hello World';
+        $query = $article->query();
+
+        if ($classify_id = $request->classify_id)
+            $query->where('classify_id', $classify_id);
+
+        switch ($request->order) {
+            case 'recent':
+                $query->recent();
+                break;
+
+            default:
+                // $query->recentReplied();
+                break;
+        }
+
+        $articles = $query->paginate(1);
+
+        return $this->response->paginator($articles, new ArticleTransformer());
     }
 }

@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', [
     'namespace' => 'App\Http\Controllers\Api\V1',
+    'middleware' => ['serializer:array', 'bindings']
 ], function($api) {
 
     // 接口节流处理
@@ -41,6 +42,9 @@ $api->version('v1', [
         $api->get('categories','CategoriesController@index')
             ->name('api.categories.index');
 
+        //获取文章列表
+        $api->get('article', 'ArticleController@index')
+            ->name('api.article.index');
 
         /**
          * 访问以下接口需要token认证
@@ -55,5 +59,4 @@ $api->version('v1', [
                 ->name('api.article.destroy');
         });
     });
-
 });
