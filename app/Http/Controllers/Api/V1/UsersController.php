@@ -9,6 +9,12 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
+    /**
+     * 用户注册
+     *
+     * @param UserRequest $request
+     * @return $this|void
+     */
     public function store(UserRequest $request)
     {
         $verifyData = \Cache::get($request->verification_key);
@@ -43,11 +49,22 @@ class UsersController extends Controller
             ->setStatusCode(201);
     }
 
+    /**
+     * 查询个人信息
+     *
+     * @return \Dingo\Api\Http\Response
+     */
     public function me()
     {
         return $this->response->item($this->user(), new UserTransformer());
     }
 
+    /**
+     * 更新信息
+     *
+     * @param UserRequest $request
+     * @return \Dingo\Api\Http\Response
+     */
     public function update(UserRequest $request)
     {
         $user = $this->user();

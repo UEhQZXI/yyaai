@@ -16,12 +16,11 @@ use Illuminate\Http\Request;
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', [
     'namespace' => 'App\Http\Controllers\Api\V1',
-    'middleware' => ['serializer:array', 'bindings']
 ], function($api) {
 
     // 接口节流处理
     $api->group([
-        'middleware' =>  ['api.throttle', 'serializer:array'],
+        'middleware' =>  ['api.throttle', 'serializer:array', 'bindings'],
         'limit' => config('api.rate_limits.sign.limit'),
         'expires' => config('api.rate_limits.sign.expires'),
     ], function ($api) {
@@ -67,6 +66,14 @@ $api->version('v1', [
                 ->name('api.article.update');
             $api->delete('article/{article}', 'ArticleController@destroy')
                 ->name('api.article.destroy');
+
+            // 发布咨询
+            $api->post('advisory','AdvisoryController@store')
+                ->name('api.advisory.store');
+
+            // 编辑咨询
+            $api->patch('advisory/{advisory}','AdvisoryController@update')
+                ->name('api.advisory.update');
         });
     });
 });
