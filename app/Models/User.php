@@ -11,7 +11,7 @@ class User extends Authenticatable implements JWTSubject
     public $table = 'app_users';
     public $primaryKey = 'id';
     public $timestamps = FALSE;
-    protected $fillable = ['phone', 'name', 'password', 'create_time'];
+    protected $fillable = ['phone', 'name', 'password','avatar','sex','birthday','address','description', 'create_time'];
 
     /**
      * 关联案例表
@@ -85,5 +85,10 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function isAuthorOf($model)
+    {
+        return $this->id == $model->user_id;
     }
 }
