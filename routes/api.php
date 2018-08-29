@@ -36,6 +36,12 @@ $api->version('v1', [
         $api->post('authorizations','AuthorizationsController@store')
             ->name('api.authorizations.store');
 
+
+        // 获取分类列表
+        $api->get('categories','CategoriesController@index')
+            ->name('api.categories.index');
+
+
         /**
          * 访问以下接口需要token认证
          */

@@ -9,11 +9,8 @@ class AuthorizationsController extends Controller
 {
     public function store(AuthorizationRequest $request)
     {
-        $phone = $request->phone;
-        $password = $request->password;
-
-        $loginInfo['phone'] = $phone;
-        $loginInfo['password'] = $password;
+        $loginInfo['phone'] = $request->phone;
+        $loginInfo['password'] = $request->password;
 
         if (!$token = \Auth::guard('api')->attempt($loginInfo)) {
             return $this->response->errorUnauthorized('账号或密码错误');
