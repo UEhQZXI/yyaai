@@ -12,18 +12,20 @@ class ArticleChildComment extends Model
 
     /**
      * 关联用户表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function User()
+    public function user()
     {
         return $this->belongsTo('App\Models\User','user_id');
     }
 
     /**
      * 关联案例父评论表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function ArticleComment()
+    public function articleComment()
     {
         return $this->belongsTo('App\Models\ArticleComment','article_comment_id');
     }

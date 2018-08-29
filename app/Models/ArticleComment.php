@@ -12,27 +12,30 @@ class ArticleComment extends Model
 
     /**
      * 关联用户表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function User()
+    public function user()
     {
         return $this->belongsTo('App\Models\User','user_id');
     }
 
     /**
      * 关联案例表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function Article()
+    public function article()
     {
         return $this->belongsTo('App\Models\Article','article_id');
     }
 
     /**
      * 关联子评论表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function ArticleChildComment()
+    public function articleChildComment()
     {
         return $this->hasMany('App\Models\ArticleChildComment','article_comment_id');
     }

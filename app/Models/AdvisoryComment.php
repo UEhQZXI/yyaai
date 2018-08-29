@@ -12,27 +12,30 @@ class AdvisoryComment extends Model
 
     /**
      * 关联用户表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function User()
+    public function user()
     {
         return $this->belongsTo('App\Models\User','user_id');
     }
 
     /**
      * 关联咨询表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function Advisory()
+    public function advisory()
     {
         return $this->belongsTo('App\Models\Advisory','advisory_id');
     }
 
     /**
      * 关联子评论表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function AdvisoryChildComment()
+    public function advisoryChildComment()
     {
         return $this->belongsTo('App\Models\AdvisoryChildComment','advisory_comment_id');
     }

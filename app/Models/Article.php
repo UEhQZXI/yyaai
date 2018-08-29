@@ -13,27 +13,30 @@ class Article extends Model
 
     /**
      * 关联用户表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function User()
+    public function user()
     {
         return $this->belongsTo('App\Models\User','user_id');
     }
 
     /**
      * 关联案例评论表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function ArticleComment()
+    public function articleComment()
     {
         return $this->hasMany('App\Models\ArticleComment','article_id');
     }
 
     /**
      * 关联分类表
+     * 
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function ArticleClassify()
+    public function articleClassify()
     {
         return $this->belongsTo('App\Models\ArticleClassify','classify_id');
     }

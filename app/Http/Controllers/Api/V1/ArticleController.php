@@ -2,21 +2,12 @@
 
 namespace App\Http\Controllers\Api\V1;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Dingo\Api\Routing\Helpers;
 use App\Models\Article;
 use App\Transformers\ArticleTransformer;
 use App\Http\Requests\Api\ArticleRequest;
 
 class ArticleController extends Controller
 {
-    use Helpers;
-
-    public function __construct()
-    {
-        // $this->middleware('auth', ['except' => ['stroe']]);
-    }
-
     public function store(ArticleRequest $request, Article $article)
     {
     	$article->fill($request->all());
