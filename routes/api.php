@@ -25,20 +25,20 @@ $api->version('v1', [
         'expires' => config('api.rate_limits.sign.expires'),
     ], function ($api) {
         // 发送短信验证码
-        $api->post('verificationCodes','VerificationCodesController@store')
+        $api->post('verificationCodes', 'VerificationCodesController@store')
             ->name('api.verificationCodes.store');
 
         // 用户注册
-        $api->post('users','UsersController@store')
+        $api->post('users', 'UsersController@store')
             ->name('api.users.store');
 
         // 登录
-        $api->post('authorizations','AuthorizationsController@store')
+        $api->post('authorizations', 'AuthorizationsController@store')
             ->name('api.authorizations.store');
 
 
         // 获取分类列表
-        $api->get('categories','CategoriesController@index')
+        $api->get('categories', 'CategoriesController@index')
             ->name('api.categories.index');
 
 
@@ -48,8 +48,12 @@ $api->version('v1', [
         $api->group(['middleware' => 'api.auth'], function ($api) {
 
             // 登录用户信息获取
-            $api->get('user','UsersController@me')
+            $api->get('user', 'UsersController@me')
                 ->name('api.user.show');
+
+            // 编辑用户信息
+            $api->patch('user', 'UsersController@update')
+                ->name('api.user.update');
 
 
             //文章

@@ -47,4 +47,15 @@ class UsersController extends Controller
     {
         return $this->response->item($this->user(), new UserTransformer());
     }
+
+    public function update(UserRequest $request)
+    {
+        $user = $this->user();
+
+        $data = $request->only(['name','avatar','sex','birthday','address','description']);
+
+        $user->update($data);
+
+        return $this->response->item($user, new UserTransformer());
+    }
 }
