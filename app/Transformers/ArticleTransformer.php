@@ -7,6 +7,8 @@ use League\Fractal\TransformerAbstract;
 
 class ArticleTransformer extends TransformerAbstract
 {
+    protected $availbleIncludes = ['articleclassify'];
+
     public function transform(Article $article)
     {
         return [
@@ -22,5 +24,15 @@ class ArticleTransformer extends TransformerAbstract
             'before' => $article->before,
             'after' => $article->after,
         ];
+    }
+
+    // public function includeUser(Article $article)
+    // {
+    //     return $this->item($article->user, new UserTransformer());
+    // }
+
+    public function includeArticleClassify(Article $article)
+    {
+        return $this->item($article->articleClassify, new CategoryTransformer());
     }
 }
