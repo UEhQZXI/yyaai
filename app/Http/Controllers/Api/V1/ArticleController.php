@@ -5,6 +5,7 @@ use App\Models\Article;
 use App\Transformers\ArticleTransformer;
 use App\Http\Requests\Api\V1\ArticleRequest;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class ArticleController extends Controller
 {
@@ -28,7 +29,7 @@ class ArticleController extends Controller
 
     public function destroy(Article $article)
     {
-    	$this->authorize('destroy', $article);
+    	$this->authorize('destroy');
     	$article->delete();
 
     	return $this->response->noContent();
@@ -42,8 +43,16 @@ class ArticleController extends Controller
             $query->where('classify_id', $classify_id);
 
         switch ($request->order) {
-            case 'recent':
-                $query->recent();
+            case 'time':
+                $query->orderBy('create_time', 'desc');
+                break;
+
+            case 'pageviews':
+                $query->orderBy('pageviews', 'desc');
+                break;
+
+            case 'likes':
+                $query->orderBy('likes', 'desc');
                 break;
 
             default:
@@ -51,8 +60,20 @@ class ArticleController extends Controller
                 break;
         }
 
-        $articles = $query->paginate(1);
+        $articles = $query->paginate(10);
 
         return $this->response->paginator($articles, new ArticleTransformer());
+    }
+
+    public function userIndex(User $user, Request $request)
+    {
+        $articles =  $user->article()->paginate(10);
+
+        return $this->response->paginator($articles, new ArticleTransformer());
+    }
+
+    public function show(Article $article)
+    {
+        return $this->response->item($article, new ArticleTransformer());
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Requests\Api\V1;
 
 use Dingo\Api\Http\FormRequest;
-
+use Auth;
 class ArticleRequest extends FormRequest
 {
     /**

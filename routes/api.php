@@ -18,10 +18,9 @@ $api->version('v1', [
     'namespace' => 'App\Http\Controllers\Api\V1',
     'middleware' => ['serializer:array', 'bindings']
 ], function($api) {
-
     // 接口节流处理
     $api->group([
-        'middleware' =>  ['api.throttle', 'serializer:array'],
+        'middleware' =>  ['api.throttle'],
         'limit' => config('api.rate_limits.sign.limit'),
         'expires' => config('api.rate_limits.sign.expires'),
     ], function ($api) {
@@ -45,6 +44,12 @@ $api->version('v1', [
         //获取文章列表
         $api->get('article', 'ArticleController@index')
             ->name('api.article.index');
+        // 获取个人文章列表
+        $api->get('user/article/{user}', 'ArticleController@userIndex')
+            ->name('api.article.userIndex');
+        //文章详情
+        $api->get('article/{article}', 'ArticleController@show')
+            ->name('api.article.show');
 
         /**
          * 访问以下接口需要token认证
@@ -60,11 +65,13 @@ $api->version('v1', [
                 ->name('api.user.update');
 
 
-            //文章
+            //添加文章
             $api->post('article', 'ArticleController@store')
                 ->name('api.article.stroe');
+            //修改文章
             $api->patch('article/{article}', 'ArticleController@update')
                 ->name('api.article.update');
+            //删除文章
             $api->delete('article/{article}', 'ArticleController@destroy')
                 ->name('api.article.destroy');
         });
