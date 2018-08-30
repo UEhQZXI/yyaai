@@ -36,4 +36,9 @@ class AdvisoryController extends Controller
 
         return $this->response->noContent();
     }
+
+    public function show(Advisory $advisory)
+    {
+        return $this->response->item($advisory, new AdvisoryTransformer());
+    }
 }
