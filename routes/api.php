@@ -77,8 +77,12 @@ $api->version('v1', [
                 ->name('api.article.destroy');
 
             //添加文章回复
-            $api->post('article/comment/{article}', 'articleCommentController@store')
+            $api->post('article/comment/{article}', 'ArticleCommentController@store')
                 ->name('api.articleComment.store');
+
+            //删除文章回复
+            $api->delete('article/comment/{comment}', 'ArticleCommentController@destroy')
+                ->name('api.articleComment.destroy');
 
             // 发布咨询
             $api->post('advisory', 'AdvisoryController@store')

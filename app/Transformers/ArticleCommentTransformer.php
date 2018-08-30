@@ -2,20 +2,19 @@
 
 namespace App\Transformers;
 
-use App\Models\Reply;
+use App\Models\ArticleComment;
 use League\Fractal\TransformerAbstract;
 
-class ReplyTransformer extends TransformerAbstract
+class ArticleCommentTransformer extends TransformerAbstract
 {
-    public function transform(Reply $reply)
+    public function transform(ArticleComment $articleComment)
     {
         return [
-            'id' => $reply->id,
-            'user_id' => (int) $reply->user_id,
-            'topic_id' => (int) $reply->topic_id,
-            'content' => $reply->content,
-            'created_at' => $reply->created_at->toDateTimeString(),
-            'updated_at' => $reply->updated_at->toDateTimeString(),
+            'id' => $articleComment->id,
+            'user_id' => (int) $articleComment->user_id,
+            'article_id' => (int) $articleComment->article_id,
+            'content' => $articleComment->content,
+            'create_time' => date('Y-m-d H:i:s', $articleComment->create_time),
         ];
     }
 }
