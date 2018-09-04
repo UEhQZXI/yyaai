@@ -23,11 +23,18 @@ class ArticleCommentController extends Controller
     	return $this->response->item($articleComment, new ArticleCommentTransformer())->setStatusCode(201);
     }
 
-    public function destroy(Article $article, ArticleComment $articleComment)
+    public function destroy(ArticleComment $articleComment)
     {
     	$this->authorize('destroy', $articleComment);
     	$articleComment->delete();
 
     	return $this->response->noContent();
+    }
+
+    public function index(Article $article)
+    {
+        $data = $article->articleComment()->paginate(10);
+        
+        return $this->response->paginator($data, new ArticleCommentTransformer());
     }
 }
