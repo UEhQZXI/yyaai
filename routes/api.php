@@ -17,7 +17,7 @@ $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', [
     'namespace' => 'App\Http\Controllers\Api\V1',
 ], function($api) {
-    
+
     // 接口节流处理
     $api->group([
         'middleware' =>  ['api.throttle', 'serializer:array', 'bindings'],
@@ -53,11 +53,16 @@ $api->version('v1', [
             ->name('api.article.show');
 
         // 咨询列表
-        $api->get('articles');
+        $api->get('advisorys', 'AdvisoryController@index')
+            ->name('api.advisorys.index');
 
         // 咨询详情
         $api->get('advisory/{advisory}', 'AdvisoryController@show')
             ->name('api.advisory.show');
+
+        // 根据用户查询咨询列表
+        $api->get('users/{user}/advisorys', 'AdvisoryController@userIndex')
+            ->name('api.users.advisorys.index');
 
         /**
          * 访问以下接口需要token认证

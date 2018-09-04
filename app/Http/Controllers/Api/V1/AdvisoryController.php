@@ -25,6 +25,7 @@ class AdvisoryController extends Controller
         $this->authorize('update', $advisory);
 
         $advisory->update($request->all());
+        
         return $this->response->item($advisory, new AdvisoryTransformer());
     }
 
@@ -40,5 +41,24 @@ class AdvisoryController extends Controller
     public function show(Advisory $advisory)
     {
         return $this->response->item($advisory, new AdvisoryTransformer());
+    }
+
+    public function index(Request $request, Advisory $advisory)
+    {
+        $query = $advisory->query();
+        
+        if ($classify_id = $request->classify_id) {
+            $query->where('classify_id', $classify_id);
+        }
+
+        switch ($request->order) {
+            case 'time':
+                $query->orderBy('create_time', 'desc');
+                break;
+        }
+
+        $advisorys = $query->paginate(10);
+
+        return $this->response->paginator($advisorys, new AdvisoryTransformer());
     }
 }
