@@ -52,6 +52,10 @@ $api->version('v1', [
         $api->get('article/{article}', 'ArticleController@show')
             ->name('api.article.show');
 
+        //获取文章回复列表
+        $api->get('article/{article}/comments', 'ArticleCommentController@index')
+            ->name('api.articleComment.index');
+
         // 咨询列表
         $api->get('advisorys', 'AdvisoryController@index')
             ->name('api.advisorys.index');
@@ -90,8 +94,16 @@ $api->version('v1', [
                 ->name('api.article.destroy');
 
             //添加文章回复
-            $api->post('article/comment/{article}', 'articleCommentController@store')
+            $api->post('article/comment/{article}', 'ArticleCommentController@store')
                 ->name('api.articleComment.store');
+
+            //删除文章回复
+            $api->delete('article/comment/{articleComment}', 'ArticleCommentController@destroy')
+                ->name('api.articleComment.destroy');
+
+            //文章有新回复通知
+            $api->get('user/atricle/notifications', 'ArticleNotificationsController@index')
+                ->name('api.user.articleNotifications.index');
 
             // 发布咨询
             $api->post('advisory', 'AdvisoryController@store')

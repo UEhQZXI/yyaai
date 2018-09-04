@@ -74,6 +74,8 @@ class ArticleController extends Controller
 
     public function show(Article $article)
     {
+        $article->pageviews = $article->pageviews + 1;
+        
         return $this->response->item($article, new ArticleTransformer());
     }
 }
