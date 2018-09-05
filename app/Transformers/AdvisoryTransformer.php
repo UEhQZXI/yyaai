@@ -7,6 +7,9 @@ use League\Fractal\TransformerAbstract;
 
 class AdvisoryTransformer extends TransformerAbstract
 {
+
+    protected $availableIncludes = ['user', 'articleClassify'];
+
     public function transform(Advisory $advisory)
     {
         return [
@@ -18,5 +21,15 @@ class AdvisoryTransformer extends TransformerAbstract
             'anonymous' => (int) $advisory->anonymous,
             'create_time' => time(),
         ];
+    }
+
+    public function includeUser(Advisory $advisory)
+    {
+        return $this->item($advisory->user, new UserTransformer());
+    }
+
+    public function includeArticleClassify(Advisory $advisory)
+    {
+        return $this->item($advisory->articleClassify, new CategoryTransformer());
     }
 }
