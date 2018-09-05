@@ -27,6 +27,6 @@ class ArticleCommentTransformer extends TransformerAbstract
 
     public function includeArticleChildComment(ArticleComment $articleComment)
     {
-        return $this->item($articleComment->articleChildComment, new ArticleChildTransformer());
+        return $this->item($articleComment->articleChildComment, new ArticleChildCommentTransformer());
     }
 }

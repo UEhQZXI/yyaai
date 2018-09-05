@@ -39,4 +39,9 @@ class ArticleComment extends Model
     {
         return $this->hasMany('App\Models\ArticleChildComment','article_comment_id');
     }
+
+    public function getCreateTime($value)
+    {
+        return date('Y-m-d H:i:s', $value);
+    }
 }

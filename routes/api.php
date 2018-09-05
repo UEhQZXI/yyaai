@@ -52,9 +52,13 @@ $api->version('v1', [
         $api->get('article/{article}', 'ArticleController@show')
             ->name('api.article.show');
 
-        //获取文章回复列表
+        //获取文章回复列表   Param: include=user,articleChildComment
         $api->get('article/{article}/comments', 'ArticleCommentController@index')
             ->name('api.articleComment.index');
+
+        //获取文章子回复列表
+        $api->get('article/{articleComment}/childComment', 'ArticleChildCommentController@index')
+            ->name('api.articleChildComment.index');
 
         // 咨询列表
         $api->get('advisorys', 'AdvisoryController@index')
@@ -100,6 +104,14 @@ $api->version('v1', [
             //删除文章回复
             $api->delete('articles/comment/{articleComment}', 'ArticleCommentController@destroy')
                 ->name('api.articlesComment.destroy');
+
+            //添加文章评论子评论
+            $api->post('article/childComment/{articleComment}/{articleChildComments?}', 'ArticleChildCommentController@store')
+                ->name('api.articleChildComment.store');
+
+            //删除文章评论子评论
+            $api->delete('article/childComment/{articleChildComment}', 'ArticleChildCommentController@destroy')
+                ->name('api.articleChildComment.destroy');
 
             //文章有新回复通知
             $api->get('user/articles/notifications', 'ArticleNotificationsController@index')
