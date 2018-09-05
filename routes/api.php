@@ -82,27 +82,27 @@ $api->version('v1', [
                 ->name('api.user.update');
 
             //添加文章
-            $api->post('article', 'ArticleController@store')
+            $api->post('articles', 'ArticleController@store')
                 ->name('api.article.stroe');
 
             //修改文章
-            $api->patch('article/{article}', 'ArticleController@update')
+            $api->patch('articles/{article}', 'ArticleController@update')
                 ->name('api.article.update');
 
             //删除文章
-            $api->delete('article/{article}', 'ArticleController@destroy')
+            $api->delete('articles/{article}', 'ArticleController@destroy')
                 ->name('api.article.destroy');
 
             //添加文章回复
-            $api->post('article/comment/{article}', 'ArticleCommentController@store')
+            $api->post('articles/comment/{article}', 'ArticleCommentController@store')
                 ->name('api.articleComment.store');
 
             //删除文章回复
-            $api->delete('article/comment/{articleComment}', 'ArticleCommentController@destroy')
-                ->name('api.articleComment.destroy');
+            $api->delete('articles/comment/{articleComment}', 'ArticleCommentController@destroy')
+                ->name('api.articlesComment.destroy');
 
             //文章有新回复通知
-            $api->get('user/atricle/notifications', 'ArticleNotificationsController@index')
+            $api->get('user/articles/notifications', 'ArticleNotificationsController@index')
                 ->name('api.user.articleNotifications.index');
 
             // 发布咨询
@@ -116,6 +116,14 @@ $api->version('v1', [
             // 删除咨询
             $api->delete('advisory/{advisory}', 'AdvisoryController@destroy')
                 ->name('api.advisory.destroy');
+
+            // 回复咨询
+            $api->post('advisory/{advisory}/replies', 'AdvisoryReplyController@store')
+                ->name('api.advisory.replies.store');
+
+            // 添加子评论
+            $api->post('advisory/{advisory}/replies/{replies}', 'AdvisoryReplyReplyController@store')
+                ->name('api.advisory.replies.replies.store');
         });
     });
 });
