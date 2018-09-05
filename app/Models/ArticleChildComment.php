@@ -29,4 +29,9 @@ class ArticleChildComment extends Model
     {
         return $this->belongsTo('App\Models\ArticleComment','article_comment_id');
     }
+
+    public function getCreateTimeAttribute($value)
+    {
+        return date('Y-m-d H:i:s', $value);
+    }
 }
