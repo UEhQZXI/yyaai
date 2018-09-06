@@ -9,7 +9,7 @@ class Article extends Model
     public $table = 'app_articles';
     public $primaryKey = 'id';
     public $timestamps = FALSE;
-    protected $fillable = ['title', 'content', 'classify_id', 'before', 'after'];
+    protected $fillable = ['title', 'content', 'classify_id', 'before', 'after', 'hospital', 'project', 'price'];
 
     /**
      * 关联用户表

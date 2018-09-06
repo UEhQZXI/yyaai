@@ -56,10 +56,6 @@ $api->version('v1', [
         $api->get('article/{article}/comments', 'ArticleCommentController@index')
             ->name('api.articleComment.index');
 
-        //获取文章子回复列表
-        $api->get('article/{articleComment}/childComment', 'ArticleChildCommentController@index')
-            ->name('api.articleChildComment.index');
-
         // 咨询列表
         $api->get('advisorys', 'AdvisoryController@index')
             ->name('api.advisorys.index');

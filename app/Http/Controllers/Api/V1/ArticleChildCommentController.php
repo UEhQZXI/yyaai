@@ -31,23 +31,4 @@ class ArticleChildCommentController extends Controller
 
         return $this->response->noContent();
     }
-
-    public function index(ArticleComment $articleComment)
-    {
-        $comment_id = $articleComment->id;
-        $data = ArticleChildComment::where('article_comment_id', $comment_id)->get()->toArray();
-
-        foreach ($data as $key => $val) {
-
-            if ($data[$key]['reply_id'] == 0) {
-                $data[$key]['aite']['id'] = $comment_id;
-                $data[$key]['aite']['user'] = User::where('id', $comment_id)->first(['name'])->name;
-            } else {
-                $data[$key]['aite']['id'] = $val['reply_id'];
-                $data[$key]['aite']['user'] = User::where('id', $val['reply_id'])->first(['name'])->name;
-            }
-        }
-
-        return $this->response->array($data)->setStatusCode(201);
-    }
 }
