@@ -23,6 +23,9 @@ class ArticleTransformer extends TransformerAbstract
                 'status' => (int) $article->status ? $article->status : 0,
                 'before' => $article->before,
                 'after' => $article->after,
+                'hospital' => $article->hospital,
+                'project' => $article->project,
+                'price' => $article->price,
             ];
     }
 

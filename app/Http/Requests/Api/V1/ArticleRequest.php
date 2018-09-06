@@ -31,6 +31,9 @@ class ArticleRequest extends FormRequest
                     'content' => 'required|string',
                     'before' => 'required|string',
                     'after' => 'required|string',
+                    'hospital' => 'string',
+                    'project' => 'string',
+                    'price' => '',
                 ];
                 break;
             case 'PATCH':
@@ -40,6 +43,9 @@ class ArticleRequest extends FormRequest
                     'content' => 'string',
                     'before' => 'string',
                     'after' => 'string',
+                    'hospital' => 'string',
+                    'project' => 'string',
+                    'price' => '',
                 ];
                 break;
         }
@@ -53,6 +59,9 @@ class ArticleRequest extends FormRequest
             'content' => '内容',
             'before' => '矫正前照片',
             'after' => '矫正后照片',
+            'hospital' => '做牙医院',
+            'project' => '做的项目',
+            'price' => '',
         ];
     }
 }

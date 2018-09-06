@@ -55,11 +55,7 @@ $api->version('v1', [
         //获取文章回复列表   Param: include=user,articleChildComment
         $api->get('articles/{article}/comments', 'ArticleCommentController@index')
             ->name('api.articleComment.index');
-
-        //获取文章子回复列表
-        $api->get('articles/{articleComment}/childComment', 'ArticleChildCommentController@index')
-            ->name('api.articleChildComment.index');
-
+            
         // 咨询列表
         $api->get('advisorys', 'AdvisoryController@index')
             ->name('api.advisorys.index');
