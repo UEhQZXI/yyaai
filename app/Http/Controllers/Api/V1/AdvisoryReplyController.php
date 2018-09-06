@@ -23,4 +23,11 @@ class AdvisoryReplyController extends Controller
         return $this->response->item($comment, new AdvisoryReplyTransformer())
             ->setStatusCode(201);
     }
+
+    public function index(Advisory $advisory)
+    {
+        $replies = $advisory->advisoryComment()->paginate(20);
+
+        return $this->response->paginator($replies, new AdvisoryReplyTransformer());
+    }
 }

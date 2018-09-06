@@ -41,23 +41,23 @@ $api->version('v1', [
             ->name('api.categories.index');
 
         //获取文章列表
-        $api->get('article', 'ArticleController@index')
+        $api->get('articles', 'ArticleController@index')
             ->name('api.article.index');
 
         // 获取个人文章列表
-        $api->get('user/article/{user}', 'ArticleController@userIndex')
+        $api->get('users/{user}/articles', 'ArticleController@userIndex')
             ->name('api.article.userIndex');
 
         //文章详情
-        $api->get('article/{article}', 'ArticleController@show')
+        $api->get('articles/{article}', 'ArticleController@show')
             ->name('api.article.show');
 
         //获取文章回复列表   Param: include=user,articleChildComment
-        $api->get('article/{article}/comments', 'ArticleCommentController@index')
+        $api->get('articles/{article}/comments', 'ArticleCommentController@index')
             ->name('api.articleComment.index');
 
         //获取文章子回复列表
-        $api->get('article/{articleComment}/childComment', 'ArticleChildCommentController@index')
+        $api->get('articles/{articleComment}/childComment', 'ArticleChildCommentController@index')
             ->name('api.articleChildComment.index');
 
         // 咨询列表
@@ -65,12 +65,16 @@ $api->version('v1', [
             ->name('api.advisorys.index');
 
         // 咨询详情
-        $api->get('advisory/{advisory}', 'AdvisoryController@show')
+        $api->get('advisorys/{advisory}', 'AdvisoryController@show')
             ->name('api.advisory.show');
 
         // 根据用户查询咨询列表
         $api->get('users/{user}/advisorys', 'AdvisoryController@userIndex')
             ->name('api.users.advisorys.index');
+
+        // 查询咨询回复列表
+        $api->get('advisorys/{advisory}/replies', 'AdvisoryReplyController@index')
+            ->name('api.advisorys.replies.index');
 
         /**
          * 访问以下接口需要token认证
@@ -134,7 +138,7 @@ $api->version('v1', [
                 ->name('api.advisory.replies.store');
 
             // 添加子评论
-            $api->post('advisory/{advisory}/replies/{replies}', 'AdvisoryReplyReplyController@store')
+            $api->post('advisory/replies/{replies}/{childReplies?}', 'AdvisoryReplyReplyController@store')
                 ->name('api.advisory.replies.replies.store');
         });
     });

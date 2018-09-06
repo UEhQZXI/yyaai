@@ -10,16 +10,16 @@ use App\Transformers\AdvisoryReplyReplyTransformer;
 
 class AdvisoryReplyReplyController extends Controller
 {
-    public function store(AdvisoryReplyReplyRequest $request, AdvisoryComment $advisory, AdvisoryChildComment $comment)
+    public function store(AdvisoryReplyReplyRequest $request, AdvisoryComment $replies, AdvisoryChildComment $childReplies)
     {
-        $comment->content = $request->content;
-        $comment->user_id = $this->user()->id;
-        $comment->advisory_comment_id = $advisory->id;
-        $comment->reply_id = User::select('id')->where('id', $advisory->id)->first()->id;
-        $comment->create_time = $_SERVER['REQUEST_TIME'];
-        $comment->save();
+        $childReplies->content = $request->content;
+        $childReplies->user_id = $this->user()->id;
+        $childReplies->advisory_comment_id = $replies->id;
+        $childReplies->reply_id = $childReplies->id ?? 0;
+        $childReplies->create_time = $_SERVER['REQUEST_TIME'];
+        $childReplies->save();
 
-        return $this->response->item($comment, new AdvisoryReplyReplyTransformer())
+        return $this->response->item($childReplies, new AdvisoryReplyReplyTransformer())
             ->setStatusCode(201);
     }
 }

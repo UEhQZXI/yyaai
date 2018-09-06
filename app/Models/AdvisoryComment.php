@@ -37,6 +37,6 @@ class AdvisoryComment extends Model
      */
     public function advisoryChildComment()
     {
-        return $this->belongsTo('App\Models\AdvisoryChildComment','advisory_comment_id');
+        return $this->hasMany('App\Models\AdvisoryChildComment','advisory_comment_id');
     }
 }
