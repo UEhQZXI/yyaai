@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Http\Serializers\NoDataArraySerializer;
+use Dingo\Api\Transformer\Adapter\Fractal;
 use Illuminate\Support\ServiceProvider;
+use League\Fractal\Manager;
 
 class AppServiceProvider extends ServiceProvider
 {

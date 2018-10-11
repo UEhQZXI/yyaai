@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Advisory;
+use App\Models\AdvisoryComment;
 use App\Models\Article;
 use App\Models\ArticleComment;
 use App\Models\ArticleChildComment;

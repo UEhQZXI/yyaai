@@ -160,6 +160,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\EasySmsServiceProvider::class,
+        Dingo\Api\Provider\LaravelServiceProvider::class,
+        App\Providers\DingoSerializerProvider::class,
 
     ],
 

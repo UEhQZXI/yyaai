@@ -19,7 +19,7 @@ class UserTransformer extends TransformerAbstract
             'description' => $user->description,
             'integral' => $user->integral,
             'fans' => $user->fans,
-            'create_time' => $user->create_time,
+            'create_time' => date('Y-m-d H:i:s', $user->create_time),
         ];
     }
 }
