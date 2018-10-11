@@ -132,6 +132,10 @@ $api->version('v1', [
             // 添加子评论
             $api->post('advisory/{advisory}/replies/{replies}', 'AdvisoryReplyReplyController@store')
                 ->name('api.advisory.replies.replies.store');
+
+            //文件上传
+            $api->post('upload', 'Controller@upload')
+                ->name('api.Controller.upload');
         });
     });
 });

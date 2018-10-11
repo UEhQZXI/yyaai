@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Requests\Api\V1\ArticleCommentRequest;
 use App\Models\ArticleComment;
 use App\Models\Article;
+use App\Models\User;
 use App\Transformers\ArticleCommentTransformer;
 
 class ArticleCommentController extends Controller
@@ -19,6 +20,14 @@ class ArticleCommentController extends Controller
     	$articleComment->create_time = $_SERVER['REQUEST_TIME'];
     	$articleComment->floor = $floor;
     	$articleComment->save();
+
+        //今日评论量
+        $today_article_comments = ArticleComment::where('user_id', $this->user()->id)
+                                   ->where('create_time', '>=', strtotime(date('Ymd')))
+                                   ->count();
+        //今日评论数量小于6条，增加2积分
+        if ($today_article_comments <= 5)
+            User::where('id', $this->user()->id)->increment('integral', 2);
 
     	return $this->response->item($articleComment, new ArticleCommentTransformer())->setStatusCode(201);
     }

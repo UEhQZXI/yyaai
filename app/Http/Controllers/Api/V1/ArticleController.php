@@ -1,11 +1,15 @@
 <?php
 
 namespace App\Http\Controllers\Api\V1;
+
 use App\Models\Article;
 use App\Transformers\ArticleTransformer;
 use App\Http\Requests\Api\V1\ArticleRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\ArticlePageview;
+use App\Models\ArticleChildComment;
+use App\Models\ArticleComment;
 
 class ArticleController extends Controller
 {
@@ -15,6 +19,14 @@ class ArticleController extends Controller
     	$article->user_id = $this->user()->id;
     	$article->create_time = $_SERVER['REQUEST_TIME'];
     	$article->save();
+
+        //今日发帖的条数
+        $today_articles = Article::where('user_id', $this->user()->id)
+                                   ->where('create_time', '>=', strtotime(date('Ymd')))
+                                   ->count();
+        //若发帖少于5条，则增加5点积分                            
+        if ($today_articles <= 5)
+            User::where('id', $this->user()->id)->increment('integral', 5);
 
     	return $this->response->item($article, new ArticleTransformer())->setStatusCode(201);
     }
@@ -30,7 +42,11 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
     	$this->authorize('destroy', $article);
-    	$article->delete();
+        $article_id = $article->id;
+        $article->delete();
+        //删除文章的时候，将文章下的评论以及子评论一起删除
+        ArticleComment::where('article_id', $article_id)->delete();
+        ArticleChildComment::where('article_id', $article_id)->delete();
 
     	return $this->response->noContent();
     }
@@ -56,7 +72,7 @@ class ArticleController extends Controller
                 break;
 
             default:
-                // $query->recentReplied();
+                // 
                 break;
         }
 
@@ -74,7 +90,17 @@ class ArticleController extends Controller
 
     public function show(Article $article)
     {
-        $article->pageviews = $article->pageviews + 1;
+        //获取客户端IP
+        $ip = $_SERVER['REMOTE_ADDR'];
+        //判断该IP是否访问过该帖子
+        $isPageview = ArticlePageview::firstOrNew(['article_id' => $article->id, 'user_ip'=> $ip],
+                                                  ['article_id' => $article->id, 'user_ip'=> $ip]);
+        //没有访问过 -> 帖子访问量加一
+        if (!$isPageview->id) {
+            $article->pageviews = $article->pageviews + 1;
+            $article->save();
+            $isPageview->save();
+        }
         
         return $this->response->item($article, new ArticleTransformer());
     }
