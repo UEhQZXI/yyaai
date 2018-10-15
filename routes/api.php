@@ -142,4 +142,11 @@ $api->version('v1', [
                 ->name('api.Controller.upload');
         });
     });
+
+    $api->group([
+        'namespace' => 'Store'
+    ], function ($api) {
+        $api->get('store', 'CategorieController@store');
+    });
 });
+
