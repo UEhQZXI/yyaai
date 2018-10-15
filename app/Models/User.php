@@ -33,6 +33,8 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany('App\Models\Advisory','user_id');
     }
 
+    
+
     /**
      * 关联案例评论表
      * 
