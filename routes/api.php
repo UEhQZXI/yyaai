@@ -140,11 +140,19 @@ $api->version('v1', [
             //文件上传
             $api->post('upload', 'Controller@upload')
                 ->name('api.Controller.upload');
-
-            $api->group([
-                'namespace' => 'Store'
-            ], function ($api) {
                 
+            });
+
+            $api->group(['namespace' => 'Store'], function ($api) {
+                $api->post('store/cart', 'CartController@store')
+                    ->name('api.store.cart.store');
+
+                $api->delete('store/cart/{cart}', 'CartController@destroy')
+                    ->name('api.store.cart.destroy');
+
+                $api->patch('store/cart/{cart}', 'CartController@update')
+                    ->name('api.store.cart.update');
+
                 //添加订单
                 $api->post('store/order', 'OrderController@store');
 
@@ -154,11 +162,10 @@ $api->version('v1', [
                 //查询订单详情
                 $api->get('store/order/{order}', 'OrderController@show');
             });
-        });
     });
 
     $api->group([
-        'namespace' => 'Store'
+        'namespace' => 'Store',
     ], function ($api) {
         //添加分类
         $api->post('store/categorie', 'CategorieController@store');
@@ -178,6 +185,23 @@ $api->version('v1', [
         //查询所有订单
         $api->get('store/orders', 'OrderController@index');
 
+
+        $api->get('store', 'CategorieController@store');
+
+        $api->post('store/product', 'ProductController@store')
+            ->name('api.store.product.store');
+
+        $api->delete('store/products/{product}', 'ProductController@destroy')
+            ->name('api.store.product.destroy');
+
+        $api->patch('store/products/{product}', 'ProductController@update')
+            ->name('api.store.product.update');
+
+        $api->get('store/products', 'ProductController@index')
+            ->name('api.store.product.index');
+
+        $api->get('store/products/{product}', 'ProductController@productIndex')
+            ->name('api.store.product.productIndex');
     });
 });
 

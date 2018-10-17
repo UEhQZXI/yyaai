@@ -7,10 +7,12 @@ use App\Models\AdvisoryComment;
 use App\Models\Article;
 use App\Models\ArticleComment;
 use App\Models\ArticleChildComment;
+use App\Models\Store\Cart;
 use App\Policies\AdvisoryPolicy;
 use App\Policies\ArticlePolicy;
 use App\Policies\ArticleCommentPolicy;
 use App\Policies\ArticleChildCommentPolicy;
+use App\Policies\CartPolicy;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -27,6 +29,7 @@ class AuthServiceProvider extends ServiceProvider
         Article::class => ArticlePolicy::class,
         ArticleComment::class => ArticleCommentPolicy::class,
         ArticleChildComment::class => ArticleChildCommentPolicy::class,
+        Cart::class => CartPolicy::class,
     ];
 
     /**

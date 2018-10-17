@@ -2,10 +2,17 @@
 
 namespace App\Models\Store;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Cart extends Model
 {
     protected $table = 'app_store_cart';
-    public $timestamps = false;
+    protected $fillable = ['user_id','product_id','product_number'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
+
