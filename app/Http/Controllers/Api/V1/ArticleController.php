@@ -28,7 +28,7 @@ class ArticleController extends Controller
         if ($today_articles <= 5)
             User::where('id', $this->user()->id)->increment('integral', 5);
 
-    	return $this->response->item($article, new ArticleTransformer())->setStatusCode(201);
+    	return $this->response->item($article, new ArticleTransformer())->setStatusCode(200);
     }
 
     public function update(ArticleRequest $request, Article $article)

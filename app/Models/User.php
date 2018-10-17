@@ -75,6 +75,14 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany('App\Models\AdvisoryChildComment','user_id');
     }
 
+    /**
+     *关联订单表
+    */
+    public function order()
+    {
+        return $this->hasMany('App\Models\Store\Order', 'user_id');
+    }
+
 
     /**
      * @return mixed 返回user id

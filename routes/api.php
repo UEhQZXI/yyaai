@@ -140,13 +140,44 @@ $api->version('v1', [
             //文件上传
             $api->post('upload', 'Controller@upload')
                 ->name('api.Controller.upload');
+
+            $api->group([
+                'namespace' => 'Store'
+            ], function ($api) {
+                
+                //添加订单
+                $api->post('store/order', 'OrderController@store');
+
+                //查询某个用户的订单
+                $api->get('store/user/orders', 'OrderController@userIndex');
+
+                //查询订单详情
+                $api->get('store/order/{order}', 'OrderController@show');
+            });
         });
     });
 
     $api->group([
         'namespace' => 'Store'
     ], function ($api) {
-        $api->get('store', 'CategorieController@store');
+        //添加分类
+        $api->post('store/categorie', 'CategorieController@store');
+        
+        //修改分类
+        $api->patch('store/categorie/{categorie}', 'CategorieController@update');
+
+        //删除分类
+        $api->delete('store/categorie/{categorie}', 'CategorieController@destroy');
+
+        //查询分类
+        $api->get('store/categorie', 'CategorieController@index');
+
+        //修改订单
+        $api->patch('store/order/{order}', 'OrderController@update');
+
+        //查询所有订单
+        $api->get('store/orders', 'OrderController@index');
+
     });
 });
 

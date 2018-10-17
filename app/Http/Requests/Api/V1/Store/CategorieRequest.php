@@ -23,8 +23,26 @@ class CategorieRequest extends FormRequest
      */
     public function rules()
     {
+        if ($this->method() == 'POST') {
+            return [
+                'name' => 'required|string',
+                'pid' => 'required|int',
+            ];
+        } else if ($this->method() == 'PATCH') {
+            return [
+                'name' => 'string',
+                'pid' => 'int',
+            ];
+        }
+    }
+
+    public function messages ()
+    {
         return [
-            //
+            'name.required' => '请输入分类名',
+            'name.string' => '分类名格式错误',
+            'pid.required' => '缺少父分类id',
+            'pid.int' => '父分类id类型错误',
         ];
     }
 }

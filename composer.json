@@ -25,7 +25,9 @@
         "classmap": [
             "database/seeds",
             "database/factories",
-            "app/Common/Common.php"
+            "app/Common/Common.php",
+            "app/Common/Res.php",
+            "app/Common/ApiResponse.php"
         ],
         "psr-4": {
             "App\\": "app/"
