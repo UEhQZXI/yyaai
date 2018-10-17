@@ -140,13 +140,43 @@ $api->version('v1', [
             //文件上传
             $api->post('upload', 'Controller@upload')
                 ->name('api.Controller.upload');
+
+            $api->group(['namespace' => 'Store'], function ($api) {
+                $api->post('store/cart', 'CartController@store')
+                    ->name('api.store.cart.store');
+
+                $api->delete('store/cart/{cart}', 'CartController@destroy')
+                    ->name('api.store.cart.destroy');
+
+                $api->patch('store/cart/{cart}', 'CartController@update')
+                    ->name('api.store.cart.update');
+            });
+
+
         });
+
+
     });
 
     $api->group([
-        'namespace' => 'Store'
+        'namespace' => 'Store',
     ], function ($api) {
         $api->get('store', 'CategorieController@store');
+
+        $api->post('store/product', 'ProductController@store')
+            ->name('api.store.product.store');
+
+        $api->delete('store/products/{product}', 'ProductController@destroy')
+            ->name('api.store.product.destroy');
+
+        $api->patch('store/products/{product}', 'ProductController@update')
+            ->name('api.store.product.update');
+
+        $api->get('store/products', 'ProductController@index')
+            ->name('api.store.product.index');
+
+        $api->get('store/products/{product}', 'ProductController@productIndex')
+            ->name('api.store.product.productIndex');
     });
 });
 

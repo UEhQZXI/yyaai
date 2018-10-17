@@ -162,7 +162,6 @@ return [
         App\Providers\EasySmsServiceProvider::class,
         Dingo\Api\Provider\LaravelServiceProvider::class,
         App\Providers\DingoSerializerProvider::class,
-
     ],
 
     /*

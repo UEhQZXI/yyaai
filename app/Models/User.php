@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Store\Cart;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Auth;
@@ -75,7 +76,10 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany('App\Models\AdvisoryChildComment','user_id');
     }
 
-
+    public function cart()
+    {
+        return $this->hasMany(Cart::class, 'user_id');
+    }
     /**
      * @return mixed 返回user id
      */
