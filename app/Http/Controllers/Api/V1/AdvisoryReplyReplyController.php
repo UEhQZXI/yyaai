@@ -19,7 +19,8 @@ class AdvisoryReplyReplyController extends Controller
         $childReplies->create_time = $_SERVER['REQUEST_TIME'];
         $childReplies->save();
 
-        return $this->response->item($childReplies, new AdvisoryReplyReplyTransformer())
-            ->setStatusCode(201);
+        // return $this->response->item($childReplies, new AdvisoryReplyReplyTransformer())
+        //     ->setStatusCode(201);
+        return $this->response->array(['message' => 'success', 'data' => []]);
     }
 }

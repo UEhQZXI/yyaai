@@ -26,7 +26,7 @@ class VerificationCodesController extends Controller
             ]);
         } catch (NoGatewayAvailableException $e) {
             $message = $e->getException('aliyun')->getMessage();
-            return $this->response->errorInternal($message ?? '短信发送失败');
+            return $this->response->error($message ?? '短信发送失败', 422);
         }
 
         $key = 'verificationCode_'.str_random(15);
@@ -34,9 +34,6 @@ class VerificationCodesController extends Controller
         // 缓存验证码，10分钟后过期
         \Cache::put($key, ['phone' => $phone, 'code' => $code], $expiredTime);
 
-        return $this->response->array([
-            'key' => $key,
-            'expired_time' => $expiredTime->toDateTimeString(),
-        ])->setStatusCode(201);
+        return $this->response->array(['message' => 'success', 'data' => ['key' => $key, 'expired_time' => $expiredTime->toDateTimeString()]]);
     }
 }

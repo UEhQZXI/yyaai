@@ -12,6 +12,7 @@
         "laravel/tinker": "^1.0",
         "liyu/dingo-serializer-switch": "^0.3.0",
         "overtrue/easy-sms": "^1.1",
+        "overtrue/laravel-lang": "~3.0",
         "tymon/jwt-auth": "1.0.0-rc.2"
     },
     "require-dev": {
@@ -27,8 +28,7 @@
             "database/seeds",
             "database/factories",
             "app/Common/Common.php",
-            "app/Common/Res.php",
-            "app/Common/ApiResponse.php"
+            "app/Common/Res.php"
         ],
         "psr-4": {
             "App\\": "app/"

@@ -28,7 +28,7 @@ class UsersController extends Controller
         }
 
         // 生成随机用户名
-        $name = '牙牙_'.str_random(1).mt_rand(1,99).str_random(4);
+        $name = '牙牙_'.str_random(1).mt_rand(1, 99).str_random(4);
 
         $user = User::create([
             'name' => $name,
@@ -40,13 +40,19 @@ class UsersController extends Controller
         // 清楚验证码缓存
         \Cache::forget($request->verification_key);
 
-        return $this->response->item($user, new UserTransformer())
-            ->setMeta([
-                'access_token' => \Auth::guard('api')->fromUser($user),
-                'token_type' => 'Bearer',
-                'expires_in' => \Auth::guard('api')->factory()->getTTL() * 60
-            ])
-            ->setStatusCode(201);
+        return $this->response->array(['message' => 'success', 'data' => [
+            'access_token' => \Auth::guard('api')->fromUser($user),
+            'token_type' => 'Bearer',
+            'expires_in' => \Auth::guard('api')->factory()->getTTL() * 60
+        ]]);
+
+//        return $this->response->item($user, new UserTransformer())
+//            ->setMeta([
+//                'access_token' => \Auth::guard('api')->fromUser($user),
+//                'token_type' => 'Bearer',
+//                'expires_in' => \Auth::guard('api')->factory()->getTTL() * 60
+//            ])
+//            ->setStatusCode(201);
     }
 
     /**
@@ -56,7 +62,10 @@ class UsersController extends Controller
      */
     public function me()
     {
-        return $this->response->item($this->user(), new UserTransformer());
+//        return $this->user();
+        $user = User::select(['id', 'name', 'avatar', 'sex', 'birthday', 'address', 'description', 'integral', 'fans', 'created_at', 'updated_at'])->where('id', $this->user()->id)->get();
+
+        return $this->response->array(['message' => 'success', 'data' => $user]);
     }
 
     /**
@@ -73,6 +82,8 @@ class UsersController extends Controller
 
         $user->update($data);
 
-        return $this->response->item($user, new UserTransformer());
+        return $this->response->array(['message' => 'success', 'data' => []]);
+
+//        return $this->response->item($user, new UserTransformer());
     }
 }

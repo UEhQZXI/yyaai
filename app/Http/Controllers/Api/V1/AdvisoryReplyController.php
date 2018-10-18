@@ -20,14 +20,16 @@ class AdvisoryReplyController extends Controller
         $comment->floor = $floor;
         $comment->save();
 
-        return $this->response->item($comment, new AdvisoryReplyTransformer())
-            ->setStatusCode(201);
+        // return $this->response->item($comment, new AdvisoryReplyTransformer())
+        //     ->setStatusCode(201);
+        return $this->response->array(['message' => 'success', 'data' => []]);
     }
 
     public function index(Advisory $advisory)
     {
         $replies = $advisory->advisoryComment()->paginate(20);
 
-        return $this->response->paginator($replies, new AdvisoryReplyTransformer());
+        // return $this->response->paginator($replies, new AdvisoryReplyTransformer());
+        return $this->response->array(['message' => 'success', 'data' => $replies]);
     }
 }

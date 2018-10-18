@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Store\Address;
 use App\Models\Store\Cart;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
@@ -11,8 +12,7 @@ class User extends Authenticatable implements JWTSubject
 {
     public $table = 'app_users';
     public $primaryKey = 'id';
-    public $timestamps = FALSE;
-    protected $fillable = ['phone', 'name', 'password','avatar','sex','birthday','address','description', 'create_time'];
+    protected $fillable = ['phone', 'name', 'password', 'avatar', 'sex', 'birthday', 'address', 'description'];
 
     /**
      * 关联案例表
@@ -90,6 +90,11 @@ class User extends Authenticatable implements JWTSubject
     public function cart()
     {
         return $this->hasMany(Cart::class, 'user_id');
+    }
+
+    public function address()
+    {
+        return $this->hasMany(Address::class, 'user_id');
     }
 
     /**

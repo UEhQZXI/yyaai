@@ -38,7 +38,7 @@ class CartController extends Controller
         }
 
         $collection = collect(['cart' => $cartList]);
-        $collection->put('cart_total_price', sprintf('%.2f',round($cartTotalPrice, 2)) );
+        $collection->put('cart_total_price', sprintf('%.2f', round($cartTotalPrice, 2)));
 
         return $this->response->array(['message' => 'success', 'data' => $collection]);
     }
@@ -49,7 +49,7 @@ class CartController extends Controller
 
         $cart->delete();
 
-        return $this->response->array(['message' => 'success']);
+        return $this->response->array(['message' => 'success', 'data' => []]);
     }
 
     public function update(CartRequest $request, Cart $cart)
@@ -64,8 +64,8 @@ class CartController extends Controller
             ->where('id', $productId->product_id)
             ->first();
 
-        if (empty($product)) {
-            return $this->response->error('商品过期不存在',422);
+        if ($product->isEmpty()) {
+            return $this->response->error('商品过期不存在', 422);
         }
 
         if ($product->inventory < $productNumber) {
@@ -89,7 +89,35 @@ class CartController extends Controller
         }
 
         $collection = collect(['cart' => $cartList]);
-        $collection->put('cart_total_price', sprintf('%.2f',round($cartTotalPrice, 2)) );
+        $collection->put('cart_total_price', sprintf('%.2f', round($cartTotalPrice, 2)) );
+
+        return $this->response->array(['message' => 'success', 'data' => $collection]);
+    }
+
+    public function userIndex()
+    {
+        $cart = Cart::select(['id', 'product_id', 'product_number', 'total_price', 'created_at'])
+            ->where('user_id', $this->user()->id)
+            ->with(['product' => function ($query) {
+                $query->select([
+                    'id', 'category_id', 'title', 'description', 'model',
+                    'original_price', 'current_price', 'inventory', 'group_number',
+                    'image1', 'image2', 'image3', 'image4', 'image5',
+                    'status', 'created_at'
+                ])->get();
+            }])
+            ->get();
+
+        $collection = collect(['cart' => $cart]);
+
+        if (!$cart->isEmpty()) {
+            $cartTotalPrice = 0.00;
+
+            foreach ($cart as $value) {
+                $cartTotalPrice += $value->total_price;
+            }
+            $collection->put('cart_total_price', sprintf('%.2f', round($cartTotalPrice, 2)) );
+        }
 
         return $this->response->array(['message' => 'success', 'data' => $collection]);
     }
