@@ -51,8 +51,8 @@ class UserRequest extends FormRequest
     public function messages()
     {
         return [
-            'name:regex' => '用户名只支持英文、数字、横杆和下划线',
-            'name:between' => '用户名必须介于 2 - 10 个字符之间',
+            'name.regex' => '用户名只支持英文、数字、横杆和下划线',
+            'name.between' => '用户名必须介于 2 - 10 个字符之间',
             'name.required' => '用户名不能为空'
         ];
     }

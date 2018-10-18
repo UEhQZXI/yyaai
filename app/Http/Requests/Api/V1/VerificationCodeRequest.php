@@ -31,4 +31,20 @@ class VerificationCodeRequest extends FormRequest
             ]
         ];
     }
+
+    public function attributes()
+    {
+        return [
+            'phone' => '手机号码',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'phone.unique' => '该手机已注册，可以通过密码或短信快捷登录',
+            'phone.regex' => '手机号码格式不正确',
+            'phone.required' => '手机号码不能为空'
+        ];
+    }
 }

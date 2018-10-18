@@ -14,7 +14,7 @@ class UserTransformer extends TransformerAbstract
             'phone' => $user->phone,
             'avatar' => $user->avatar,
             'sex' => $user->sex,
-            'birthday' => $user->bithday,
+            'birthday' => $user->birthday,
             'address' => $user->address,
             'description' => $user->description,
             'integral' => $user->integral,

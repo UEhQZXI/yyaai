@@ -16,10 +16,10 @@ class AuthorizationsController extends Controller
             return $this->response->errorUnauthorized('账号或密码错误');
         }
 
-        return $this->response->array([
+        return $this->response->array(['message' => 'success','data' => [
             'access_token' => $token,
             'token_type' => 'Bearer',
-            'expires_in' => \Auth::guard('api')->factory()->getTTL() * 336
-        ])->setStatusCode(201);
+            'expires_in' => \Auth::guard('api')->factory()->getTTL() * 60
+        ]]);
     }
 }

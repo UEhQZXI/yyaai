@@ -16,15 +16,17 @@ class ProductController extends Controller
         $product->group_number = uniqid();
         $product->save();
 
-        return $this->response->item($product, new ProductTransformer())
-            ->setStatusCode(201);
+        // return $this->response->item($product, new ProductTransformer())
+        //     ->setStatusCode(201);
+        return $this->response->array(['message' => 'success', 'data' => []]);
     }
 
     public function destroy($product)
     {
         Product::where('id', $product)->delete();
 
-        return $this->response()->noContent();
+        // return $this->response()->noContent();
+        return $this->response->array(['message' => 'success', 'data' => []]);
     }
 
     public function update(ProductRequest $request, $product)
@@ -32,7 +34,7 @@ class ProductController extends Controller
         Product::where('id', $product)
             ->update($request->all());
 
-        return $this->response->array(['message' => 'success']);
+        return $this->response->array(['message' => 'success', 'data' => []]);
     }
 
     public function index(Request $request, Product $product)
@@ -43,9 +45,10 @@ class ProductController extends Controller
             $query->where('category_id', $category_id);
         }
 
-        $products = $query->paginate(10);
+        $products = $query->paginate(2);
 
-        return $this->response->paginator($products, new ProductTransformer());
+        // return $this->response->paginator($products, new ProductTransformer());
+        return $this->response->array(['message' => 'success', 'data' => $products]);
     }
 
     public function productIndex($product)
@@ -72,6 +75,15 @@ class ProductController extends Controller
             $product->linked = $product->linked->values()->all();
         }
 
-        return $this->response->array(['data' => $product]);
+        return $this->response->array(['message' => 'success', 'data' => $product]);
+    }
+
+    public function userExclusive()
+    {
+        $products = Product::select(['id', 'title', 'description', 'original_price', 'current_price'])->get();
+
+        $products = $products->random(10);
+
+        return $this->response->array(['message' => 'success', 'data' => $products]);
     }
 }
