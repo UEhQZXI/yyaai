@@ -29,7 +29,7 @@ class ArticleCommentController extends Controller
         if ($today_article_comments <= 5)
             User::where('id', $this->user()->id)->increment('integral', 2);
 
-    	return $this->response->item($articleComment, new ArticleCommentTransformer())->setStatusCode(201);
+    	return $this->response->array(['message' => '评论成功', 'data' => []]);
     }
 
     public function destroy(ArticleComment $articleComment)
@@ -37,13 +37,13 @@ class ArticleCommentController extends Controller
     	$this->authorize('destroy', $articleComment);
     	$articleComment->delete();
 
-    	return $this->response->noContent();
+    	return $this->response->array(['message' => '删除成功', 'data' => []]);
     }
 
     public function index(Article $article)
     {
         $data = $article->articleComment()->paginate(10);
         
-        return $this->response->paginator($data, new ArticleCommentTransformer());
+        return $this->response->array(['message' => 'success', 'data' => $data]);
     }
 }

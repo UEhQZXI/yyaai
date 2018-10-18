@@ -140,10 +140,9 @@ $api->version('v1', [
             //文件上传
             $api->post('upload', 'Controller@upload')
                 ->name('api.Controller.upload');
-                
-            });
 
             $api->group(['namespace' => 'Store'], function ($api) {
+                
                 $api->post('store/cart', 'CartController@store')
                     ->name('api.store.cart.store');
 
@@ -161,7 +160,8 @@ $api->version('v1', [
 
                 //查询订单详情
                 $api->get('store/order/{order}', 'OrderController@show');
-            });
+            });               
+        });         
     });
 
     $api->group([

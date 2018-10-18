@@ -16,7 +16,7 @@ class CategorieController extends Controller
     	$categories->fill($request->all());
     	$categories->save();
 
-    	return $this->response->noContent();
+    	return $this->response->array(['message' => '添加成功', 'data' => []]);
     }
 
     public function update(CategorieRequest $request, $categorie_id)
@@ -24,17 +24,17 @@ class CategorieController extends Controller
     	$categorie = Categories::find($categorie_id);
     	$categorie->update($request->all());
 
-    	return $this->response->noContent();
+    	return $this->response->array(['message' => '修改成功', 'data' => []]);
     }
 
      public function destroy($categorie_id)
      {
      	if (Categories::where('pid', $categorie_id)->count() > 0)
-     		return $this->response->item('删除失败，有子分类');
+     		return $this->response->error('删除失败，有子分类', 422);
 
      	Categories::where('id', $categorie_id)->delete();
 
-     	return $this->response->noContent('删除成功');
+     	return $this->response->array(['message' => '删除成功', 'data' => []]);
      }
 
      public function index(Request $request)
@@ -45,6 +45,6 @@ class CategorieController extends Controller
      						? $query->where('pid', $request->pid)
      						: $query->where('pid', 0);
      	$data = $query->get();
-     	return $this->response->array($data);
+     	return $this->response->array(['message' => 'success', 'data' => $data]);
      }
 }

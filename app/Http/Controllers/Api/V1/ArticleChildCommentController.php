@@ -30,7 +30,7 @@ class ArticleChildCommentController extends Controller
         if ($today_article_child_comments <= 5)
             User::where('id', $this->user()->id)->increment('integral', 2);
 
-    	return $this->response->item($articleChildComment, new ArticleChildCommentTransformer())->setStatusCode(201);
+    	return $this->response->array(['message' => '评论成功', 'data' => []]);
     }
 
     public function destroy(ArticleChildComment $articleChildComment)
@@ -38,6 +38,6 @@ class ArticleChildCommentController extends Controller
         $this->authorize('destroy', $articleChildComment);
         $articleChildComment->delete();
 
-        return $this->response->noContent();
+        return $this->response->array(['message' => '删除成功', 'data' => []]);
     }
 }

@@ -25,17 +25,25 @@ class OrderRequest extends FormRequest
     {
         switch ($this->method()) {
             case 'POST':
-                return [
-                    'address_id' => 'required|int',
-                    'product_ids' => 'required',
-                    'price' => 'required',
-                    'num' => 'required'
-                ];
+                $res = [];
+                $res['address_id'] = 'required|int';
+                
+                if (!$this->type) {
+                    $res['type'] = 'required'; 
+                } else if ($this->type == 'direct') {
+                    $res['product_id'] = 'required|int';
+                    $res['num'] = 'required|int';
+                } else {
+                    $res['cart_ids'] = 'required';
+                }
+
+                return $res;
                 break;
             
             default:
                 return [
                     'status' => 'int',
+                    'price' => 'int'
                 ];
                 break;
         }

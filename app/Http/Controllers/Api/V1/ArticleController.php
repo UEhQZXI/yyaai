@@ -28,7 +28,7 @@ class ArticleController extends Controller
         if ($today_articles <= 5)
             User::where('id', $this->user()->id)->increment('integral', 5);
 
-    	return $this->response->item($article, new ArticleTransformer())->setStatusCode(200);
+    	return $this->response->array(['message' => '分享成功', 'data' => []]);
     }
 
     public function update(ArticleRequest $request, Article $article)
@@ -36,7 +36,7 @@ class ArticleController extends Controller
         $this->authorize('update', $article);
         $article->update($request->all());
 
-        return $this->response->item($article, new ArticleTransformer());
+        return $this->response->array(['message' => '修改成功', 'data' => []]);
     }
 
     public function destroy(Article $article)
@@ -48,7 +48,7 @@ class ArticleController extends Controller
         ArticleComment::where('article_id', $article_id)->delete();
         ArticleChildComment::where('article_id', $article_id)->delete();
 
-    	return $this->response->noContent();
+    	return $this->response->array(['message' => '删除成功', 'data' => []]);
     }
 
     public function index(Request $request, Article $article)
@@ -76,9 +76,9 @@ class ArticleController extends Controller
                 break;
         }
 
-        $articles = $query->paginate(10);
+        $articles = $query->with(['user', 'articleClassify'])->paginate(10);
 
-        return $this->response->paginator($articles, new ArticleTransformer());
+        return $this->response->array(['message' => 'success', 'data' => $articles]);
     }
 
     public function userIndex(User $user, Request $request)
@@ -102,6 +102,6 @@ class ArticleController extends Controller
             $isPageview->save();
         }
         
-        return $this->response->item($article, new ArticleTransformer());
+        return $this->response->array(['message' => 'success', 'data' => $article]);
     }
 }
