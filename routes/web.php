@@ -11,4 +11,6 @@
 |
 */
 
-Route::get('/','Controller@test');
+Route::get('/', function () {
+    return ['message' => '此地不宜久留~ (｡ŏ_ŏ)走开！', 'code' => 2333];
+});

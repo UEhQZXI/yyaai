@@ -11,6 +11,12 @@ use App\Http\Controllers\Api\V1\Controller;
 
 class CartController extends Controller
 {
+    /**
+     * 添加商品到购物车
+     *
+     * @param CartRequest $request
+     * @param Cart $cart
+     */
     public function store(CartRequest $request, Cart $cart)
     {
         $product = Product::select(['inventory', 'current_price'])
@@ -43,6 +49,13 @@ class CartController extends Controller
         return $this->response->array(['message' => 'success', 'data' => $collection]);
     }
 
+    /**
+     * 删除购物车中的商品
+     *
+     * @param Cart $cart
+     * @return mixed
+     * @throws \Exception
+     */
     public function destroy(Cart $cart)
     {
         $this->authorize('destroy', $cart);
@@ -52,6 +65,12 @@ class CartController extends Controller
         return $this->response->array(['message' => 'success', 'data' => []]);
     }
 
+    /**
+     * 更新购物车商品
+     *
+     * @param CartRequest $request
+     * @param Cart $cart
+     */
     public function update(CartRequest $request, Cart $cart)
     {
         $this->authorize('update', $cart);
@@ -94,6 +113,11 @@ class CartController extends Controller
         return $this->response->array(['message' => 'success', 'data' => $collection]);
     }
 
+    /**
+     * 查询当前用户的购物车列表
+     *
+     * @return mixed
+     */
     public function userIndex()
     {
         $cart = Cart::select(['id', 'product_id', 'product_number', 'total_price', 'created_at'])

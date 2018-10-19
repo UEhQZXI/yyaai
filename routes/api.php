@@ -147,41 +147,48 @@ $api->version('v1', [
                 $api->post('store/cart', 'CartController@store')
                     ->name('api.store.cart.store');
 
-                    // 添加商品到购物车
-                    $api->post('store/cart', 'CartController@store')
-                        ->name('api.store.cart.store');
+                // 添加商品到购物车
+                $api->post('store/cart', 'CartController@store')
+                    ->name('api.store.cart.store');
 
-                    // 删除购物车
-                    $api->delete('store/cart/{cart}', 'CartController@destroy')
-                        ->name('api.store.cart.destroy');
+                // 删除购物车
+                $api->delete('store/cart/{cart}', 'CartController@destroy')
+                    ->name('api.store.cart.destroy');
 
-                    // 更新购物车
-                    $api->patch('store/cart/{cart}', 'CartController@update')
-                        ->name('api.store.cart.update');
+                // 更新购物车
+                $api->patch('store/cart/{cart}', 'CartController@update')
+                    ->name('api.store.cart.update');
 
-                    // 查询当前登录用户的购物车信息
-                    $api->get('store/cart', 'CartController@userIndex')
-                        ->name('api.store.cart.userIndex');
+                // 查询当前登录用户的购物车信息
+                $api->get('store/cart', 'CartController@userIndex')
+                    ->name('api.store.cart.userIndex');
 
-                    // 新增收货地址
-                    $api->post('store/address', 'AddressController@store')
-                        ->name('api.store.address.store');
+                // 新增收货地址
+                $api->post('store/address', 'AddressController@store')
+                    ->name('api.store.address.store');
 
-                    // 删除收货地址
-                    $api->delete('store/address/{address}', 'AddressController@destroy')
-                        ->name('api.store.address.destroy');
+                // 删除收货地址
+                $api->delete('store/address/{address}', 'AddressController@destroy')
+                    ->name('api.store.address.destroy');
 
-                    //添加订单
-                    $api->post('store/order', 'OrderController@store');
+                // 更新收货地址
+                $api->patch('store/address/{address}', 'AddressController@update')
+                    ->name('api.store.address.update');
 
-                    //查询某个用户的订单
-                    $api->get('store/user/orders', 'OrderController@userIndex');
+                $api->get('store/address', 'AddressController@userIndex')
+                    ->name('api.store.address.userIndex');
 
-                    //查询订单详情
-                    $api->get('store/order/{order}', 'OrderController@show');
-                });
-            });               
-        });         
+                //添加订单
+                $api->post('store/order', 'OrderController@store');
+
+                //查询某个用户的订单
+                $api->get('store/user/orders', 'OrderController@userIndex');
+
+                //查询订单详情
+                $api->get('store/order/{order}', 'OrderController@show');
+            });
+        });
+    });
 
 
     $api->group([
