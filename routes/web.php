@@ -11,4 +11,8 @@
 |
 */
 
-Route::get('/','Controller@test');
+Route::get('/', function () {
+	return 'Hello World';
+});
+
+Route::get('/testweb', 'Api\V1\Store\WechatPayController@index');

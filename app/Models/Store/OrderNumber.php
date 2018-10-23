@@ -13,4 +13,8 @@ class OrderNumber extends Model
     {
     	return $this->belongsTo('App\Models\Store\Order', 'order_number', 'order_number');
     }
+
+    public function product() {
+    	return $this->hasOne('App\Models\Store\Product', 'id');
+    }
 }

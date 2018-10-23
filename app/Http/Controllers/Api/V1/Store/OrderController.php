@@ -102,7 +102,7 @@ class OrderController extends Controller
 
     public function userIndex(User $user, Request $request)
     {
-        $data = Order::where('user_id', $this->user()->id)->with(['orderInfo'])->paginate(10);
+        $data = Order::where('user_id', $this->user()->id)->with(['orderInfo', 'address', 'orderInfo.product'])->paginate(10);
 
         return $this->response->array(['message' => 'success', 'data' => $data]);
     }
