@@ -55,7 +55,7 @@ $api->version('v1', [
         //获取文章回复列表   Param: include=user,articleChildComment
         $api->get('articles/{article}/comments', 'ArticleCommentController@index')
             ->name('api.articleComment.index');
-            
+
         // 咨询列表
         $api->get('advisorys', 'AdvisoryController@index')
             ->name('api.advisorys.index');
@@ -143,7 +143,7 @@ $api->version('v1', [
 
 
             $api->group(['namespace' => 'Store'], function ($api) {
-                
+
                 $api->post('store/cart', 'CartController@store')
                     ->name('api.store.cart.store');
 
@@ -175,6 +175,7 @@ $api->version('v1', [
                 $api->patch('store/address/{address}', 'AddressController@update')
                     ->name('api.store.address.update');
 
+                // 查询当前登录用户收货地址列表
                 $api->get('store/address', 'AddressController@userIndex')
                     ->name('api.store.address.userIndex');
 

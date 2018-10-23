@@ -140,6 +140,7 @@ class CartController extends Controller
             foreach ($cart as $value) {
                 $cartTotalPrice += $value->total_price;
             }
+
             $collection->put('cart_total_price', sprintf('%.2f', round($cartTotalPrice, 2)) );
         }
 
