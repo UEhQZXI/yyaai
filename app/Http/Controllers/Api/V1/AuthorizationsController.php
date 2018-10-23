@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Requests\Api\V1\AuthorizationRequest;
-use Illuminate\Http\Request;
 
 class AuthorizationsController extends Controller
 {
@@ -19,7 +18,7 @@ class AuthorizationsController extends Controller
         return $this->response->array(['message' => 'success','data' => [
             'access_token' => $token,
             'token_type' => 'Bearer',
-            'expires_in' => \Auth::guard('api')->factory()->getTTL() * 60
+            'expires_in' => \Auth::guard('api')->factory()->getTTL() * 50000
         ]]);
     }
 }

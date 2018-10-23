@@ -27,7 +27,7 @@ class AdvisoryController extends Controller
         $this->authorize('update', $advisory);
 
         $advisory->update($request->all());
-        
+
         // return $this->response->item($advisory, new AdvisoryTransformer());
         return $this->response->array(['message' => 'success', 'data' => []]);
     }
@@ -46,13 +46,13 @@ class AdvisoryController extends Controller
     {
         $advisory = Advisory::where('id', $advisory->id)->get();
         // return $this->response->item($advisory, new AdvisoryTransformer());
-        return $this->response->array(['message' => 'success', 'data' => $advisory]); 
+        return $this->response->array(['message' => 'success', 'data' => $advisory]);
     }
 
     public function index(Request $request, Advisory $advisory)
     {
         $query = $advisory->query();
-        
+
         if ($classify_id = $request->classify_id) {
             $query->where('classify_id', $classify_id);
         }
@@ -79,4 +79,5 @@ class AdvisoryController extends Controller
 
         return $this->response->array(['message' => 'success', 'data' => $advisorys]);
     }
+
 }

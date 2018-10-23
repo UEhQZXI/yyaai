@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-	return 'Hello World';
+	return ['message' => '此地不宜久留~ (｡ŏ_ŏ)走开！', 'code' => 2333];
 });
 
 Route::get('/testweb', 'Api\V1\Store\WechatPayController@index');
+
