@@ -176,7 +176,10 @@ $api->version('v1', [
                     ->name('api.store.address.update');
 
                 // 查询当前登录用户收货地址列表
-                $api->get('store/address', 'AddressController@userIndex')
+                $api->get('store/address', 'AddressController@show')
+                    ->name('api.store.address.show');
+
+                $api->get('store/address/{address}', 'AddressController@userIndex')
                     ->name('api.store.address.userIndex');
 
                 //添加订单

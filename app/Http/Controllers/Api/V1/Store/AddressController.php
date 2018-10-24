@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1\Store;
 use App\Http\Requests\Api\V1\Store\AddressRequest;
 use App\Models\Store\Address;
 use App\Http\Controllers\Api\V1\Controller;
+use Illuminate\Support\Facades\Request;
 
 class AddressController extends Controller
 {
@@ -47,12 +48,19 @@ class AddressController extends Controller
     }
 
 
-    public function userIndex()
+    public function show(Request $request)
     {
         $address = Address::select(['id', 'user_name', 'user_phone', 'user_tel', 'area1', 'area2', 'area3', 'address', 'is_default', 'created_at'])
             ->where(['user_id' => $this->user()->id, 'status' => 1])
             ->get();
 
+        return $this->response->array(['message' => 'success', 'data' => $address]);
+    }
+
+    public function userIndex(Address $address)
+    {
+        $address = Address::select(['id', 'user_name', 'user_phone', 'user_tel', 'area1', 'area2', 'area3', 'address', 'is_default', 'created_at'])
+            ->where(['user_id' => $this->user()->id, 'id' => $address->id]);
         return $this->response->array(['message' => 'success', 'data' => $address]);
     }
 }

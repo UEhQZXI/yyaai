@@ -96,7 +96,7 @@ class CartController extends Controller
             ->where('id', $productId->product_id)
             ->first();
 
-        if ($product->isEmpty()) {
+        if (!$product->exists) {
             return $this->response->error('商品过期不存在', 422);
         }
 
