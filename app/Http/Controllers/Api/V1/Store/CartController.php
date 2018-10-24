@@ -62,7 +62,20 @@ class CartController extends Controller
 
         $cart->delete();
 
-        return $this->response->array(['message' => 'success', 'data' => []]);
+        $cartList = Cart::where('user_id', $this->user()->id)->get();
+
+        $cartTotalPrice = 0;
+
+        foreach ($cartList as $value) {
+            $cartTotalPrice += $value->total_price;
+        }
+
+        $collection = collect(['cart' => $cartList]);
+        $collection->put('cart_total_price', sprintf('%.2f', round($cartTotalPrice, 2)));
+
+        return $this->response->array(['message' => 'success', 'data' => $collection]);
+
+//        return $this->response->array(['message' => 'success', 'data' => []]);
     }
 
     /**
