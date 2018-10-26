@@ -123,4 +123,5 @@ class ProductController extends Controller
 
         return $this->response->array(['message' => 'success', 'data' => $products]);
     }
+
 }

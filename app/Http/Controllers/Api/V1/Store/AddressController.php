@@ -60,7 +60,9 @@ class AddressController extends Controller
     public function userIndex(Address $address)
     {
         $address = Address::select(['id', 'user_name', 'user_phone', 'user_tel', 'area1', 'area2', 'area3', 'address', 'is_default', 'created_at'])
-            ->where(['user_id' => $this->user()->id, 'id' => $address->id]);
+            ->where(['user_id' => $this->user()->id, 'id' => $address->id])
+            ->get();
+
         return $this->response->array(['message' => 'success', 'data' => $address]);
     }
 }

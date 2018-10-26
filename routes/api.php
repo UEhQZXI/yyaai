@@ -163,6 +163,10 @@ $api->version('v1', [
                 $api->get('store/cart', 'CartController@userIndex')
                     ->name('api.store.cart.userIndex');
 
+                // 结算页面接口
+                $api->post('store/cart/count', 'CartController@show')
+                    ->name('api.store.cart.show');
+
                 // 新增收货地址
                 $api->post('store/address', 'AddressController@store')
                     ->name('api.store.address.store');

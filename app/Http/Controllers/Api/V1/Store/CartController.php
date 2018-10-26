@@ -160,4 +160,37 @@ class CartController extends Controller
         return $this->response->array(['message' => 'success', 'data' => $collection]);
     }
 
+    public function show(Request $request)
+    {
+        $selectArray = $request->huangyingxuan;
+
+        $info = Cart::select(['id', 'product_id', 'product_number', 'total_price', 'created_at'])
+            ->where('user_id', $this->user()->id)
+            ->whereIn('id', $selectArray)
+            ->with(['product' => function ($query) {
+                $query->select([
+                    'id', 'category_id', 'title', 'description', 'model',
+                    'original_price', 'current_price', 'inventory', 'group_number',
+                    'image1', 'image2', 'image3', 'image4', 'image5',
+                    'status', 'created_at'
+                ])->get();
+            }])
+            ->get();
+
+        $collection = collect(['cart' => $info]);
+
+        if (!$info->isEmpty()) {
+            $totalPrice = 0.0;
+
+            foreach ($info as $value) {
+                $totalPrice += $value->total_price;
+            }
+
+            $collection->put('total_price', sprintf('%.2f', round($totalPrice, 2)) );
+        }
+
+        return $this->response->array(['message' => 'success', 'data' => $collection]);
+    }
+
 }
+
