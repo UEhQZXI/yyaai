@@ -16,7 +16,6 @@ class AdvisoryReplyReplyController extends Controller
         $childReplies->user_id = $this->user()->id;
         $childReplies->advisory_comment_id = $replies->id;
         $childReplies->reply_id = $childReplies->id ?? 0;
-        $childReplies->create_time = $_SERVER['REQUEST_TIME'];
         $childReplies->save();
 
         // return $this->response->item($childReplies, new AdvisoryReplyReplyTransformer())

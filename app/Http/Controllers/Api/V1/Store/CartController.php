@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Api\V1\Store;
 use App\Http\Requests\Api\V1\Store\CartRequest;
 use App\Models\Store\Cart;
 use App\Models\Store\Product;
-use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Api\V1\Controller;
 
@@ -19,6 +18,7 @@ class CartController extends Controller
      */
     public function store(CartRequest $request, Cart $cart)
     {
+        $userId = $this->user()->id;
         $product = Product::select(['inventory', 'current_price'])
             ->where('id', $request->product_id)
             ->first();
@@ -30,10 +30,21 @@ class CartController extends Controller
         // 总价
         $totalPrice = $request->product_number * $product->current_price;
 
-        $cart->fill($request->all());
-        $cart->user_id = $this->user()->id;
-        $cart->total_price = $totalPrice;
-        $cart->save();
+        // 先查询购物车有没有相同的商品
+        $sameProduct = Cart::select(['id', 'product_number','total_price'])->where('user_id', $userId)->where('product_id', $request->product_id)->first();
+
+        if ($sameProduct) {
+            Cart::where('id', $sameProduct->id)
+                ->update([
+                    'product_number' => ($request->product_number + $sameProduct->product_number),
+                    'total_price' => ($totalPrice + $sameProduct->total_price)
+                ]);
+        } else {
+            $cart->fill($request->all());
+            $cart->user_id = $this->user()->id;
+            $cart->total_price = $totalPrice;
+            $cart->save();
+        }
 
         $cartList = Cart::where('user_id', $this->user()->id)->get();
 
@@ -163,6 +174,8 @@ class CartController extends Controller
     public function show(Request $request)
     {
         $selectArray = $request->huangyingxuan;
+
+        $selectArray = explode(',', $selectArray);
 
         $info = Cart::select(['id', 'product_id', 'product_number', 'total_price', 'created_at'])
             ->where('user_id', $this->user()->id)

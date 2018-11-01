@@ -83,16 +83,38 @@ class ProductController extends Controller
      *
      * @param $product
      */
-    public function productIndex($product)
+    public function productIndex(Request $request, $product)
     {
         $product = Product::where('id', $product)->first();
 
-        if (empty($product)) {
+        if (!$product->exists) {
             return $this->response->error('商品过期不存在', 422);
         }
 
         if (!$product->status) {
             return $this->response->error('商品已下架', 422);
+        }
+
+        if ($request->has('product_number')) {
+
+            $productNumber = round($request->product_number);
+
+            $products = Product::select(['id', 'category_id', 'title', 'description', 'model', 'original_price', 'current_price', 'inventory', 'group_number', 'image1', 'image2', 'image3', 'image4', 'image5', 'status', 'created_at'])
+                ->where('id', $product->id)
+                ->first();
+
+            if ($products->inventory < $productNumber) {
+                return $this->response->error('商品库存不足', 422);
+            }
+
+            $collection = collect(['product' => $products]);
+
+            $total_price = $products->current_price * $productNumber;
+
+            $collection->put('number', $productNumber);
+            $collection->put('total_price', sprintf('%.2f', round($total_price, 2)) );
+
+            return $this->response->array(['message' => 'success', 'data' => $collection]);
         }
 
         if ($product->group_number) {

@@ -98,7 +98,7 @@ class User extends Authenticatable implements JWTSubject
     }
 
     /**
-     * @return mixed 返回user id
+     * @return int 返回user id
      */
     public function getJWTIdentifier()
     {

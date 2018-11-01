@@ -162,6 +162,7 @@ return [
         App\Providers\EasySmsServiceProvider::class,
         Dingo\Api\Provider\LaravelServiceProvider::class,
         App\Providers\DingoSerializerProvider::class,
+        Yansongda\LaravelPay\PayServiceProvider::class,
     ],
 
     /*
@@ -211,6 +212,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,//新添加
+        'Pay' => Yansongda\LaravelPay\Facades\Pay::class,
     ],
 
 ];

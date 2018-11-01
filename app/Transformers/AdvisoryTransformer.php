@@ -16,10 +16,10 @@ class AdvisoryTransformer extends TransformerAbstract
             'id' => $advisory->id,
             'title' => $advisory->title,
             'content' => $advisory->content,
-            'user_id' => (int) $advisory->user_id,
+//            'user_id' => (int) $advisory->user_id,
             'classify_id' => (int) $advisory->classify_id,
             'anonymous' => (int) $advisory->anonymous,
-            'create_time' => time(),
+            'created_at' => $advisory->created_at,
         ];
     }
 

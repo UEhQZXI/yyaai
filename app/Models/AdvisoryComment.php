@@ -8,7 +8,6 @@ class AdvisoryComment extends Model
 {
     public $table = 'app_advisory_comments';
     public $primaryKey = 'id';
-    public $timestamps = FALSE;
 
     /**
      * 关联用户表

@@ -194,6 +194,9 @@ $api->version('v1', [
 
                 //查询订单详情
                 $api->get('store/order/{order}', 'OrderController@show');
+
+                $api->get('store/pay/alipay/{order}', 'AliPayController@store')
+                    ->name('api.store.pay.alipay.store');
             });
         });
     });
