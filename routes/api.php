@@ -163,6 +163,10 @@ $api->version('v1', [
                 $api->get('store/cart', 'CartController@userIndex')
                     ->name('api.store.cart.userIndex');
 
+                // 结算页面接口
+                $api->post('store/cart/count', 'CartController@show')
+                    ->name('api.store.cart.show');
+
                 // 新增收货地址
                 $api->post('store/address', 'AddressController@store')
                     ->name('api.store.address.store');
@@ -176,7 +180,10 @@ $api->version('v1', [
                     ->name('api.store.address.update');
 
                 // 查询当前登录用户收货地址列表
-                $api->get('store/address', 'AddressController@userIndex')
+                $api->get('store/address', 'AddressController@show')
+                    ->name('api.store.address.show');
+
+                $api->get('store/address/{address}', 'AddressController@userIndex')
                     ->name('api.store.address.userIndex');
 
                 //添加订单
@@ -187,6 +194,9 @@ $api->version('v1', [
 
                 //查询订单详情
                 $api->get('store/order/{order}', 'OrderController@show');
+
+                $api->get('store/pay/alipay/{order}', 'AliPayController@store')
+                    ->name('api.store.pay.alipay.store');
             });
         });
     });

@@ -14,7 +14,6 @@ class AdvisoryController extends Controller
     {
         $advisory->fill($request->all());
         $advisory->user_id = $this->user()->id;
-        $advisory->create_time = $_SERVER['REQUEST_TIME'];
         $advisory->save();
 
         // return $this->response->item($advisory, new AdvisoryTransformer())

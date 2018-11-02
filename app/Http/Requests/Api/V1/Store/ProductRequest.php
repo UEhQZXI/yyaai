@@ -38,7 +38,7 @@ class ProductRequest extends FormRequest
                     'image2' => 'string',
                     'image3' => 'string',
                     'image4' => 'string',
-                    'image5' => 'string'    
+                    'image5' => 'string',
                 ];
                 break;
         case 'PATCH':

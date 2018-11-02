@@ -9,7 +9,9 @@ use App\Models\ArticleComment;
 use App\Models\ArticleChildComment;
 use App\Models\Store\Address;
 use App\Models\Store\Cart;
+use App\Models\Store\Order;
 use App\Policies\AdvisoryPolicy;
+use App\Policies\AliPayPolicy;
 use App\Policies\ArticlePolicy;
 use App\Policies\ArticleCommentPolicy;
 use App\Policies\ArticleChildCommentPolicy;
@@ -33,6 +35,7 @@ class AuthServiceProvider extends ServiceProvider
         ArticleChildComment::class => ArticleChildCommentPolicy::class,
         Cart::class => CartPolicy::class,
         Address::class => AddressPolicy::class,
+        Order::class => AliPayPolicy::class,
     ];
 
     /**

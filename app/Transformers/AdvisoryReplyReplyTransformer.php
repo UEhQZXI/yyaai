@@ -18,7 +18,7 @@ class AdvisoryReplyReplyTransformer extends TransformerAbstract
             'user_name' => User::select('name')->where('id', $reply->user_id)->first()->name,
             'reply_name' => $reply->reply_id ? User::select('name')->where('id', $reply->reply_id)->first()->name : 0,
             'content' => $reply->content,
-            'create_time' => date('Y-m-d H:i:s', $reply->create_time),
+            'created_at' => $reply->created_at,
         ];
     }
 }

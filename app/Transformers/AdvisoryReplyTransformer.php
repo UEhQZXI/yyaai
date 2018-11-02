@@ -20,7 +20,7 @@ class AdvisoryReplyTransformer extends TransformerAbstract
             'advisory_id' => (int) $reply->advisory_id,
             'content' => $reply->content,
             'floor' => $reply->floor,
-            'create_time' => date('Y-m-d H:i:s', $reply->create_time),
+            'created_at' => $reply->created_at,
         ];
     }
 

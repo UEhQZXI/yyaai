@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Api\V1\Store;
 use App\Http\Requests\Api\V1\Store\CartRequest;
 use App\Models\Store\Cart;
 use App\Models\Store\Product;
-use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Api\V1\Controller;
 
@@ -19,6 +18,7 @@ class CartController extends Controller
      */
     public function store(CartRequest $request, Cart $cart)
     {
+        $userId = $this->user()->id;
         $product = Product::select(['inventory', 'current_price'])
             ->where('id', $request->product_id)
             ->first();
@@ -30,10 +30,21 @@ class CartController extends Controller
         // 总价
         $totalPrice = $request->product_number * $product->current_price;
 
-        $cart->fill($request->all());
-        $cart->user_id = $this->user()->id;
-        $cart->total_price = $totalPrice;
-        $cart->save();
+        // 先查询购物车有没有相同的商品
+        $sameProduct = Cart::select(['id', 'product_number','total_price'])->where('user_id', $userId)->where('product_id', $request->product_id)->first();
+
+        if ($sameProduct) {
+            Cart::where('id', $sameProduct->id)
+                ->update([
+                    'product_number' => ($request->product_number + $sameProduct->product_number),
+                    'total_price' => ($totalPrice + $sameProduct->total_price)
+                ]);
+        } else {
+            $cart->fill($request->all());
+            $cart->user_id = $this->user()->id;
+            $cart->total_price = $totalPrice;
+            $cart->save();
+        }
 
         $cartList = Cart::where('user_id', $this->user()->id)->get();
 
@@ -62,7 +73,20 @@ class CartController extends Controller
 
         $cart->delete();
 
-        return $this->response->array(['message' => 'success', 'data' => []]);
+        $cartList = Cart::where('user_id', $this->user()->id)->get();
+
+        $cartTotalPrice = 0;
+
+        foreach ($cartList as $value) {
+            $cartTotalPrice += $value->total_price;
+        }
+
+        $collection = collect(['cart' => $cartList]);
+        $collection->put('cart_total_price', sprintf('%.2f', round($cartTotalPrice, 2)));
+
+        return $this->response->array(['message' => 'success', 'data' => $collection]);
+
+//        return $this->response->array(['message' => 'success', 'data' => []]);
     }
 
     /**
@@ -83,7 +107,7 @@ class CartController extends Controller
             ->where('id', $productId->product_id)
             ->first();
 
-        if ($product->isEmpty()) {
+        if (!$product->exists) {
             return $this->response->error('商品过期不存在', 422);
         }
 
@@ -147,4 +171,39 @@ class CartController extends Controller
         return $this->response->array(['message' => 'success', 'data' => $collection]);
     }
 
+    public function show(Request $request)
+    {
+        $selectArray = $request->huangyingxuan;
+
+        $selectArray = explode(',', $selectArray);
+
+        $info = Cart::select(['id', 'product_id', 'product_number', 'total_price', 'created_at'])
+            ->where('user_id', $this->user()->id)
+            ->whereIn('id', $selectArray)
+            ->with(['product' => function ($query) {
+                $query->select([
+                    'id', 'category_id', 'title', 'description', 'model',
+                    'original_price', 'current_price', 'inventory', 'group_number',
+                    'image1', 'image2', 'image3', 'image4', 'image5',
+                    'status', 'created_at'
+                ])->get();
+            }])
+            ->get();
+
+        $collection = collect(['cart' => $info]);
+
+        if (!$info->isEmpty()) {
+            $totalPrice = 0.0;
+
+            foreach ($info as $value) {
+                $totalPrice += $value->total_price;
+            }
+
+            $collection->put('total_price', sprintf('%.2f', round($totalPrice, 2)) );
+        }
+
+        return $this->response->array(['message' => 'success', 'data' => $collection]);
+    }
+
 }
+
