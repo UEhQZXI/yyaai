@@ -205,6 +205,10 @@ $api->version('v1', [
     $api->group([
         'namespace' => 'Store',
     ], function ($api) {
+
+        $api->post('store/pay/ali/notify', 'AliPayController@notify');
+        $api->get('store/pay/ali/return', 'AliPayController@aliReturn');
+
         //添加分类
         $api->post('store/categorie', 'CategorieController@store');
         
@@ -224,7 +228,6 @@ $api->version('v1', [
         $api->get('store/orders', 'OrderController@index');
 
         $api->get('wechatpay/index', 'WechatPayController@index');
-
 
         $api->get('store', 'CategorieController@store');
 
