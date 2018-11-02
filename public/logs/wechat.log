@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2018-10-30 13:45:55 > DEBUG > Starting To Wechat ["wap",{"out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
 
 2018-10-30 13:45:55 > INFO > Starting To Pay A Wechat Wap Order ["https://api.mch.weixin.qq.com/sandboxnew/",{"appid":"","mch_id":"1490055842","nonce_str":"X3mjcNj8iNYBRnnI","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"","trade_type":"MWEB","spbill_create_ip":"180.170.59.198","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
@@ -487,4 +488,175 @@
 2018-11-01 12:50:25 > INFO > Starting To Pay A Wechat Wap Order ["https://api.mch.weixin.qq.com/",{"appid":"wx81885922a85a8519","mch_id":"1490055842","nonce_str":"36vyMT5M3DzqgwQ2","notify_url":"http://m.iyaa180.com/api/store/wechatpay/notify","sign":"","trade_type":"MWEB","spbill_create_ip":"180.170.59.198","out_trade_no":"yy15397412935bc6966d43f30","body":"医牙啊-商品购买","total_fee":2}] 
 
 2018-11-02 09:28:34 > INFO > Starting To Pay A Wechat Wap Order ["https://api.mch.weixin.qq.com/",{"appid":"wx81885922a85a8519","mch_id":"1490055842","nonce_str":"cW6RSkmbpxUQeXoD","notify_url":"http://m.iyaa180.com/api/store/wechatpay/notify","sign":"","trade_type":"MWEB","spbill_create_ip":"180.170.59.198","out_trade_no":"yy15397412935bc6966d43f30","body":"医牙啊-商品购买","total_fee":2}] 
+=======
+2018-10-30 11:30:43 > DEBUG > Starting To Wechat ["app",{"out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 11:30:43 > DEBUG > Wechat Generate Sign Content Before Trim [{"appid":"wxd678efh567hg6787","body":"医牙啊-商品购买","mch_id":"1230000109","nonce_str":"eTrLudQ6ACCYDN1f","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","sub_appid":null,"total_fee":500000,"trade_type":"APP"},"appid=wxd678efh567hg6787&body=医牙啊-商品购买&mch_id=1230000109&nonce_str=eTrLudQ6ACCYDN1f&notify_url=http://47.100.3.125/api/wechatpay/success&out_trade_no=re&spbill_create_ip=::1&total_fee=500000&trade_type=APP&"] 
+
+2018-10-30 11:30:43 > DEBUG > Wechat Generate Sign Before UPPER [{"appid":"wxd678efh567hg6787","body":"医牙啊-商品购买","mch_id":"1230000109","nonce_str":"eTrLudQ6ACCYDN1f","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","sub_appid":null,"total_fee":500000,"trade_type":"APP"},"ed621c27db9150efc0da3298fbf7e47c"] 
+
+2018-10-30 11:30:43 > DEBUG > Schedule A Wechat order [{"appid":"wxd678efh567hg6787","mch_id":"1230000109","nonce_str":"eTrLudQ6ACCYDN1f","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"ED621C27DB9150EFC0DA3298FBF7E47C","trade_type":"APP","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000,"sub_appid":null}] 
+
+2018-10-30 11:30:43 > DEBUG > Request To Wechat Api ["https://api.mch.weixin.qq.com/sandboxnew/pay/unifiedorder",{"appid":"wxd678efh567hg6787","mch_id":"1230000109","nonce_str":"eTrLudQ6ACCYDN1f","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"ED621C27DB9150EFC0DA3298FBF7E47C","trade_type":"APP","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000,"sub_appid":null}] 
+
+2018-10-30 11:31:37 > DEBUG > Starting To Wechat ["app",{"out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 11:31:37 > DEBUG > Wechat Generate Sign Content Before Trim [{"appid":"wxd678efh567hg6787","body":"医牙啊-商品购买","mch_id":"1230000109","nonce_str":"8LYOpfRa4Rn95y53","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","sub_appid":null,"total_fee":500000,"trade_type":"APP"},"appid=wxd678efh567hg6787&body=医牙啊-商品购买&mch_id=1230000109&nonce_str=8LYOpfRa4Rn95y53&notify_url=http://47.100.3.125/api/wechatpay/success&out_trade_no=re&spbill_create_ip=::1&total_fee=500000&trade_type=APP&"] 
+
+2018-10-30 11:31:37 > DEBUG > Wechat Generate Sign Before UPPER [{"appid":"wxd678efh567hg6787","body":"医牙啊-商品购买","mch_id":"1230000109","nonce_str":"8LYOpfRa4Rn95y53","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","sub_appid":null,"total_fee":500000,"trade_type":"APP"},"22ed6c0c908d3cef4e81ac46394e1fb3"] 
+
+2018-10-30 11:31:37 > DEBUG > Schedule A Wechat order [{"appid":"wxd678efh567hg6787","mch_id":"1230000109","nonce_str":"8LYOpfRa4Rn95y53","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"22ED6C0C908D3CEF4E81AC46394E1FB3","trade_type":"APP","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000,"sub_appid":null}] 
+
+2018-10-30 11:31:37 > DEBUG > Request To Wechat Api ["https://api.mch.weixin.qq.com/sandboxnew/pay/unifiedorder",{"appid":"wxd678efh567hg6787","mch_id":"1230000109","nonce_str":"8LYOpfRa4Rn95y53","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"22ED6C0C908D3CEF4E81AC46394E1FB3","trade_type":"APP","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000,"sub_appid":null}] 
+
+2018-10-30 11:33:01 > DEBUG > Starting To Wechat ["app",{"out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 11:33:01 > DEBUG > Wechat Generate Sign Content Before Trim [{"appid":"wxd678efh567hg6787","body":"医牙啊-商品购买","mch_id":"1230000109","nonce_str":"ZrGObznHI6S7jvgq","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","sub_appid":null,"total_fee":500000,"trade_type":"APP"},"appid=wxd678efh567hg6787&body=医牙啊-商品购买&mch_id=1230000109&nonce_str=ZrGObznHI6S7jvgq&notify_url=http://47.100.3.125/api/wechatpay/success&out_trade_no=re&spbill_create_ip=::1&total_fee=500000&trade_type=APP&"] 
+
+2018-10-30 11:33:01 > DEBUG > Wechat Generate Sign Before UPPER [{"appid":"wxd678efh567hg6787","body":"医牙啊-商品购买","mch_id":"1230000109","nonce_str":"ZrGObznHI6S7jvgq","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","sub_appid":null,"total_fee":500000,"trade_type":"APP"},"891b6e4c863a3e51a07d38eea34b9739"] 
+
+2018-10-30 11:33:01 > DEBUG > Schedule A Wechat order [{"appid":"wxd678efh567hg6787","mch_id":"1230000109","nonce_str":"ZrGObznHI6S7jvgq","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"891B6E4C863A3E51A07D38EEA34B9739","trade_type":"APP","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000,"sub_appid":null}] 
+
+2018-10-30 11:33:01 > DEBUG > Request To Wechat Api ["https://api.mch.weixin.qq.com/sandboxnew/pay/unifiedorder",{"appid":"wxd678efh567hg6787","mch_id":"1230000109","nonce_str":"ZrGObznHI6S7jvgq","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"891B6E4C863A3E51A07D38EEA34B9739","trade_type":"APP","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000,"sub_appid":null}] 
+
+2018-10-30 12:52:32 > DEBUG > Starting To Wechat ["app",{"out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:52:32 > DEBUG > Wechat Generate Sign Content Before Trim [{"appid":"wx81885922a85a8519","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"VDnX2lYoTPGKpnY4","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","sub_appid":null,"total_fee":500000,"trade_type":"APP"},"appid=wx81885922a85a8519&body=医牙啊-商品购买&mch_id=1490055842&nonce_str=VDnX2lYoTPGKpnY4&notify_url=http://47.100.3.125/api/wechatpay/success&out_trade_no=re&spbill_create_ip=::1&total_fee=500000&trade_type=APP&"] 
+
+2018-10-30 12:52:32 > DEBUG > Wechat Generate Sign Before UPPER [{"appid":"wx81885922a85a8519","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"VDnX2lYoTPGKpnY4","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","sub_appid":null,"total_fee":500000,"trade_type":"APP"},"856ae012d7559e7d8f5362f66f377da9"] 
+
+2018-10-30 12:52:32 > DEBUG > Schedule A Wechat order [{"appid":"wx81885922a85a8519","mch_id":"1490055842","nonce_str":"VDnX2lYoTPGKpnY4","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"856AE012D7559E7D8F5362F66F377DA9","trade_type":"APP","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000,"sub_appid":null}] 
+
+2018-10-30 12:52:32 > DEBUG > Request To Wechat Api ["https://api.mch.weixin.qq.com/sandboxnew/pay/unifiedorder",{"appid":"wx81885922a85a8519","mch_id":"1490055842","nonce_str":"VDnX2lYoTPGKpnY4","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"856AE012D7559E7D8F5362F66F377DA9","trade_type":"APP","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000,"sub_appid":null}] 
+
+2018-10-30 12:53:07 > DEBUG > Starting To Wechat ["wap",{"out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:53:07 > INFO > Starting To Pay A Wechat Wap Order ["https://api.mch.weixin.qq.com/sandboxnew/",{"appid":"xxxxxxxxxxxxxxxx","mch_id":"1490055842","nonce_str":"CJOPkQgP6BFKjkKu","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:53:07 > DEBUG > Wechat Generate Sign Content Before Trim [{"appid":"xxxxxxxxxxxxxxxx","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"CJOPkQgP6BFKjkKu","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"appid=xxxxxxxxxxxxxxxx&body=医牙啊-商品购买&mch_id=1490055842&nonce_str=CJOPkQgP6BFKjkKu&notify_url=http://47.100.3.125/api/wechatpay/success&out_trade_no=re&spbill_create_ip=::1&total_fee=500000&trade_type=MWEB&"] 
+
+2018-10-30 12:53:07 > DEBUG > Wechat Generate Sign Before UPPER [{"appid":"xxxxxxxxxxxxxxxx","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"CJOPkQgP6BFKjkKu","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"1c5e49e5e132b85cc337471bf4428b9e"] 
+
+2018-10-30 12:53:07 > DEBUG > Schedule A Wechat order [{"appid":"xxxxxxxxxxxxxxxx","mch_id":"1490055842","nonce_str":"CJOPkQgP6BFKjkKu","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"1C5E49E5E132B85CC337471BF4428B9E","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:53:07 > DEBUG > Request To Wechat Api ["https://api.mch.weixin.qq.com/sandboxnew/pay/unifiedorder",{"appid":"xxxxxxxxxxxxxxxx","mch_id":"1490055842","nonce_str":"CJOPkQgP6BFKjkKu","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"1C5E49E5E132B85CC337471BF4428B9E","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:54:53 > DEBUG > Starting To Wechat ["wap",{"out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:54:53 > INFO > Starting To Pay A Wechat Wap Order ["https://api.mch.weixin.qq.com/sandboxnew/",{"appid":"","mch_id":"1490055842","nonce_str":"O6bepUrSMYN1MMRW","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:54:53 > DEBUG > Wechat Generate Sign Content Before Trim [{"appid":"","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"O6bepUrSMYN1MMRW","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"body=医牙啊-商品购买&mch_id=1490055842&nonce_str=O6bepUrSMYN1MMRW&notify_url=http://47.100.3.125/api/wechatpay/success&out_trade_no=re&spbill_create_ip=::1&total_fee=500000&trade_type=MWEB&"] 
+
+2018-10-30 12:54:53 > DEBUG > Wechat Generate Sign Before UPPER [{"appid":"","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"O6bepUrSMYN1MMRW","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"4f45f7fe41fbdffbcfb36ae4c5471f09"] 
+
+2018-10-30 12:54:53 > DEBUG > Schedule A Wechat order [{"appid":"","mch_id":"1490055842","nonce_str":"O6bepUrSMYN1MMRW","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"4F45F7FE41FBDFFBCFB36AE4C5471F09","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:54:53 > DEBUG > Request To Wechat Api ["https://api.mch.weixin.qq.com/sandboxnew/pay/unifiedorder",{"appid":"","mch_id":"1490055842","nonce_str":"O6bepUrSMYN1MMRW","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"4F45F7FE41FBDFFBCFB36AE4C5471F09","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:56:33 > DEBUG > Starting To Wechat ["wap",{"out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:56:33 > INFO > Starting To Pay A Wechat Wap Order ["https://api.mch.weixin.qq.com/sandboxnew/",{"appid":"","mch_id":"1490055842","nonce_str":"i3GRYQ7bejI6n9H4","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:56:33 > DEBUG > Wechat Generate Sign Content Before Trim [{"appid":"","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"i3GRYQ7bejI6n9H4","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"body=医牙啊-商品购买&mch_id=1490055842&nonce_str=i3GRYQ7bejI6n9H4&notify_url=http://47.100.3.125/api/wechatpay/success&out_trade_no=re&spbill_create_ip=::1&total_fee=500000&trade_type=MWEB&"] 
+
+2018-10-30 12:56:33 > DEBUG > Wechat Generate Sign Before UPPER [{"appid":"","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"i3GRYQ7bejI6n9H4","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"190a8cd78ac1916492fa3d3a9bfad6ed"] 
+
+2018-10-30 12:56:33 > DEBUG > Schedule A Wechat order [{"appid":"","mch_id":"1490055842","nonce_str":"i3GRYQ7bejI6n9H4","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"190A8CD78AC1916492FA3D3A9BFAD6ED","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:56:33 > DEBUG > Request To Wechat Api ["https://api.mch.weixin.qq.com/sandboxnew/pay/unifiedorder",{"appid":"","mch_id":"1490055842","nonce_str":"i3GRYQ7bejI6n9H4","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"190A8CD78AC1916492FA3D3A9BFAD6ED","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:56:35 > DEBUG > Starting To Wechat ["wap",{"out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:56:35 > INFO > Starting To Pay A Wechat Wap Order ["https://api.mch.weixin.qq.com/sandboxnew/",{"appid":"","mch_id":"1490055842","nonce_str":"yB6OBMf9CHVSexHm","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:56:35 > DEBUG > Wechat Generate Sign Content Before Trim [{"appid":"","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"yB6OBMf9CHVSexHm","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"body=医牙啊-商品购买&mch_id=1490055842&nonce_str=yB6OBMf9CHVSexHm&notify_url=http://47.100.3.125/api/wechatpay/success&out_trade_no=re&spbill_create_ip=::1&total_fee=500000&trade_type=MWEB&"] 
+
+2018-10-30 12:56:35 > DEBUG > Wechat Generate Sign Before UPPER [{"appid":"","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"yB6OBMf9CHVSexHm","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"89c86f8c8e9cd49c3ea59701861663db"] 
+
+2018-10-30 12:56:35 > DEBUG > Schedule A Wechat order [{"appid":"","mch_id":"1490055842","nonce_str":"yB6OBMf9CHVSexHm","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"89C86F8C8E9CD49C3EA59701861663DB","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:56:35 > DEBUG > Request To Wechat Api ["https://api.mch.weixin.qq.com/sandboxnew/pay/unifiedorder",{"appid":"","mch_id":"1490055842","nonce_str":"yB6OBMf9CHVSexHm","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"89C86F8C8E9CD49C3EA59701861663DB","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:58:18 > DEBUG > Starting To Wechat ["wap",{"out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:58:18 > INFO > Starting To Pay A Wechat Wap Order ["https://api.mch.weixin.qq.com/sandboxnew/",{"appid":"","mch_id":"1490055842","nonce_str":"cHHOHHVlBLotO5UH","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:58:18 > DEBUG > Wechat Generate Sign Content Before Trim [{"appid":"","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"cHHOHHVlBLotO5UH","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"body=医牙啊-商品购买&mch_id=1490055842&nonce_str=cHHOHHVlBLotO5UH&notify_url=http://47.100.3.125/api/wechatpay/success&out_trade_no=re&spbill_create_ip=::1&total_fee=500000&trade_type=MWEB&"] 
+
+2018-10-30 12:58:18 > DEBUG > Wechat Generate Sign Before UPPER [{"appid":"","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"cHHOHHVlBLotO5UH","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"8d2c8f2056dad914433425f9d05c9b8a"] 
+
+2018-10-30 12:58:18 > DEBUG > Schedule A Wechat order [{"appid":"","mch_id":"1490055842","nonce_str":"cHHOHHVlBLotO5UH","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"8D2C8F2056DAD914433425F9D05C9B8A","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 12:58:18 > DEBUG > Request To Wechat Api ["https://api.mch.weixin.qq.com/sandboxnew/pay/unifiedorder",{"appid":"","mch_id":"1490055842","nonce_str":"cHHOHHVlBLotO5UH","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"8D2C8F2056DAD914433425F9D05C9B8A","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:00:36 > DEBUG > Starting To Wechat ["wap",{"out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:00:36 > INFO > Starting To Pay A Wechat Wap Order ["https://api.mch.weixin.qq.com/sandboxnew/",{"appid":"","mch_id":"1490055842","nonce_str":"eBogKb8R6WyPrVbi","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:00:36 > DEBUG > Wechat Generate Sign Content Before Trim [{"appid":"","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"eBogKb8R6WyPrVbi","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"body=医牙啊-商品购买&mch_id=1490055842&nonce_str=eBogKb8R6WyPrVbi&notify_url=http://47.100.3.125/api/wechatpay/success&out_trade_no=re&spbill_create_ip=::1&total_fee=500000&trade_type=MWEB&"] 
+
+2018-10-30 13:00:36 > DEBUG > Wechat Generate Sign Before UPPER [{"appid":"","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"eBogKb8R6WyPrVbi","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"c46950db2b059b5fa965327e64f3d33e"] 
+
+2018-10-30 13:00:36 > DEBUG > Schedule A Wechat order [{"appid":"","mch_id":"1490055842","nonce_str":"eBogKb8R6WyPrVbi","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"C46950DB2B059B5FA965327E64F3D33E","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:00:36 > DEBUG > Request To Wechat Api ["https://api.mch.weixin.qq.com/sandboxnew/pay/unifiedorder",{"appid":"","mch_id":"1490055842","nonce_str":"eBogKb8R6WyPrVbi","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"C46950DB2B059B5FA965327E64F3D33E","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:02:54 > DEBUG > Starting To Wechat ["wap",{"out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:02:54 > INFO > Starting To Pay A Wechat Wap Order ["https://api.mch.weixin.qq.com/sandboxnew/",{"appid":"","mch_id":"1490055842","nonce_str":"gLGV4LPbJIORk2ap","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:02:54 > DEBUG > Wechat Generate Sign Content Before Trim [{"appid":"","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"gLGV4LPbJIORk2ap","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"body=医牙啊-商品购买&mch_id=1490055842&nonce_str=gLGV4LPbJIORk2ap&notify_url=http://47.100.3.125/api/wechatpay/success&out_trade_no=re&spbill_create_ip=::1&total_fee=500000&trade_type=MWEB&"] 
+
+2018-10-30 13:02:54 > DEBUG > Wechat Generate Sign Before UPPER [{"appid":"","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"gLGV4LPbJIORk2ap","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"583fcbdd10035353b3e6b651ea7e3ee3"] 
+
+2018-10-30 13:02:54 > DEBUG > Schedule A Wechat order [{"appid":"","mch_id":"1490055842","nonce_str":"gLGV4LPbJIORk2ap","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"583FCBDD10035353B3E6B651EA7E3EE3","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:02:54 > DEBUG > Request To Wechat Api ["https://api.mch.weixin.qq.com/sandboxnew/pay/unifiedorder",{"appid":"","mch_id":"1490055842","nonce_str":"gLGV4LPbJIORk2ap","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"583FCBDD10035353B3E6B651EA7E3EE3","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:40:42 > DEBUG > Starting To Wechat ["wap",{"out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:40:42 > INFO > Starting To Pay A Wechat Wap Order ["https://api.mch.weixin.qq.com/sandboxnew/",{"appid":"","mch_id":"1490055842","nonce_str":"oR8ihwRzAeRQS6Kl","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:40:42 > DEBUG > Wechat Generate Sign Content Before Trim [{"appid":"","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"oR8ihwRzAeRQS6Kl","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"body=医牙啊-商品购买&mch_id=1490055842&nonce_str=oR8ihwRzAeRQS6Kl&notify_url=http://47.100.3.125/api/wechatpay/success&out_trade_no=re&spbill_create_ip=::1&total_fee=500000&trade_type=MWEB&"] 
+
+2018-10-30 13:40:42 > DEBUG > Wechat Generate Sign Before UPPER [{"appid":"","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"oR8ihwRzAeRQS6Kl","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"b53c5ea35bb1d49ca1039c21cc137661"] 
+
+2018-10-30 13:40:42 > DEBUG > Schedule A Wechat order [{"appid":"","mch_id":"1490055842","nonce_str":"oR8ihwRzAeRQS6Kl","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"B53C5EA35BB1D49CA1039C21CC137661","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:40:42 > DEBUG > Request To Wechat Api ["https://api.mch.weixin.qq.com/sandboxnew/pay/unifiedorder",{"appid":"","mch_id":"1490055842","nonce_str":"oR8ihwRzAeRQS6Kl","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"B53C5EA35BB1D49CA1039C21CC137661","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:41:08 > DEBUG > Starting To Wechat ["wap",{"out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:41:08 > INFO > Starting To Pay A Wechat Wap Order ["https://api.mch.weixin.qq.com/sandboxnew/",{"appid":"","mch_id":"1490055842","nonce_str":"DHqPMuRU87fAcT6n","notify_url":"https://47.100.3.125/api/wechatpay/success","sign":"","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:41:08 > DEBUG > Wechat Generate Sign Content Before Trim [{"appid":"","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"DHqPMuRU87fAcT6n","notify_url":"https://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"body=医牙啊-商品购买&mch_id=1490055842&nonce_str=DHqPMuRU87fAcT6n&notify_url=https://47.100.3.125/api/wechatpay/success&out_trade_no=re&spbill_create_ip=::1&total_fee=500000&trade_type=MWEB&"] 
+
+2018-10-30 13:41:08 > DEBUG > Wechat Generate Sign Before UPPER [{"appid":"","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"DHqPMuRU87fAcT6n","notify_url":"https://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"1e0510e364a758d478eb9520a1ebec97"] 
+
+2018-10-30 13:41:08 > DEBUG > Schedule A Wechat order [{"appid":"","mch_id":"1490055842","nonce_str":"DHqPMuRU87fAcT6n","notify_url":"https://47.100.3.125/api/wechatpay/success","sign":"1E0510E364A758D478EB9520A1EBEC97","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:41:08 > DEBUG > Request To Wechat Api ["https://api.mch.weixin.qq.com/sandboxnew/pay/unifiedorder",{"appid":"","mch_id":"1490055842","nonce_str":"DHqPMuRU87fAcT6n","notify_url":"https://47.100.3.125/api/wechatpay/success","sign":"1E0510E364A758D478EB9520A1EBEC97","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:41:27 > DEBUG > Starting To Wechat ["wap",{"out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:41:27 > INFO > Starting To Pay A Wechat Wap Order ["https://api.mch.weixin.qq.com/sandboxnew/",{"appid":"","mch_id":"1490055842","nonce_str":"w66hDi5dlBN61uJ0","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:41:27 > DEBUG > Wechat Generate Sign Content Before Trim [{"appid":"","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"w66hDi5dlBN61uJ0","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"body=医牙啊-商品购买&mch_id=1490055842&nonce_str=w66hDi5dlBN61uJ0&notify_url=http://47.100.3.125/api/wechatpay/success&out_trade_no=re&spbill_create_ip=::1&total_fee=500000&trade_type=MWEB&"] 
+
+2018-10-30 13:41:27 > DEBUG > Wechat Generate Sign Before UPPER [{"appid":"","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"w66hDi5dlBN61uJ0","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"::1","total_fee":500000,"trade_type":"MWEB"},"0b215a1fd71f91c0c276bfc378f0b263"] 
+
+2018-10-30 13:41:27 > DEBUG > Schedule A Wechat order [{"appid":"","mch_id":"1490055842","nonce_str":"w66hDi5dlBN61uJ0","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"0B215A1FD71F91C0C276BFC378F0B263","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 13:41:27 > DEBUG > Request To Wechat Api ["https://api.mch.weixin.qq.com/sandboxnew/pay/unifiedorder",{"appid":"","mch_id":"1490055842","nonce_str":"w66hDi5dlBN61uJ0","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"0B215A1FD71F91C0C276BFC378F0B263","trade_type":"MWEB","spbill_create_ip":"::1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 18:33:39 > DEBUG > Starting To Wechat ["app",{"out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000}] 
+
+2018-10-30 18:33:39 > DEBUG > Wechat Generate Sign Content Before Trim [{"appid":"wx81885922a85a8519","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"9LEeEPkcGF8qjM3R","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"127.0.0.1","sub_appid":null,"total_fee":500000,"trade_type":"APP"},"appid=wx81885922a85a8519&body=医牙啊-商品购买&mch_id=1490055842&nonce_str=9LEeEPkcGF8qjM3R&notify_url=http://47.100.3.125/api/wechatpay/success&out_trade_no=re&spbill_create_ip=127.0.0.1&total_fee=500000&trade_type=APP&"] 
+
+2018-10-30 18:33:39 > DEBUG > Wechat Generate Sign Before UPPER [{"appid":"wx81885922a85a8519","body":"医牙啊-商品购买","mch_id":"1490055842","nonce_str":"9LEeEPkcGF8qjM3R","notify_url":"http://47.100.3.125/api/wechatpay/success","out_trade_no":"re","sign":"","spbill_create_ip":"127.0.0.1","sub_appid":null,"total_fee":500000,"trade_type":"APP"},"6ed26aaa0789547b2b9df1e36415815f"] 
+
+2018-10-30 18:33:39 > DEBUG > Schedule A Wechat order [{"appid":"wx81885922a85a8519","mch_id":"1490055842","nonce_str":"9LEeEPkcGF8qjM3R","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"6ED26AAA0789547B2B9DF1E36415815F","trade_type":"APP","spbill_create_ip":"127.0.0.1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000,"sub_appid":null}] 
+
+2018-10-30 18:33:39 > DEBUG > Request To Wechat Api ["https://api.mch.weixin.qq.com/pay/unifiedorder",{"appid":"wx81885922a85a8519","mch_id":"1490055842","nonce_str":"9LEeEPkcGF8qjM3R","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"6ED26AAA0789547B2B9DF1E36415815F","trade_type":"APP","spbill_create_ip":"127.0.0.1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000,"sub_appid":null}] 
+>>>>>>> efd15145067d6b8d63c2c377026b6e5c7aabe6a6
 

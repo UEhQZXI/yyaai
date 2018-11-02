@@ -16,7 +16,6 @@ class AdvisoryReplyController extends Controller
         $comment->content = $request->content;
         $comment->advisory_id = $advisory->id;
         $comment->user_id = $this->user()->id;
-        $comment->create_time = $_SERVER['REQUEST_TIME'];
         $comment->floor = $floor;
         $comment->save();
 

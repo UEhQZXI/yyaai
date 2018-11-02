@@ -8,7 +8,6 @@ class Advisory extends Model
 {
     public $table = 'app_advisory';
     public $primaryKey = 'id';
-    public $timestamps = FALSE;
     protected $fillable = ['title', 'content', 'classify_id', 'create_time'];
 
     /**

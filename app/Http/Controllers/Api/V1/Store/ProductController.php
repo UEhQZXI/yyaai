@@ -87,7 +87,7 @@ class ProductController extends Controller
     {
         $product = Product::where('id', $product)->first();
 
-        if (empty($product)) {
+        if (!$product->exists) {
             return $this->response->error('商品过期不存在', 422);
         }
 
@@ -110,7 +110,7 @@ class ProductController extends Controller
             $collection = collect(['product' => $products]);
 
             $total_price = $products->current_price * $productNumber;
-            
+
             $collection->put('number', $productNumber);
             $collection->put('total_price', sprintf('%.2f', round($total_price, 2)) );
 
@@ -145,4 +145,5 @@ class ProductController extends Controller
 
         return $this->response->array(['message' => 'success', 'data' => $products]);
     }
+
 }

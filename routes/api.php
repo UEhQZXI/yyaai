@@ -44,10 +44,6 @@ $api->version('v1', [
         $api->get('articles', 'ArticleController@index')
             ->name('api.article.index');
 
-        // 获取个人文章列表
-        $api->get('users/{user}/articles', 'ArticleController@userIndex')
-            ->name('api.article.userIndex');
-
         //文章详情
         $api->get('articles/{article}', 'ArticleController@show')
             ->name('api.article.show');
@@ -68,7 +64,7 @@ $api->version('v1', [
         $api->get('users/{user}/advisorys', 'AdvisoryController@userIndex')
             ->name('api.users.advisorys.index');
 
-        // 查询咨询回复列表
+        // 查询咨询 回复列表
         $api->get('advisorys/{advisory}/replies', 'AdvisoryReplyController@index')
             ->name('api.advisorys.replies.index');
 
@@ -96,6 +92,10 @@ $api->version('v1', [
             //删除文章
             $api->delete('articles/{article}', 'ArticleController@destroy')
                 ->name('api.article.destroy');
+
+            // 获取自己文章列表
+            $api->get('user/articles', 'ArticleController@userIndex')
+                ->name('api.article.userIndex');
 
             //添加文章回复
             $api->post('articles/comment/{article}', 'ArticleCommentController@store')
@@ -158,9 +158,11 @@ $api->version('v1', [
                 // 更新购物车
                 $api->patch('store/cart/{cart}', 'CartController@update')
                     ->name('api.store.cart.update');
+
                 // 结算页面接口
                 $api->post('store/cart/count', 'CartController@show')
                     ->name('api.store.cart.show');
+
 
                 // 查询当前登录用户的购物车信息
                 $api->get('store/cart', 'CartController@userIndex')
@@ -185,6 +187,7 @@ $api->version('v1', [
                 $api->get('store/address/{address}', 'AddressController@userIndex')
                     ->name('api.store.address.userIndex');
 
+
                 //添加订单
                 $api->post('store/order', 'OrderController@store');
 
@@ -193,7 +196,10 @@ $api->version('v1', [
 
                 //查询订单详情
                 $api->get('store/order/{order}', 'OrderController@show');
-                $api->get('store/pay/alipay/{order}', 'AliPayController@store'); 
+
+                $api->get('store/pay/alipay/{order}', 'AliPayController@store')
+                    ->name('api.store.pay.alipay.store');
+
             });
         });
     });
@@ -204,7 +210,7 @@ $api->version('v1', [
     ], function ($api) {
           
         $api->post('store/pay/ali/notify', 'AliPayController@notify');
-        $api->get('store/pay/ali/return', 'AliPayController@isSuccess');
+        $api->get('store/pay/ali/return', 'AliPayController@AliReturn');
         //添加分类
         $api->post('store/categorie', 'CategorieController@store');
         
@@ -223,8 +229,11 @@ $api->version('v1', [
         //查询所有订单
         $api->get('store/orders', 'OrderController@index');
 
+
         $api->get('store/wechatpay/index', 'WechatPayController@index');
         $api->post('store/wechatpay/notify', 'WechatPayController@notify');
+
+        $api->get('wechatpay/index', 'WechatPayController@index');
 
 
         $api->get('store', 'CategorieController@store');

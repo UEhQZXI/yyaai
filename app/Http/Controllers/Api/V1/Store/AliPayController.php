@@ -63,7 +63,8 @@ class AliPayController extends Controller
             }
 
             if ($data->trade_status == 'TRADE_SUCCESS'
-                || $data->trade_status == 'TRADE_FINISHED') {
+                || $data->trade_status == 'TRADE_FINISHED')
+            {
                 Order::where('order_number', $data->out_trade_no)
                     ->update([
                         'status' => 1,

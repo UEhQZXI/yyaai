@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Api\V1\Store;
 use App\Http\Requests\Api\V1\Store\CartRequest;
 use App\Models\Store\Cart;
 use App\Models\Store\Product;
-use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Api\V1\Controller;
 
@@ -171,6 +170,7 @@ class CartController extends Controller
 
         return $this->response->array(['message' => 'success', 'data' => $collection]);
     }
+
     public function show(Request $request)
     {
         $selectArray = $request->huangyingxuan;
@@ -204,4 +204,6 @@ class CartController extends Controller
 
         return $this->response->array(['message' => 'success', 'data' => $collection]);
     }
+
 }
+
