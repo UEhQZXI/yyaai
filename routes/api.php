@@ -44,10 +44,6 @@ $api->version('v1', [
         $api->get('articles', 'ArticleController@index')
             ->name('api.article.index');
 
-        // 获取个人文章列表
-        $api->get('users/{user}/articles', 'ArticleController@userIndex')
-            ->name('api.article.userIndex');
-
         //文章详情
         $api->get('articles/{article}', 'ArticleController@show')
             ->name('api.article.show');
@@ -68,7 +64,7 @@ $api->version('v1', [
         $api->get('users/{user}/advisorys', 'AdvisoryController@userIndex')
             ->name('api.users.advisorys.index');
 
-        // 查询咨询回复列表
+        // 查询咨询 回复列表
         $api->get('advisorys/{advisory}/replies', 'AdvisoryReplyController@index')
             ->name('api.advisorys.replies.index');
 
@@ -96,6 +92,10 @@ $api->version('v1', [
             //删除文章
             $api->delete('articles/{article}', 'ArticleController@destroy')
                 ->name('api.article.destroy');
+
+            // 获取自己文章列表
+            $api->get('user/articles', 'ArticleController@userIndex')
+                ->name('api.article.userIndex');
 
             //添加文章回复
             $api->post('articles/comment/{article}', 'ArticleCommentController@store')
@@ -212,6 +212,8 @@ $api->version('v1', [
 
         //查询所有订单
         $api->get('store/orders', 'OrderController@index');
+
+        $api->get('wechatpay/index', 'WechatPayController@index');
 
 
         $api->get('store', 'CategorieController@store');

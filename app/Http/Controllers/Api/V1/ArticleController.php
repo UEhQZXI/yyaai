@@ -58,6 +58,9 @@ class ArticleController extends Controller
         if ($classify_id = $request->classify_id)
             $query->where('classify_id', $classify_id);
 
+        if ($user_id = $request->user_id)
+            $query->where('user_id', $user_id);
+
         switch ($request->order) {
             case 'time':
                 $query->orderBy('create_time', 'desc');
@@ -81,11 +84,11 @@ class ArticleController extends Controller
         return $this->response->array(['message' => 'success', 'data' => $articles]);
     }
 
-    public function userIndex(User $user, Request $request)
+    public function userIndex()
     {
-        $articles =  $user->article()->paginate(10);
+        $articles =  Article::where('user_id', $this->user()->id)->with(['articleClassify'])->paginate(10);
 
-        return $this->response->paginator($articles, new ArticleTransformer());
+        return $this->response->array(['message' => 'success', 'data' => $articles]);
     }
 
     public function show(Article $article)

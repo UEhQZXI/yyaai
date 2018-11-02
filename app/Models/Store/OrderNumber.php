@@ -15,6 +15,6 @@ class OrderNumber extends Model
     }
 
     public function product() {
-    	return $this->hasOne('App\Models\Store\Product', 'id');
+    	return $this->hasOne('App\Models\Store\Product', 'id', 'products_id');
     }
 }

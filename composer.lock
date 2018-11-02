@@ -4,12 +4,60 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-
-    "content-hash": "bbcb411519177614afd9b71f63d93f16",
-
-    // "content-hash": "2a01f27c42196c7224655d1be21a9605",
-
+    "content-hash": "4c20e94b7c8d04974036ffe0531175ba",
     "packages": [
+        {
+            "name": "bacon/bacon-qr-code",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Bacon/BaconQrCode.git",
+                "reference": "5a91b62b9d37cee635bbf8d553f4546057250bee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Bacon/BaconQrCode/zipball/5a91b62b9d37cee635bbf8d553f4546057250bee",
+                "reference": "5a91b62b9d37cee635bbf8d553f4546057250bee",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-iconv": "*",
+                "php": "^5.4|^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
+            },
+            "suggest": {
+                "ext-gd": "to generate QR code images"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "BaconQrCode": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Scholzen 'DASPRiD'",
+                    "email": "mail@dasprids.de",
+                    "homepage": "http://www.dasprids.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "BaconQrCode is a QR code generator for PHP.",
+            "homepage": "https://github.com/Bacon/BaconQrCode",
+            "time": "2017-10-17T09:59:25+00:00"
+        },
         {
             "name": "caouecs/laravel-lang",
             "version": "3.0.54",
@@ -2443,6 +2491,63 @@
             "time": "2018-07-19T23:38:55+00:00"
         },
         {
+            "name": "simplesoftwareio/simple-qrcode",
+            "version": "1.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SimpleSoftwareIO/simple-qrcode.git",
+                "reference": "17c5e45c79c40f717d4bc08cf5e568f29ebf9333"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SimpleSoftwareIO/simple-qrcode/zipball/17c5e45c79c40f717d4bc08cf5e568f29ebf9333",
+                "reference": "17c5e45c79c40f717d4bc08cf5e568f29ebf9333",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "bacon/bacon-qr-code": "1.0.*",
+                "ext-gd": "*",
+                "illuminate/support": ">=4.2.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "SimpleSoftwareIO\\QrCode\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Simple Software LLC",
+                    "email": "support@simplesoftware.io"
+                }
+            ],
+            "description": "Simple QrCode is a QR code generator made for Laravel.",
+            "homepage": "http://www.simplesoftware.io",
+            "keywords": [
+                "Simple",
+                "generator",
+                "laravel",
+                "qrcode",
+                "wrapper"
+            ],
+            "time": "2016-01-31T02:09:25+00:00"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v6.1.3",
             "source": {
@@ -3828,114 +3933,6 @@
                 "validate"
             ],
             "time": "2018-01-29T19:49:41+00:00"
-        },
-        {
-            "name": "yansongda/pay",
-            "version": "v2.5.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yansongda/pay.git",
-                "reference": "c0466d7762f5fbb761478f6b20453256fb8706f2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yansongda/pay/zipball/c0466d7762f5fbb761478f6b20453256fb8706f2",
-                "reference": "c0466d7762f5fbb761478f6b20453256fb8706f2",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "ext-openssl": "*",
-                "ext-simplexml": "*",
-                "monolog/monolog": "^1.23",
-                "php": ">=7.0",
-                "symfony/http-foundation": "^3.0|^4.0",
-                "yansongda/supports": "^1.8"
-            },
-            "require-dev": {
-                "mockery/mockery": "1.0.x-dev",
-                "phpunit/phpunit": "^6.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Yansongda\\Pay\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "yansongda",
-                    "email": "me@yansongda.cn"
-                }
-            ],
-            "description": "专注 Alipay 和 WeChat 的支付扩展包",
-            "keywords": [
-                "alipay",
-                "pay",
-                "wechat"
-            ],
-            "time": "2018-10-10T16:05:22+00:00"
-        },
-        {
-            "name": "yansongda/supports",
-            "version": "v1.8.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yansongda/supports.git",
-                "reference": "2e295667942f7bb2453b09fba8f86a5a03cba55e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yansongda/supports/zipball/2e295667942f7bb2453b09fba8f86a5a03cba55e",
-                "reference": "2e295667942f7bb2453b09fba8f86a5a03cba55e",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "guzzlehttp/guzzle": "^6.2",
-                "monolog/monolog": "^1.23",
-                "php": ">=5.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Yansongda\\Supports\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "yansongda",
-                    "email": "me@yansongda.cn"
-                }
-            ],
-            "description": "common components",
-            "keywords": [
-                "Guzzle",
-                "array",
-                "collection",
-                "config",
-                "http",
-                "support"
-            ],
-            "time": "2018-09-13T06:47:49+00:00"
         }
     ],
     "packages-dev": [
@@ -6357,6 +6354,114 @@
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
             "time": "2017-04-07T12:08:54+00:00"
+        },
+        {
+            "name": "yansongda/pay",
+            "version": "v2.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yansongda/pay.git",
+                "reference": "c0466d7762f5fbb761478f6b20453256fb8706f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yansongda/pay/zipball/c0466d7762f5fbb761478f6b20453256fb8706f2",
+                "reference": "c0466d7762f5fbb761478f6b20453256fb8706f2",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-openssl": "*",
+                "ext-simplexml": "*",
+                "monolog/monolog": "^1.23",
+                "php": ">=7.0",
+                "symfony/http-foundation": "^3.0|^4.0",
+                "yansongda/supports": "^1.8"
+            },
+            "require-dev": {
+                "mockery/mockery": "1.0.x-dev",
+                "phpunit/phpunit": "^6.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yansongda\\Pay\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "yansongda",
+                    "email": "me@yansongda.cn"
+                }
+            ],
+            "description": "专注 Alipay 和 WeChat 的支付扩展包",
+            "keywords": [
+                "alipay",
+                "pay",
+                "wechat"
+            ],
+            "time": "2018-10-10T16:05:22+00:00"
+        },
+        {
+            "name": "yansongda/supports",
+            "version": "v1.8.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yansongda/supports.git",
+                "reference": "2e295667942f7bb2453b09fba8f86a5a03cba55e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yansongda/supports/zipball/2e295667942f7bb2453b09fba8f86a5a03cba55e",
+                "reference": "2e295667942f7bb2453b09fba8f86a5a03cba55e",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.2",
+                "monolog/monolog": "^1.23",
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Yansongda\\Supports\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "yansongda",
+                    "email": "me@yansongda.cn"
+                }
+            ],
+            "description": "common components",
+            "keywords": [
+                "Guzzle",
+                "array",
+                "collection",
+                "config",
+                "http",
+                "support"
+            ],
+            "time": "2018-09-13T06:47:49+00:00"
         }
     ],
     "aliases": [],
