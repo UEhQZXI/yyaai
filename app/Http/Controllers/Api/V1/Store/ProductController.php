@@ -10,6 +10,13 @@ use Dingo\Api\Http\Request;
 
 class ProductController extends Controller
 {
+    /**
+     * 新增商品
+     *
+     * @param ProductRequest $request
+     * @param Product $product
+     * @return mixed
+     */
     public function store(ProductRequest $request, Product $product)
     {
         $product->fill($request->all());
@@ -21,6 +28,12 @@ class ProductController extends Controller
         return $this->response->array(['message' => 'success', 'data' => []]);
     }
 
+    /**
+     * 删除商品
+     *
+     * @param $product
+     * @return mixed
+     */
     public function destroy($product)
     {
         Product::where('id', $product)->delete();
@@ -29,6 +42,13 @@ class ProductController extends Controller
         return $this->response->array(['message' => 'success', 'data' => []]);
     }
 
+    /**
+     * 更新商品
+     *
+     * @param ProductRequest $request
+     * @param $product
+     * @return mixed
+     */
     public function update(ProductRequest $request, $product)
     {
         Product::where('id', $product)
@@ -37,6 +57,13 @@ class ProductController extends Controller
         return $this->response->array(['message' => 'success', 'data' => []]);
     }
 
+    /**
+     * 查询所有商品
+     *
+     * @param Request $request
+     * @param Product $product
+     * @return mixed
+     */
     public function index(Request $request, Product $product)
     {
         $query = $product->query();
@@ -45,13 +72,18 @@ class ProductController extends Controller
             $query->where('category_id', $category_id);
         }
 
-        $products = $query->paginate(2);
+        $products = $query->paginate(10);
 
         // return $this->response->paginator($products, new ProductTransformer());
         return $this->response->array(['message' => 'success', 'data' => $products]);
     }
 
-    public function productIndex($product)
+    /**
+     * 查询单个商品信息
+     *
+     * @param $product
+     */
+    public function productIndex(Request $request, $product)
     {
         $product = Product::where('id', $product)->first();
 
@@ -61,6 +93,28 @@ class ProductController extends Controller
 
         if (!$product->status) {
             return $this->response->error('商品已下架', 422);
+        }
+
+        if ($request->has('product_number')) {
+
+            $productNumber = round($request->product_number);
+
+            $products = Product::select(['id', 'category_id', 'title', 'description', 'model', 'original_price', 'current_price', 'inventory', 'group_number', 'image1', 'image2', 'image3', 'image4', 'image5', 'status', 'created_at'])
+                ->where('id', $product->id)
+                ->first();
+
+            if ($products->inventory < $productNumber) {
+                return $this->response->error('商品库存不足', 422);
+            }
+
+            $collection = collect(['product' => $products]);
+
+            $total_price = $products->current_price * $productNumber;
+            
+            $collection->put('number', $productNumber);
+            $collection->put('total_price', sprintf('%.2f', round($total_price, 2)) );
+
+            return $this->response->array(['message' => 'success', 'data' => $collection]);
         }
 
         if ($product->group_number) {
@@ -78,6 +132,11 @@ class ProductController extends Controller
         return $this->response->array(['message' => 'success', 'data' => $product]);
     }
 
+    /**
+     * 查询新手专享商品
+     *
+     * @return mixed
+     */
     public function userExclusive()
     {
         $products = Product::select(['id', 'title', 'description', 'original_price', 'current_price'])->get();

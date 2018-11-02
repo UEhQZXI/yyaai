@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>忘记密码</title>
+  <link rel="stylesheet" href="lib/mui/css/mui.css">
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+  <link rel="stylesheet" href="css/register.css">
+
+</head>
+<body>
+
+<div class="lt_container">
+  
+  <div class="lt_header">
+    <a class="icon_left" href="javascript:history.go(-1);"><span class="mui-icon mui-icon-arrowleft"></span></a>
+    <span>修改密码<span>
+  </div>
+
+  <div class="lt_main">
+
+    <form class="myform">
+      <div class="mui-input-row">
+        <input type="password" name="password" class="mui-input-password" placeholder="请输入密码">
+      </div>
+      <div class="mui-input-row">
+        <input type="password" name="repassword" class="mui-input-password" placeholder="请确认密码">
+      </div>
+      <div class="mui-input-row">
+        <input type="text" name="mobile" class="mui-input-clear" placeholder="请输入手机号">
+      </div>
+
+      <div class="mui-input-row vcode_wrap">
+        <input type="text" name="vCode" class="mui-input-clear" placeholder="请输入验证码">
+        <button class="mui-btn mui-btn-primary btn_vcode">获取验证码</button>
+      </div>
+
+      <div class="mui-input-row">
+        <button class="mui-btn mui-btn-primary mui-block btn_register">确定</button>
+      </div>
+
+      <div class="mui-input-row tips">
+        <span class="mui-pull-left">
+          <input type="checkbox" checked>
+          我同意《会员服务协议》
+        </span>
+
+        <span class="mui-pull-right">
+          <a href="login.html">立即登录</a>
+        </span>
+      </div>
+    </form>
+
+  </div>
+  
+</div>
+
+
+<script src="lib/mui/js/mui.js"></script>
+<script src="lib/lib-flexible/flexible.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="js/common.js"></script>
+<script src="js/Forget.js"></script>
+</body>
+</html>

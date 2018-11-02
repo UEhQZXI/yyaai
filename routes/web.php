@@ -11,4 +11,9 @@
 |
 */
 
-Route::get('/','Controller@test');
+Route::get('/', function () {
+	return redirect('http://m.iyaa180.com/web/index.html');
+});
+
+Route::get('/test', 'Api\V1\Store\WechatPayController@test');
+

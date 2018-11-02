@@ -11,11 +11,12 @@ class Controller extends BaseController
 {
     use Helpers;
 
+    private $upload_host = 'http://m.iyaa180.com/uploads/';
     //文件上传
     public function upload(UploadRequest $request)
     {
     	$path = $request->file->store($request->type);
 
-    	return $path;
+    	return $this->response->array(['message' => 'success', 'data' => ['path' => $this->upload_host . $path]]);
     }
 }

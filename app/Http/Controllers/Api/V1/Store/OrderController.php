@@ -95,21 +95,26 @@ class OrderController extends Controller
                                 ? $query->where('status', $request->status)
                                 : '';
 
-        $orders = $query->with('orderInfo')->paginate(10);
+        $orders = $query->with(['orderInfo', 'orderInfo.product'])->paginate(10);
 
         return $this->response->array(['message' => 'success', 'data' => $orders]);
     }
 
     public function userIndex(User $user, Request $request)
     {
-        $data = Order::where('user_id', $this->user()->id)->with(['orderInfo'])->paginate(10);
+        $query = Order::query();
+
+        $request->has('status')
+                                ? $query->where('status', $request->status)
+                                : '';
+        $data = $query->where('user_id', $this->user()->id)->with(['orderInfo', 'address', 'orderInfo.product'])->paginate(10);
 
         return $this->response->array(['message' => 'success', 'data' => $data]);
     }
 
     public function show($order)
     {
-        $data = Order::with(['orderInfo', 'address'])->find($order);
+        $data = Order::with(['orderInfo', 'address', 'orderInfo.product'])->find($order);
 
         return $this->response->array(['message' => 'success', 'data' => $data]);
     }

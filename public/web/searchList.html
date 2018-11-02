@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="touch-action: none"s>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>搜索列表</title>
+  <link rel="stylesheet" href="lib/mui/css/mui.css">
+  <link rel="stylesheet" href="css/searchList.css">
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+</head>
+<body>
+
+<div class="Ty_mall">
+  
+  <div class="Ty_header">
+      <div class="back">
+          <a href="index.html"><span class="mui-icon mui-icon-arrowleft"></span></a>
+          <!-- <input type="text"> -->
+          <span>商品列表</span>
+      </div>
+      <!-- <div class="tabNavs">
+          <a href="javascript:;">全部 <span class="fa fa-angle-down"></span></a>
+          <a href="javascript:;">价格 <span class="fa fa-angle-down"></span></a>
+          <a href="javascript:;">库存 <span class="fa fa-angle-down"></span></a>
+          <a href="javascript:;">折扣 <span class="fa fa-angle-down"></span></a>
+      </div> -->
+  </div>
+
+  <div class="Ty_main">
+
+    <!--滚动容器的父盒子-->
+    <div class="mui-scroll-wrapper">
+      <!--子盒子-->
+      <div class="mui-scroll">
+        <!--这里放置真实显示的DOM内容-->
+             <ul id="goodList">
+                 <!-- 模板 -->
+             </ul>
+        </div>
+       
+      </div>
+    </div>
+
+  </div>
+  
+</div>
+
+<script type="text/html" id="tpl_list">
+  {{each list v i}}   
+        <a href="searchGood.html?id={{v.id}}" data-id="{{v.id}}">
+            <img src="{{v.image1}}" alt="">
+            <p>{{v.title}}</p>
+            <p>{{v.description}}</p>
+            <span style="color:red;margin-right:10px;font-size:17px;">&yen;{{v.current_price}}</span>
+            <span style="text-decoration:line-through;color:#333;">&yen;{{v.original_price}}</span>
+        </a>
+  {{/each}}
+</script>
+
+
+
+<script src="lib/mui/js/mui.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="lib/lib-flexible/flexible.js"></script>
+<script src="js/common.js"></script>
+<script src="js/searchList.js"></script>
+</body>
+</html>

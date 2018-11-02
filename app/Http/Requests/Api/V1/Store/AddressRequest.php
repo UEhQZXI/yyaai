@@ -35,6 +35,17 @@ class AddressRequest extends FormRequest
                     'address' => 'required|string'
                 ];
                 break;
+            case 'PATCH':
+                return [
+                    'user_name' => 'required|string|min:2',
+                    'user_phone' => ['nullable', 'regex:/^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/'],
+                    'user_tel' => 'nullable',
+                    'area1' => 'required',
+                    'area2' => 'required',
+                    'area3' => 'required',
+                    'address' => 'required|string'
+                ];
+                break;
         }
     }
 

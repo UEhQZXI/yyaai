@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en"  style="touch-action: none">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品分类</title>
+    <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="css/searchGood.css">
+    <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+</head>
+<body>
+    <div class="Ty_mall">
+        <div class="Ty_header">
+            <a href="javascript:history.go(-1);"><span class="mui-icon mui-icon-arrowleft"></span></a>
+            <span>商品详情</span>
+        </div>    
+        <div class="Ty_main">
+          <!--滚动容器的父盒子-->
+          <div class="mui-scroll-wrapper">
+            <!--子盒子-->
+            <div class="mui-scroll">
+              <!--这里放置真实显示的DOM内容-->
+                
+              </div>
+             
+            </div>
+          </div>
+          <div class="showlist" style="display: none;z-index: 999;">
+               <!-- 模板 -->
+               
+          </div>
+          <div class="Ty_footer">
+               <a href="cart.html"><span class="fa fa-shopping-cart"></span></a>
+               <button class="mui-btn mui-btn-danger mui-pull-right add_car"style="margin-right:20px;">加入购物车</button>
+               <button class="mui-btn mui-btn-warning mui-pull-right buy" style="margin-right:20px;">立即购买</button>
+          </div>
+          <!-- 阴影 -->
+          <div class="ying"></div>
+      
+        </div>
+        
+    
+      <script type="text/html" id="tpl_good">
+        <div class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop">
+            <div class="mui-slider-item mui-slider-item-duplicate"><img src="{{pt[pt.length-1].picName}}" /></div>
+            {{each pt v i}}
+               <div class="mui-slider-item"><img src="{{v.picName}}"/></div>
+            {{/each}}
+            <div class="mui-slider-item mui-slider-item-duplicate"><img src="{{pt[0].picName}}" /></div>
+          </div>
+            <div class="mui-slider-indicator">
+            {{each pt v i}}
+               <div class="mui-indicator {{i == 0?'mui-active':''}}"></div>
+            {{/each}}          
+            </div>
+          </div> 
+          <div class="price" style="margin-top:0.2667rem;">
+            <span style="color:red;font-size:0.5rem;margin-left:0.35rem;">&yen;{{data.current_price}}</span><br>
+            <span style="margin-left:0.35rem;">价格：<span style="text-decoration:line-through;">&yen;{{data.original_price}}</span></span>
+          </div>
+          <p style="margin-left:0.35rem;color:#000;font-size:0.4rem;font-weight:600;">{{data.title}}</p>
+          <span style="margin-left:0.35rem;color:#dedede;">快递：0.00</span>
+          <span style="margin-left:2.3rem;color:#dedede;">销量：{{data.inventory}}</span>
+          <span class="pull-right" style="margin-right:0.35rem;color:#dedede;">上海</span>
+          <p>{{data.description}}</p>
+      </script>
+
+      <!-- <script type="text/html" id="tpl_show">
+             
+        <div style="margin-bottom:1.3rem;">
+            <img src="{{row.image2}}" alt="" style="width:2.1rem;height:2.1rem;margin-top:.35rem;margin-left:0.35rem;">
+            <span style="position:absolute;top:0.35rem;left:3.5rem;font-size:0.4rem;">价格:{{row.current_price}}</span>
+            <span style="position:absolute;top:1.3rem;left:3.5rem;font-size:0.4rem;">库存{{row.inventory}}</span>
+        </div>
+        <div class="goods" style="margin-bottom:1.5rem;margin-left:0.5333rem;">
+            <span class="title" data-id="{{row.id}}" style="">{{row.title}}</span>
+        </div>
+        <div class="lt_num mui-clearfix" style="margin-left:0.5333rem;font-size:0.4rem;">
+          <span style="display:inline-block;margin-top:0.21rem;"> 数量：</span>
+          <div class="mui-numbox" data-numbox-step="1" data-numbox-min="1" data-numbox-max="{{row.inventory}}" style="float:right;margin-right:0.5rem">
+            <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+            <input class="mui-numbox-input" type="number"/>
+            <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+          </div>
+        </div>
+         <span class="mui-icon mui-icon-closeempty"></span>
+        <div class="Join">
+            <a href="cart.html"><span class="fa fa-shopping-cart"></span></a>
+            <button class="mui-btn mui-btn-danger mui-pull-right add_car">加入购物车</button>
+            <button class="mui-btn mui-btn-warning mui-pull-right buy">立即购买</button>
+        </div>
+
+      </script> -->
+      <script type="text/html" id="tpl_show">
+        {{if data.linked.length == 0}}     
+          <div style="margin-bottom:1.3rem;">
+              <img src="{{data.image1}}" alt="" style="width:2.1rem;height:2.1rem;margin-top:.35rem;margin-left:0.35rem;">
+              <span style="position:absolute;top:0.35rem;left:3.5rem;font-size:0.4rem;">价格:{{data.current_price}}</span>
+              <span style="position:absolute;top:1.3rem;left:3.5rem;font-size:0.4rem;">库存{{data.inventory}}</span>
+          </div>
+          <div class="goods" style="margin-bottom:1.5rem;margin-left:0.5333rem;">
+              <span class="title" data-id="{{data.id}}" style="">{{data.title}}</span>
+          </div>
+          <div class="lt_num mui-clearfix" style="margin-left:0.5333rem;font-size:0.4rem;">
+            <span style="display:inline-block;margin-top:0.21rem;"> 数量：</span>
+            <div class="mui-numbox" data-numbox-step="1" data-numbox-min="1" data-numbox-max="{{data.inventory}}" style="float:right;margin-right:0.5rem">
+              <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+              <input class="mui-numbox-input" type="number"/>
+              <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+            </div>
+          </div>
+          <span class="mui-icon mui-icon-closeempty"></span>
+          <div class="Join">
+              <a href="cart.html"><span class="fa fa-shopping-cart"></span></a>
+              <button class="mui-btn mui-btn-danger mui-pull-right add_car">加入购物车</button>
+              <button class="mui-btn mui-btn-warning mui-pull-right buy">立即购买</button>
+          </div>
+        {{/if}}
+        {{elseif}}
+        {{each data.linked v i}}
+            <div style="margin-bottom:1.3rem;">
+                <img src="{{v.image1}}" alt="" style="width:2.1rem;height:2.1rem;margin-top:.35rem;margin-left:0.35rem;">
+                <span style="position:absolute;top:0.35rem;left:3.5rem;font-size:0.4rem;">价格:{{v.current_price}}</span>
+                <span style="position:absolute;top:1.3rem;left:3.5rem;font-size:0.4rem;">库存{{v.inventory}}</span>
+            </div>
+            <div class="goods" style="margin-bottom:1.5rem;margin-left:0.5333rem;">
+                <span class="title" data-id="{{v.id}}" style="">{{v.title}}</span>
+            </div>
+            <div class="lt_num mui-clearfix" style="margin-left:0.5333rem;font-size:0.4rem;">
+              <span style="display:inline-block;margin-top:0.21rem;"> 数量：</span>
+              <div class="mui-numbox" data-numbox-step="1" data-numbox-min="1" data-numbox-max="{{v.inventory}}" style="float:right;margin-right:0.5rem">
+                <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                <input class="mui-numbox-input" type="number"/>
+                <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+              </div>
+            </div>
+            <span class="mui-icon mui-icon-closeempty"></span>
+            <div class="Join">
+                <a href="cart.html"><span class="fa fa-shopping-cart"></span></a>
+                <button class="mui-btn mui-btn-danger mui-pull-right add_car">加入购物车</button>
+                <button class="mui-btn mui-btn-warning mui-pull-right buy">立即购买</button>
+            </div>
+        {{/each}}
+        {{/elseif}}
+      </script>
+
+
+
+<script src="lib/mui/js/mui.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="lib/lib-flexible/flexible.js"></script>
+<script src="js/common.js"></script>
+<script src="js/searchGood.js"></script>
+</body>
+</html>

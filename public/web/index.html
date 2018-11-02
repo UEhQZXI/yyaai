@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="touch-action: none">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>首页</title>
+  <link rel="stylesheet" href="lib/mui/css/mui.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+</head>
+<body>
+
+<div class="Ty_mall">
+  <div class="Ty_header">
+     <div class="mui-input-row mui-search">
+       <a href="search.html"><input type="search" class="mui-input-clear" placeholder="想找什么"></a>
+     </div>
+  </div>
+  <div class="Ty_main">
+    <!--滚动容器的父盒子-->
+    <div class="mui-scroll-wrapper">
+      <!--子盒子-->
+      <div class="mui-scroll">
+        <!--这里放置真实显示的DOM内容-->
+        <div class="color"></div>
+          <!--轮播图-->
+          <div class="mui-slider">
+              <div class="mui-slider-group mui-slider-loop">
+              <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/banner6.png" /></a></div>
+              <div class="mui-slider-item"><a href="#"><img src="images/banner1.png" /></a></div>
+              <div class="mui-slider-item"><a href="#"><img src="images/banner2.png" /></a></div>
+              <div class="mui-slider-item"><a href="#"><img src="images/banner3.png" /></a></div>
+              <div class="mui-slider-item"><a href="#"><img src="images/banner4.png" /></a></div>
+              <div class="mui-slider-item"><a href="#"><img src="images/banner5.png" /></a></div>
+              <div class="mui-slider-item"><a href="#"><img src="images/banner6.png" /></a></div>
+              <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/banner1.png" /></a></div>
+            </div>
+              <div class="mui-slider-indicator">
+                <div class="mui-indicator mui-active"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+              </div>
+            </div>
+        <!--商品区域-->
+        <div class="Ty_product">
+            <div class="hot">
+                <p>新人专享</p>
+                <ul class="mui-clearfix" id="new">
+                    <!-- 模板 -->
+                </ul>
+            </div>
+            <div class="sales">
+                <p>销量排行</p>
+                <ul class="mui-clearfix">
+                  <li>
+                    <img src="images/banner1.png" alt="">
+                    <p>KD2356</p>
+                    <span>&yen;666</span>
+                    <span>2人购买</span>
+                  </li>
+                  <li>
+                    <img src="images/banner2.png" alt="">
+                    <P>ko1234</P>
+                    <span>&yen;777</span>
+                    <span>2人购买</span>
+                  </li>
+                  <li>
+                    <img src="images/banner3.png" alt="">
+                    <P>KL1456</P>
+                    <span>&yen;333</span>
+                    <span>2人购买</span>
+                  </li>
+              </ul>
+            </div>
+            <div class="Newgoods">
+               <p>新品上架</p>
+               <span class="mui-icon mui-icon-arrowright iconRight"></span>
+               <ul class="mui-clearfix">
+                <li>
+                  <img src="images/banner1.png" alt="">
+                  <p>KD2356</p>
+                  <span>&yen;666</span>
+                  <span>2人购买</span>
+                </li>
+                <li>
+                  <img src="images/banner5.png" alt="">
+                  <P>ko1234</P>
+                  <span>&yen;777</span>
+                  <span>2人购买</span>
+                </li>
+                <li>
+                  <img src="images/banner2.png" alt="">
+                  <P>KL1456</P>
+                  <span>&yen;333</span>
+                  <span>2人购买</span>
+                </li>
+            </ul>
+            </div>  
+        </div>    
+      </div>
+    </div>
+  </div>
+
+  <div class="Ty_footer">
+    <ul class="mui-clearfix">
+      <li class="now">
+        <a href="index.html">
+          <span class="fa fa-home"></span>
+          <p>首页</p>
+        </a>
+      </li>
+      <li>
+        <a href="category.html">
+          <span class="fa fa-bars"></span>
+          <p>分类</p>
+        </a>
+      </li>
+      <li>
+        <a href="cart.html">
+          <span class="fa fa-shopping-cart"></span>
+          <p>购物车</p>
+        </a>
+      </li>
+      <li>
+        <a href="user.html" class="user">
+          <span class="fa fa-user"></span>
+          <p>我的</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+</div>
+  
+  <!-- 新人专享 -->
+  <script type="text/html" id="tpl_new">
+    {{each list v i}}
+        <a data-id = {{v.id}} href="searchGood.html?id={{v.id}}">
+            <img src="{{v.brandLogo?v.brandLogo:'images/banner1.png'}}" alt="">
+            <p href="javascript:;" >{{v.title}}</p>
+            <span style="color:red;margin-right:10px;font-size:17px;">&yen;{{v.current_price}}</span>
+            <span style="text-decoration:line-through;">&yen;{{v.original_price}}</span>
+            <p>{{v.description?v.description:'非常好用'}}</p>
+        </li>
+    {{/each}}
+  </script>
+</body>
+<script src="lib/mui/js/mui.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="lib/lib-flexible/flexible.js"></script>
+<script src="js/common.js"></script>
+<script src="js/index.js"></script>
+</html>

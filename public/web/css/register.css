@@ -1,0 +1,57 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.myform {
+  padding: 10px;
+}
+
+.vcode_wrap input {
+  width: 65%;
+}
+
+.vcode_wrap button.mui-btn {
+  width: 30%;
+  padding: 0;
+  margin: 0;
+  height: 40px;
+  line-height: 40px;
+}
+
+.myform .btn_vcode.disabled {
+  background-color: #999;
+  border-color: #999;
+}
+
+.myform .btn_register {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  height: 40px;
+  line-height: 40px;
+}
+
+.myform .tips {
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+}
+.lt_container{
+    background-color: #fff;
+}
+.lt_header{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    position: relative;
+}
+.lt_header a{
+    float: left;
+    display: block;
+    height: 40px;
+    line-height: 45px;
+    color: #333;
+    position: absolute;
+    left: 0;
+    top: 0;
+}

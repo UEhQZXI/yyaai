@@ -7,6 +7,9 @@
  * @author   Taylor Otwell <taylor@laravel.com>
  */
 header('Access-Control-Allow-Origin:*');
+
+header("Access-Control-Allow-Methods: GET, POST, DELETE, PATCH");
+header("Access-Control-Allow-Headers: Content-Type, X-Requested-With, Cache-Control,Authorization");
 define('LARAVEL_START', microtime(true));
 
 /*
