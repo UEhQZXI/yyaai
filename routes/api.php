@@ -211,6 +211,7 @@ $api->version('v1', [
           
         $api->post('store/pay/ali/notify', 'AliPayController@notify');
         $api->get('store/pay/ali/return', 'AliPayController@AliReturn');
+
         //添加分类
         $api->post('store/categorie', 'CategorieController@store');
         
@@ -234,7 +235,6 @@ $api->version('v1', [
         $api->post('store/wechatpay/notify', 'WechatPayController@notify');
 
         $api->get('wechatpay/index', 'WechatPayController@index');
-
 
         $api->get('store', 'CategorieController@store');
 

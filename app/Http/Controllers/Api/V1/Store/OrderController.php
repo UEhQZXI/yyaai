@@ -66,6 +66,7 @@ class OrderController extends Controller
             DB::rollback();
             return $this->response->array(['message' => '添加订单失败，请重试', 'data' => []]);
         }
+
     }
     public function update(OrderRequest $request, $order)
     {
@@ -104,5 +105,4 @@ class OrderController extends Controller
         $data = Order::with(['orderInfo', 'address', 'orderInfo.product'])->find($order);
         return $this->response->array(['message' => 'success', 'data' => $data]);
     }
-
 }
