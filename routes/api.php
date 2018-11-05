@@ -159,13 +159,14 @@ $api->version('v1', [
                 $api->patch('store/cart/{cart}', 'CartController@update')
                     ->name('api.store.cart.update');
 
-                // 查询当前登录用户的购物车信息
-                $api->get('store/cart', 'CartController@userIndex')
-                    ->name('api.store.cart.userIndex');
-
                 // 结算页面接口
                 $api->post('store/cart/count', 'CartController@show')
                     ->name('api.store.cart.show');
+
+
+                // 查询当前登录用户的购物车信息
+                $api->get('store/cart', 'CartController@userIndex')
+                    ->name('api.store.cart.userIndex');
 
                 // 新增收货地址
                 $api->post('store/address', 'AddressController@store')
@@ -186,6 +187,7 @@ $api->version('v1', [
                 $api->get('store/address/{address}', 'AddressController@userIndex')
                     ->name('api.store.address.userIndex');
 
+
                 //添加订单
                 $api->post('store/order', 'OrderController@store');
 
@@ -197,6 +199,7 @@ $api->version('v1', [
 
                 $api->get('store/pay/alipay/{order}', 'AliPayController@store')
                     ->name('api.store.pay.alipay.store');
+
             });
         });
     });
@@ -205,6 +208,9 @@ $api->version('v1', [
     $api->group([
         'namespace' => 'Store',
     ], function ($api) {
+          
+        $api->post('store/pay/ali/notify', 'AliPayController@notify');
+        $api->get('store/pay/ali/return', 'AliPayController@AliReturn');
         //添加分类
         $api->post('store/categorie', 'CategorieController@store');
         
@@ -222,6 +228,10 @@ $api->version('v1', [
 
         //查询所有订单
         $api->get('store/orders', 'OrderController@index');
+
+
+        $api->get('store/wechatpay/index', 'WechatPayController@index');
+        $api->post('store/wechatpay/notify', 'WechatPayController@notify');
 
         $api->get('wechatpay/index', 'WechatPayController@index');
 

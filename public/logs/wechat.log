@@ -168,3 +168,7 @@
 
 2018-10-30 18:33:39 > DEBUG > Request To Wechat Api ["https://api.mch.weixin.qq.com/pay/unifiedorder",{"appid":"wx81885922a85a8519","mch_id":"1490055842","nonce_str":"9LEeEPkcGF8qjM3R","notify_url":"http://47.100.3.125/api/wechatpay/success","sign":"6ED26AAA0789547B2B9DF1E36415815F","trade_type":"APP","spbill_create_ip":"127.0.0.1","out_trade_no":"re","body":"医牙啊-商品购买","total_fee":500000,"sub_appid":null}] 
 
+2018-11-02 10:31:20 > INFO > Starting To Find An Wechat Order ["https://api.mch.weixin.qq.com/",{"appid":"wx81885922a85a8519","mch_id":"1490055842","nonce_str":"wKvmfn3mHL8XJWxs","sign":"7C02F6D3E8995FC569D8AF8866322392","spbill_create_ip":"127.0.0.1","out_trade_no":"reefg4rpb0f"}] 
+
+2018-11-02 10:33:10 > INFO > Starting To Find An Wechat Order ["https://api.mch.weixin.qq.com/",{"appid":"wx81885922a85a8519","mch_id":"1490055842","nonce_str":"UmSeJbPO8I8304LP","sign":"000C40331932A10C7E7205FD7716BD12","spbill_create_ip":"127.0.0.1","out_trade_no":"reefg4rpb0f"}] 
+
