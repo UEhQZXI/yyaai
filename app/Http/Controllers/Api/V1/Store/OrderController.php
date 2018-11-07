@@ -61,7 +61,7 @@ class OrderController extends Controller
             }
 
             DB::commit();
-            return $this->response->array(['message' => '添加成功', 'data' => []]);
+            return $this->response->array(['message' => '添加成功', 'data' => ['order_number' => $data['order_number']]]);
         } catch (Exception $e) {
             DB::rollback();
             return $this->response->array(['message' => '添加订单失败，请重试', 'data' => []]);
