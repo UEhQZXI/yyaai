@@ -17,3 +17,13 @@ Route::get('/', function () {
 
 Route::get('/test', 'Api\V1\Store\WechatPayController@test');
 
+Route::get('admin/index', 'Admin\IndexController@index');
+//管理员
+Route::get('admin/user/index', 'Admin\AdminController@indexview');
+Route::post('admin/admin', 'Admin\AdminController@store');
+Route::get('admin/user/updateview/{admin_id}', 'Admin\AdminController@updateview');
+Route::patch('admin/user/update/{admin_id}', 'Admin\AdminController@update');
+Route::delete('admin/user/destroy', 'Admin\AdminController@destroy');
+
+//权限管理
+Route::get('admin/role/view', 'Admin\RoleController@indexview');
