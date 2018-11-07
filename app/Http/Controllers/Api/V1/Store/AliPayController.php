@@ -29,13 +29,13 @@ class AliPayController extends Controller
             return $this->response->error('This action is unauthorized.', 403);
         }
 
-        // 调用支付宝手机网站支付
         $order = [
             'out_trade_no' => $order->order_number,
             'total_amount' => $order->sum_price,
             'subject' => env('APP_STORE_NAME', ''),
         ];
 
+        // 调用支付宝手机网站支付
         return Pay::alipay()->wap($order);
     }
 
