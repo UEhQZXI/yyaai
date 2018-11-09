@@ -281,7 +281,7 @@
                 </div>
             </div><!-- #sidebar-shortcuts -->
             <ul class="nav nav-list" id="nav_list">
-                <li class="home"><a href="javascript:void(0)" name="home.html" class="iframeurl" title=""><i
+                <li class="home"><a href="/admin/index" name="home.html" class="iframeurl" title=""><i
                                 class="icon-dashboard"></i><span class="menu-text"> 系统首页 </span></a></li>
                 <li><a href="#" class="dropdown-toggle"><i class="icon-desktop"></i><span
                                 class="menu-text"> 产品管理 </span><b class="arrow icon-angle-down"></b></a>
@@ -290,7 +290,7 @@
                                             class="iframeurl"><i class="icon-double-angle-right"></i>商品列表</a></li>
                         {{--<li class="home"><a href="javascript:void(0)" name="Brand_Manage.html" title="品牌管理"--}}
                                             {{--class="iframeurl"><i class="icon-double-angle-right"></i>品牌管理</a></li>--}}
-                        <li class="home"><a href="javascript:void(0)" name="Category_Manage.html" title="分类管理"
+                        <li class="home"><a href="/admin/categorie/view" name="Category_Manage.html" title="分类管理"
                                             class="iframeurl"><i class="icon-double-angle-right"></i>分类管理</a></li>
 
                     </ul>
@@ -445,7 +445,7 @@
 
 <div class="footer_style" id="footerstyle">
     <p class="l_f">版权所有：上海天医数据科技有限公司</p>
-    <p class="r_f">地址：南京市鼓楼区阅江楼街道公共路64号 邮编：210011 技术支持：XXXX</p>
+    <p class="r_f">技术支持：上海天医数据科技有限公司技术研发中心</p>
 </div>
 <!--修改密码样式-->
 <div class="change_Pass_style" id="change_Pass">

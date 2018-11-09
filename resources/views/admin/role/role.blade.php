@@ -10,8 +10,8 @@
 <link href="/admin/role/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <script src="/admin/role/js/jquery.min.js"></script>
 <link href="/admin/role/css/font-awesome.css" rel="stylesheet"> 
-<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-<link href="http://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+<!-- <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet"> -->
 </head>
 <body>
 	<div class="main">
