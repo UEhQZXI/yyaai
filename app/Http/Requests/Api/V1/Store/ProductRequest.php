@@ -28,34 +28,37 @@ class ProductRequest extends FormRequest
             return [
                     'category_id' => 'required|int',
                     'title' => 'required|string',
-                    'description' => 'string',
+                    'description' => '',
                     'model' => 'required|string',
                     'original_price' => 'required',
+                    'group_number' => '',
+                    'numbering' => '',
                     'current_price' => 'required',
                     'inventory' => 'required|int',
                     'status' => 'required|int',
                     'image1' => 'required|string',
-                    'image2' => 'string',
-                    'image3' => 'string',
-                    'image4' => 'string',
-                    'image5' => 'string',
+                    'image2' => '',
+                    'image3' => '',
+                    'image4' => '',
+                    'image5' => '',
                 ];
                 break;
         case 'PATCH':
             return [
                     'category_id' => 'int',
                     'title' => 'string',
-                    'description' => 'string',
+                    'description' => '',
                     'model' => 'string',
+                    'numbering' => '',
                     'original_price' => '',
                     'current_price' => '',
                     'inventory' => 'int',
                     'status' => 'int',
                     'image1' => 'string',
-                    'image2' => 'string',
-                    'image3' => 'string',
-                    'image4' => 'string',
-                    'image5' => 'string'
+                    'image2' => '',
+                    'image3' => '',
+                    'image4' => '',
+                    'image5' => ''
                 ];
                 break;
         default:

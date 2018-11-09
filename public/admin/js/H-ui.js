@@ -9,17 +9,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
   document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
 }
 /*****宽窄屏幕自适应****/
-$(document).ready(function(){
-if(screen.width > 1366 && $(window).width() > 1366)
-{
-	window.onresize=function(){ location=location };
-	$("html").addClass("Narrow");
-}
-else{
-	window.onresize=function(){ location=location };	
-	$("html").addClass("Resolution");
-	}
-});/*添加收藏
+/*添加收藏
 <a title="收藏本站" href="javascript:;" onClick="addFavoritepage('H-ui前端框架','http://www.h-ui.net/');">收藏本站</a>
 */
 /*收藏主站*/

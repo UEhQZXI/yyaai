@@ -103,7 +103,7 @@ var CodeMirror = (function() {
             if (options.fixedGutter) gutter.style.left = scroller.scrollLeft + "px";
             if (options.onScroll) options.onScroll(instance);
         });
-        connect(window, "resize", function() {updateDisplay(true);});
+        // connect(window, "resize", function() {updateDisplay(true);});
         connect(input, "keyup", operation(onKeyUp));
         connect(input, "input", fastPoll);
         connect(input, "keydown", operation(onKeyDown));

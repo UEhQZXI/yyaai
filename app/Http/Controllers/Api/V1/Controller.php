@@ -11,12 +11,25 @@ class Controller extends BaseController
 {
     use Helpers;
 
-    private $upload_host = 'http://m.iyaa180.com/uploads/';
+    private $upload_host;
+
+    public function __construct()
+    {
+        $this->upload_host = env('APP_URL');
+    }
+
     //文件上传
     public function upload(UploadRequest $request)
     {
-    	$path = $request->file->store($request->type);
-
-    	return $this->response->array(['message' => 'success', 'data' => ['path' => $this->upload_host . $path]]);
+        if ($request->hasFile('file') && $request->file('file')[0]->isValid()) {
+            $photo = $request->file('file')[0];
+            $extension = $photo->extension();
+            $dir = 'images';
+            $filename = time() . uniqid() . '.' . $extension;
+            $store_result = $photo->storeAs($dir, $filename, 'upload');
+            $path = env('APP_URL') . $dir . '/' . $filename;
+            return $this->response->array(['message' => '上传成功', 'data' => ['path' => $path]]);
+        }
+        exit('未获取到上传文件或上传过程出错');
     }
 }

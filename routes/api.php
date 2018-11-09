@@ -137,11 +137,6 @@ $api->version('v1', [
             $api->post('advisory/replies/{replies}/{childReplies?}', 'AdvisoryReplyReplyController@store')
                 ->name('api.advisory.replies.replies.store');
 
-            //文件上传
-            $api->post('upload', 'Controller@upload')
-                ->name('api.Controller.upload');
-
-
             $api->group(['namespace' => 'Store'], function ($api) {
 
                 $api->post('store/cart', 'CartController@store')
@@ -203,7 +198,9 @@ $api->version('v1', [
             });
         });
     });
-
+//文件上传
+    $api->post('upload', 'Controller@upload')
+        ->name('api.Controller.upload');
 
     $api->group([
         'namespace' => 'Store',

@@ -51,6 +51,9 @@ class ProductController extends Controller
      */
     public function update(ProductRequest $request, $product)
     {
+        if ($request->has('fileuploader-list-file')) {
+            unset($request['fileuploader-list-file']);
+        }
         Product::where('id', $product)
             ->update($request->all());
 
@@ -72,7 +75,7 @@ class ProductController extends Controller
             $query->where('category_id', $category_id);
         }
 
-        $products = $query->paginate(10);
+        $request->has('total') ? $products = $query->get() : $products = $query->paginate(10);
 
         // return $this->response->paginator($products, new ProductTransformer());
         return $this->response->array(['message' => 'success', 'data' => $products]);
