@@ -45,6 +45,33 @@ class CategorieController extends Controller
      						? $query->where('pid', $request->pid)
      						: $query->where('pid', 0);
      	$data = $query->get();
+
+        if ($request->has('type') && $request->type == 'admin')
+        {
+            $data = $data->toArray();
+            $result = Categories::get()->toArray();
+
+            foreach ($result as $key => $val) {
+                if ($val['pid'] == 0) {
+                    continue;
+                } else {
+                    foreach ($data as $k => $v) {
+                        if ($v['id'] == $val['pid']) {
+                            $data[$k]['son'][] = $val;
+                        } else {
+                            //
+                        }
+                    }
+                }
+            }
+
+            foreach ($data as $key => $val) {
+                if (!array_key_exists('son', $val)) {
+                    $data[$key]['son'] = [];
+                }
+            }
+        }
+
      	return $this->response->array(['message' => 'success', 'data' => $data]);
      }
 }

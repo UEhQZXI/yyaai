@@ -31,6 +31,6 @@ class Order extends Model
 
     public function address()
     {
-        return $this->hasOne('App\Models\Store\Address', 'id');
+        return $this->hasOne('App\Models\Store\Address', 'id', 'address_id');
     }
 }

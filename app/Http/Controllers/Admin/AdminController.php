@@ -6,7 +6,7 @@ use App\Http\Requests\Admin\AdminRequest;
 use App\Http\Controllers\Api\V1\Controller;
 use App\Models\Admin\Admin;
 
-class AdminController extends Controller
+class AdminController extends MiddleController
 {
 	public function indexview()
 	{
@@ -29,7 +29,7 @@ class AdminController extends Controller
     	$data = $admin->fill($request->except(['password']));
     	$admin->create_time = $admin->login_time = date('Y-m-d H:i:s');
     	$admin->login_ip = $_SERVER['REMOTE_ADDR'];
-    	$admin->password = encrypt($request->password);
+    	$admin->password = md5($request->password);
     	$admin->save();
 
     	return $this->response->array(['message' => '添加管理员成功', 'data' => []]);

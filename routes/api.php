@@ -24,6 +24,10 @@ $api->version('v1', [
         'limit' => config('api.rate_limits.sign.limit'),
         'expires' => config('api.rate_limits.sign.expires'),
     ], function ($api) {
+         //文件上传
+        $api->post('upload', 'Controller@upload')
+                ->name('api.Controller.upload');
+                
         // 发送短信验证码
         $api->post('verificationCodes', 'VerificationCodesController@store')
             ->name('api.verificationCodes.store');
@@ -137,10 +141,6 @@ $api->version('v1', [
             $api->post('advisory/replies/{replies}/{childReplies?}', 'AdvisoryReplyReplyController@store')
                 ->name('api.advisory.replies.replies.store');
 
-            //文件上传
-            $api->post('upload', 'Controller@upload')
-                ->name('api.Controller.upload');
-
 
             $api->group(['namespace' => 'Store'], function ($api) {
 
@@ -195,7 +195,7 @@ $api->version('v1', [
                 $api->get('store/user/orders', 'OrderController@userIndex');
 
                 //查询订单详情
-                $api->get('store/order/{order}', 'OrderController@show');
+                
 
                 $api->get('store/pay/alipay/{order}', 'AliPayController@store')
                     ->name('api.store.pay.alipay.store');
@@ -208,7 +208,7 @@ $api->version('v1', [
     $api->group([
         'namespace' => 'Store',
     ], function ($api) {
-          
+          $api->get('store/order/{order}', 'OrderController@show');
         $api->post('store/pay/ali/notify', 'AliPayController@notify');
         $api->get('store/pay/ali/return', 'AliPayController@AliReturn');
 
@@ -255,6 +255,7 @@ $api->version('v1', [
 
         $api->get('store/products/user/new', 'ProductController@userExclusive')
             ->name('api.store.product.userExclusive');
+
     });
 });
 
