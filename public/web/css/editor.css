@@ -34,7 +34,7 @@ button.baocun{
     background-color:orange !important;
     width: 6rem;
     height: 1.0667rem;
-    margin-top: 1.0667rem;
+    margin-top:0.7rem;
     margin-left: 20%;
     color: #fff;
     border-radius:0.5rem; 
@@ -44,8 +44,12 @@ label{
     font-size: 15px;
     color: #000;
 }
-textarea{
-    /* height: 40px !important;
-    margin-right: 0.6rem; */
+textarea{ 
     font-size: 0.4rem
+}
+._citys{
+    height: 100% !important;
+}
+#PoPy{
+    height: 50% !important;
 }

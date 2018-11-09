@@ -2,7 +2,9 @@
 $(function(){
     
     var toke = localStorage.getItem("token")
-
+    
+    // 安卓下拉刷新不生效解决
+    var h5pullDown = true;
   
     // 删除购物车商品
     $(".mui-scroll").on("tap",".btn_delete",function(){
@@ -90,6 +92,9 @@ $(function(){
             
             var num = $("input[type='checkbox']:checked").length;
             $(".chooseNum").text("(" + num + ")")
+            if(num==0){
+                $(".chooseNum").text("")
+            }
 
             $(":checked").each(function () {
               var price = $(this).data("price");
@@ -105,7 +110,6 @@ $(function(){
 
     $("body").on("tap","#pays",function(){
        
-        alert(123)
         var money = $(".totalPrice .total").text();
         var _arr=[];
         console.log(money)
@@ -157,8 +161,11 @@ $(function(){
                       mui(".mui-numbox").numbox()
                     },300)
                 }
-                if(res.status_code == 422){
-                    mui.toast("商品库存不足")
+            },
+            error:function(res){
+                console.log(res)
+                if(res.status == 422){
+                    mui.toast(res.data.message)
                 }
             }
         })

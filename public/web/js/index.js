@@ -3,13 +3,12 @@ mui('.mui-scroll-wrapper').scroll({
   });
   
   mui(".mui-slider").slider({
-    interval: 1000
+    interval: 3000
   });
   
 
   $(function(){
-      
-    //  新手专享
+    //  为你推荐
      $.ajax({
        type:"GET",
        url:"http://47.100.3.125/api/store/products/user/new",
@@ -17,11 +16,16 @@ mui('.mui-scroll-wrapper').scroll({
          console.log(res)
          $("#new").html(template("tpl_new",{list:res.data}))
        }
-     })
+     });
 
-
-
-
-
-
+     // 每日精选
+     $.ajax({
+      type:"GET",
+      url:"http://47.100.3.125/api/store/products/user/new?today=true",
+      success:function(res){
+        console.log('------每日精选------');
+        console.log(res)
+        $("#qianggou").html(template("today_r",{list:res.data}))
+      }
+    });
   })

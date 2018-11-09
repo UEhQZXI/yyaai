@@ -67,13 +67,16 @@ $(function(){
             },
             type:"GET",
             success: function(res){
-                // console.log(res);
+                console.log(res)
                 if(res.status_code == 200){
                   $(".address").html(template("tpl_address",{row:res.data}))
                   for(var i=0;i<res.data.length;i++){
-                    //  console.log(res.data[i])
-                     if(res.data[i].is_default == 1){
-                         localStorage.setItem("address",res.data[i].id)
+                    console.log(res.data[i])
+                     if(res.data[i].is_default == 1){                     
+                        localStorage.setItem("address",res.data[i].id)
+                     }
+                     if(!res.data[i].is_default == 1){
+                        
                      }
                   }
                 }
@@ -107,7 +110,15 @@ $(function(){
     
     update()
    
-
+    function isWeiXin(){
+        var ua = window.navigator.userAgent.toLowerCase();  
+            if(ua.match(/MicroMessenger/i) == 'micromessenger'){    
+                return true;   
+            }else{    
+                return false;    
+        }    
+    }
+    
     // 添加订单
     $(".sumbit").on("tap",function(){
         if(addlength == ""){
@@ -129,7 +140,25 @@ $(function(){
                     cart_ids:ids
                 },
                 success:function(res){
-                    // console.log(res)
+                    console.log(res)
+                    var order_num = res.data.order_number
+                    if(res.status_code == 200){
+                        if(isWeiXin()){
+                            alert(123)        
+                            $.ajax({
+                                type:"GET",
+                                url:"http://m.iyaa180.com/api/store/wechatpay/index",
+                                data:{
+                                    order_id:order_num
+                                },
+                                success:function(res){
+                                    console.log(res)
+                                }
+                            })
+                        }else{
+                            location.href = "http://47.100.3.125/api/store/pay/alipay/" + order_num +"?token=" + toke
+                        }
+                    }
                 }
             })
         }else{
@@ -149,7 +178,25 @@ $(function(){
                     product_id:pid
                 },
                 success:function(res){
-                    // console.log(res)
+                    console.log(res)
+                    var order_num = res.data.order_number
+                    if(res.status_code == 200){
+                        if(isWeiXin()){
+                            alert(123)          
+                            $.ajax({
+                                type:"GET",
+                                url:"http://m.iyaa180.com/api/store/wechatpay/index",
+                                data:{
+                                    order_id:order_num
+                                },
+                                success:function(res){
+                                    console.log(res)
+                                }
+                            })
+                        }else{
+                            location.href = "http://47.100.3.125/api/store/pay/alipay/" + order_num +"?token=" + toke
+                        }
+                    }
                 }
             }) 
         }
@@ -166,5 +213,7 @@ $(function(){
             //    console.log(res)
            }
         })
+
     })
+
 })

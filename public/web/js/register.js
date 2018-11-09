@@ -12,11 +12,11 @@ $(function () {
       return false
     }
     var $this = $(this);
-    $this.prop("disabled", true).addClass("disabled").text("发送中...");
+    $this.prop("disabled", true).addClass("disabled")
     var count = 5;
     var timer = setInterval(function () {
       count--;
-      $this.text(count+"秒后再次发送");
+      $this.text(count+"s");
 
       //当时间为0
       if(count === 0){
@@ -35,17 +35,22 @@ $(function () {
         phone:tel
       },
       success:function(res){
-        console.log(res)
-        localStorage.setItem("key",res.data.key)
-       console.log(typeof(res.data.key))
-      }
+         console.log(res)
+         localStorage.setItem("key",res.data.key)
+         console.log(typeof(res.data.key))
+      },
+      error:function(res){
+        if(res.status == 422){
+          mui.toast("手机号已注册")
+        }
+      } 
     });
 
   });
 
 
   //注册功能
-  $(".btn_register").on("click", function (e) {
+  $(".regster").on("click", function (e) {
     e.preventDefault();
 
     var username = $("[name='username']").val();
@@ -54,23 +59,24 @@ $(function () {
     var mobile = $("[name='mobile']").val();
     var vCode = $("[name='vCode']").val();
 
-    // if(!username){
-    //   mui.toast("请输入用户名");
-    //   return false;
-    // }
+    
+    if(!mobile){
+      mui.toast("请输入手机号");
+      return false;
+    }
+    
+    if(password.length<6){
+      mui.toast("密码长度至少为6位");
+      return false;
+    }
 
     if(!password){
       mui.toast("请输入密码");
       return false;
     }
 
-    // if(repassword != password){
-    //   mui.toast("两次输入的密码不一致");
-    //   return false;
-    // }
-
-    if(!mobile){
-      mui.toast("请输入手机号");
+    if(repassword != password){
+      mui.toast("两次输入的密码不一致");
       return false;
     }
 
@@ -96,9 +102,10 @@ $(function () {
         password:password
       },
       success:function(res){
-        if(res.avatar){
+        console.log(res)
+        if(res.status_code == 200){
            mui.toast("注册成功")
-           location.href = "login.html"
+          //  location.href = "login.html"
         }
        
       }

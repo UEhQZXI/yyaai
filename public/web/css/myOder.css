@@ -99,6 +99,9 @@ li{
 .content{
     margin-bottom: 10px;
 }
+.goodTotal{
+    position: relative;
+}
 span.mall{
     margin-bottom: 0.2rem;
     display: inline-block;
@@ -107,18 +110,25 @@ span.mall{
 }
 span.status{
     position: absolute;
-    right:1rem;
+    right:0.6rem;
     color:red;
 }
 span.price{
-    float: left;
+   position: absolute;
+   right:0rem;
     
   }
 p.goods{
-    width:4.8rem;
-    height: auto;
+    width:4.2rem;
     float: left;
     margin-left: 0.3rem;
+    font-size: 0.35rem;
+    color: #000;
+}
+span.nums{
+    position: absolute;
+    right:0rem;
+    top: 0.6rem;
 }
 .payment{
     overflow: hidden;
@@ -189,7 +199,8 @@ span.pay{
     line-height:0.7rem;
     display: block;
     margin-left: 0.4rem;
-    border: 1px solid #dedede
+    border: 1px solid #dedede;
+    z-index: 888;
 }
 span.wuliu{
     float: right;
@@ -200,7 +211,7 @@ span.wuliu{
     line-height:0.7rem;
     display: block;
     margin-left: 0.4rem;
-    border: 1px solid #dedede
+    border: 1px solid #dedede;
 }
 
 .delivery_good{

@@ -12,7 +12,7 @@
   .Ty_header p{
       text-align: center;
       color: #000;
-      font-size: 18px;
+      font-size: 0.4rem;
       margin-bottom: 0 !important;
       height: 1.3333rem;
       line-height:1.3333rem;
@@ -28,11 +28,11 @@
       color: #333;
   }
   div.mui-slider-handle{
-      height: 2.5rem !important;
+      height: 3rem !important;
       border-radius:0.2rem; 
   }
   .mui-slider-right{
-     height: 2.5rem !important;
+     height: 3rem !important;
      margin-top: 11px;
   }
   .mui-scroll li{
@@ -41,7 +41,7 @@
   }
 .mui-table-view li .ck{
     position: absolute;
-    left: 0.2667rem;
+    left: 0.25rem;
 }
 .mui-table-view li .img_box img{
     position: absolute;

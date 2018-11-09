@@ -26,21 +26,48 @@ var tools = {
 
 $(function(){
     
-    // $(".user").on("tap",function(){
-    //     var token = localStorage.getItem("token")
-    //     // if(token){
-    //     //   alert(123)
-    //     //   location.href = "userInfo.html"
-    //     // }else{
-    //     //   location.href = "user.html"
-    //     // }
-
-    //     location.href = "userInfo.html"
-    // })
+  // function is_browser(){
+  //   var ua = navigator.userAgent.toLowerCase();
+  //   console.log(ua)
+  //   if(ua.match(/MicroMessenger/i)=="micromessenger") {
+  //       return true;//微信打开
+  //   }else if(ua.match(/qq/i)=="qq"){
+  //       return true;//QQ打开
+  //   }else if(ua.match(/aliapp/i)=="aliapp"){
+  //       return true;//支付宝打开 aliapp
+  //   }else{
+  //       return false;
+  //   }
+  // }
    
-  
+  // is_browser()
+
+  function isWeiXin(){
+
+    var ua = window.navigator.userAgent.toLowerCase();
+
+    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+
+        return true;
+
+    }else{
+
+        return false;
+
+    }
+
+}
 
 
+// if(isWeiXin()){
+
+// alert(1);
+
+// }else{
+
+// alert(2);
+
+// }
 
 
 

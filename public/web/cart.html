@@ -43,7 +43,7 @@
     </div>
   <div class="totalPrice mui-clearfix" style="z-index:666">
        <div class="pay">
-            <span style="font-size: 0.32rem;">合计： <span style="color:orange">&yen;  <span class="total" style="font-size: 0.35rem">00</span></span></span>
+            <span style="font-size: 0.32rem;">合计： <span style="color:orange">&yen;  <span class="total" style="font-size: 0.35rem">0.00</span></span></span>
             <a href="#" id="pays">结算<span class="chooseNum"></span></a>
        </div>
   </div>
@@ -85,11 +85,11 @@
 
 <script type="text/html" id="tpl_car">
    {{ if list.length == 0}}
-       <span style="margin-top:2rem;display:block;margin-left:3.5rem;">购物车竟然是空的</span>
+       <span style="display:block;text-align:center;padding-top:100px;">购物车竟然是空的</span>
    {{/if}}
    
    {{each list v i}}
-                <li class="mui-table-view-cell mui-transitioning" style="position: relative;padding-left:0px;borde-bottomr:1px solid #dedede;" data-id="{{v.id}}">
+                <li class="mui-table-view-cell mui-transitioning" style="position: relative;padding-left:0px;" data-id="{{v.id}}">
                     <div class="mui-slider-right mui-disabled">
                       <a class="mui-btn mui-btn-blue mui-icon mui-icon-compose btn_edit"
                          data-id="{{v.id}}" data-num="{{v.product_number}}"></a>
@@ -97,11 +97,11 @@
                     </div>
                     <div class="mui-slider-handle mui-clearfix">
                       <div class="mui-input-row mui-checkbox mui-left" style="width:3.5rem;margin:0" >
-                        <input name="checkbox1" value="Item 1" type="checkbox"  style="height:0.4rem;width:0.4rem !important;margin-right:0;margin-top:0.6rem;"class="ck" data-price="{{v.product.current_price}}" data-num="{{v.product_number}}"  data-id="{{v.id}}">
-                        <img src="{{v.product.image3}}" alt="" style="width:1.6rem;height:1.6rem;margin-left:1.6rem;margin-top:0.4rem;">
+                        <input name="checkbox1" value="Item 1" type="checkbox"  style="height:0.4rem;width:0.4rem !important;margin-right:0;margin-top:0.9rem;"class="ck" data-price="{{v.product.current_price}}" data-num="{{v.product_number}}"  data-id="{{v.id}}">
+                        <img src="{{v.product.image1}}" alt="" style="width:1.6rem;height:1.6rem;margin-left:1.5rem;margin-top:0.6rem;">
                       </div>
-                      <div class="info_box" style="position:absolute;top:0px;left:4rem;">
-                        <p style="margin-bottom:0.2667rem;margin-top:0.4rem;">{{v.product.title}}</p>
+                      <div class="info_box" style="position:absolute;top:0px;left:3.5rem;">
+                        <p style="margin-bottom:0.2667rem;margin-top:0.4rem;color:#000;font-size:0.35rem;width:5.5rem;margin-bottom:0px;">{{v.product.title}}</p>
                         <span>数量:{{v.product_number}}</span><br>
                         <span style="color:red">&yen;{{v.product.current_price}}</span>
                       </div>

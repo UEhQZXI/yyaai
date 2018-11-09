@@ -83,7 +83,10 @@
   {{/if}}
   {{each row v i}}
       <li data-id = {{v.id}}>
-          <a href="searchList.html?id={{v.id}}">{{v.name}}</a>
+          <a href="searchList.html?id={{v.id}}">
+            <img src="{{v.image}}" alt="">
+            <span>{{v.name}}</span>
+          </a>
       </li>
   {{/each}}
 </script>

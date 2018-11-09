@@ -206,12 +206,14 @@ img{
     float: left;
     width: 5.8rem;
     margin-left: 0.6rem;
+    font-size: 0.4rem;
+    color: #000;
 }
 .picImg span.price{
     float: left;
     margin-left: 0.6rem;
     color: red;
-    font-size: 18px;
+    font-size: 0.4rem;
 }
 .picImg span.number{
     float: right;

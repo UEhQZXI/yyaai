@@ -42,7 +42,6 @@ $(function(){
   // 获取地址栏参数
 
   var id = tools.getSearch("id")
-  console.log(id)
   
   if(id == 0){
 
@@ -112,7 +111,7 @@ $(function(){
         }
       });
   }
-  
+  all()
   // 待付款
   function pay(){
     $(".loading").show()
@@ -265,8 +264,7 @@ $(function(){
     //     console.log(e)
     // })
     $.ajax({
-      method:"patch",
-      dataType:'json',
+      type:"patch",
       url:"http://47.100.3.125/api/store/order/" + id,
       headers: {
         'Authorization': `Bearer ` + toke,
@@ -278,6 +276,12 @@ $(function(){
         console.log(res)
       }
     })
+  })
+
+
+  $("body").on("tap",".content",function(){
+    var id = $(this).data("id")
+      location.href = "orderDetail.html?id=" + id
   })
 
 })

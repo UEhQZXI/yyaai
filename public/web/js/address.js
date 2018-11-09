@@ -2,7 +2,6 @@
 $(function(){
 
     var toke = localStorage.getItem("token")
-    console.log(toke)
     $.ajax({
       url: 'http://47.100.3.125/api/store/address',
       headers: {
@@ -10,17 +9,25 @@ $(function(){
       },
       type:"GET",
       success: function(res){
-          console.log(res);
+          console.log(res.data);
           if(res.status_code == 200){
-              $("#addList").html(template("tpl_add",{list:res.data}))
+              $.each(res.data,function(i,v){
+                  if(v.is_default == 1){
+                      console.log(v)
+                      console.log(i)
+                      res.data.splice(i,1)
+                      console.log(res.data)
+                      res.data.unshift(v)
+                      console.log(res.data)
+                  }
+              })
+              $("#addList").html(template("tpl_add",{list:res.data}))       
           }
       }
     });
 
     $("#addList").on("tap",".addressLIst",function(){
             var areaId = $(this).data("id")
-        //  location.href = "createOrder.html?id=" + areaId
-
             var search = location.search;
                 console.log(search)
                 if (search.indexOf("retUrl") != -1) {
@@ -30,5 +37,16 @@ $(function(){
                 }else{
                   
             }
+       })
+    
+    $(".link").on("tap",function(){
+        var search = location.search;
+        if (search.indexOf("retUrl") != -1) {
+            //说明需要回跳
+            search = search.replace("?retUrl=", "");
+            location.href = search
+          }else{
+            location.href = "userInfo.html"
+        }
     })
 })

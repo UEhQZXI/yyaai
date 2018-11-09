@@ -61,7 +61,7 @@
         <li data-id="{{v.id}}">
             <p class="mall">天医商城</p>
             <div class="despiit">
-                <img src="{{v.product.image2}}" alt="">
+                <img src="{{v.product.image1}}" alt="">
                 <p>{{v.product.title}}</p>
                 <span class="price">&yen;{{v.product.current_price}}</span>
                 <span class="number">x{{v.product_number}}</span>
@@ -75,18 +75,27 @@
 <!-- 地址 -->
 <script type="text/html" id="tpl_address">
   {{if row.length == 0}}
-      <a href="addAddress.html?retUrl=createOrder.html" style="width:100%;height:2rem;text-align:center;display:block;line-height:2rem">您还没有收货地址,点击添加</a>
+      <a href="addAddress.html?retUrl=createOrder.html" style="width:100%;height:2rem;text-align:center;display:block;line-height:2rem">您还没有默认收货地址,点击添加</a>
   {{/if}}
-  {{each row v i}}
-    {{if v.is_default == 1}}
+  <!-- {{each row v i}}
+    {{if v.is_default == 1}} -->
       <a href="address.html?retUrl=createOrder.html" data-id="{{v.id}}" class="addressid">
           <span class="mui-icon mui-icon-location add"></span>
-          <span class="person">收货人:<span class="per">{{v.user_name}}</span></span>
-          <span class="tel">{{v.user_phone}}</span>
-          <p>收货地址:<span class="areaThose">{{v.area1}}{{v.area2}}{{v.area3}}{{v.address}}</span></p>
+          <span class="person">收货人:<span class="per">{{row[0].user_name}}</span></span>
+          <span class="tel">{{row[0].user_phone}}</span>
+          <p>收货地址:<span class="areaThose">{{row[0].area1}}{{row[0].area2}}{{row[0].area3}}{{row[0].address}}</span></p>
           <span class="mui-icon mui-icon-arrowright right"></span>
       </a>
-    {{/if}}
+    <!-- {{/if}} -->
+    <!-- {{if !v.is_default == 1 && v.is_default == 0}}
+        <a href="address.html?retUrl=createOrder.html" data-id="{{v.id}}" class="addressid">
+            <span class="mui-icon mui-icon-location add"></span>
+            <span class="person">收货人:<span class="per">{{row[0].user_name}}</span></span>
+            <span class="tel">{{row[0].user_phone}}</span>
+            <p>收货地址:<span class="areaThose">{{row[0].area1}}{{row[0].area2}}{{row[0].area3}}{{row[0].address}}</span></p>
+            <span class="mui-icon mui-icon-arrowright right"></span>
+        </a>
+    {{/if}} -->
   {{/each}}
 </script>
 

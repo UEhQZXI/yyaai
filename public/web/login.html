@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
     <title>登录</title>
     <link rel="stylesheet" href="lib/mui/css/mui.css">
     <link rel="stylesheet" href="css/login.css">
@@ -11,44 +11,38 @@
 </head>
 <body>
     <div class="Login">
-        <div class="loginTop">
-            <a class="icon_left" href="javascript:history.go(-1);">
-            <i class="mui-icon mui-icon-arrowleft"></i>
-            </a>
-            <p>登录</p>
-           
+        <div class="top">
+            <a href="user.html" class="go"><span class="mui-icon mui-icon-arrowleft"></span></a>
+            <span class="mall">登录天医商城</span>
+            <a href="register.html" class="regsiter">注册</a>
         </div>
-        <form class="mui-input-group" id="loginForm">
-            <div class="mui-input-row">
-                <label>用户名</label>
-            <input type="text" class="mui-input-clear" placeholder="请输入用户名">
+        <div class="form_login">
+            <div class="form_item">
+                <span class="mui-icon mui-icon-person"></span>
+                <div class="input_box">
+                     <input type="text" placeholder="手机/用户名" class="user">
+                     <i class="mui-icon mui-icon-closeempty user_delete"></i>
+                </div>
             </div>
-            <div class="mui-input-row">
-                <label>密码</label>
-                <input type="password" class="mui-input-password" placeholder="请输入密码">
+            <div class="form_item">
+                <span class="mui-icon mui-icon-locked"></span>
+                <div class="input_box">
+                     <input type="password" placeholder="请输入密码" style="border:0 !important;"  class="psd">
+                     <i class="mui-icon mui-icon-closeempty psd_delete"></i>
+                </div>
             </div>
-            <!-- <div class="mui-button-row">
-                <button type="button" class="mui-btn log_btn">登录</button>
-            </div> -->
-        </form>
-        <button class="login_btn">登录</button>
-        <a href="Forget.html" class="mui-pull-right" style="margin-top:10px;margin-right:8px;color: #333">忘记密码?</a>
-        <a href="register.html" class="register mui-pull-left" style="margin-top:10px;margin-left:8px;color: #333">快速注册</a>
-        <!-- <div class="loginThree">
-            <span>第三方登录</span>
-            <img src="images/weixin.png" alt="">
-        </div> -->
+        </div>
+        <div class="remember_login">
+             <a href="Forget.html">忘记密码?</a>
+        </div>
+        <div class="login_btn">
+            <span class="login">登录</span>
+        </div>
     </div>
-
-
-
-
-
 
     <script src="lib/mui/js/mui.js"></script>
     <script src="lib/lib-flexible/flexible.js"></script>
     <script src="lib/zepto/zepto.min.js"></script>
-    <!-- <script src="lib/zepto/touch.js"></script> -->
     <script src="js/common.js"></script>
     <script src="js/login.js"></script>
 </body>

@@ -40,7 +40,7 @@ img{
 .Ty_header p{
     text-align: center;
     color: #000;
-    font-size: 18px;
+    font-size: 0.4rem;
     margin-bottom: 0 !important;
     height: 1.3333rem;
     line-height:1.3333rem;
@@ -70,7 +70,7 @@ img{
 }
 .Ty_category_l a{
     display: block;
-    font-size: 16px;
+    font-size:0.35rem;
     color: #333;
 }
 .Ty_category_r{
@@ -79,13 +79,18 @@ img{
     position: relative;
 }
 .Ty_category_r li{
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    
+    text-align: center;   
 }
 .Ty_category_r li a{
-    color: #333
+    color: #333;
+    display:block;
+    padding-top: 0.4rem;
+}
+.Ty_category_r li a img{
+    width: 2.5rem;
+    height: 2.5rem;
+    display: block;
+    margin: 0 auto 0.4rem;
 }
 .Ty_footer {
     width: 100%;

@@ -18,6 +18,9 @@ $(function(){
                 $("#city").text(res.data[0].area1 + "-" + res.data[0].area2 + "-" + res.data[0].area3)
                 $("#tel").text(res.data[0].user_phone)
                 $("#addres").text(res.data[0].address)
+                if(res.data[0].is_default == 1){
+                    $(".mui-switch").addClass("mui-active")
+                }
             }
         }
     })
@@ -78,6 +81,32 @@ $(function(){
                  area3:area3,
                  address:address,
                  is_default:is_default
+                },
+                success:function(res){
+                    console.log(res)
+                    if(res.status_code == 200){                      
+                          mui.toast("修改成功")
+                        setTimeout(function(){
+                            location.href = "address.html"
+                        },500)
+                    }
+                }
+            })
+        }else{
+            $.ajax({
+                method:"patch",
+                url:"http://47.100.3.125/api/store/address/" + id,
+                headers: {
+                 'Authorization': `Bearer ` + toke,
+               },
+                data:{
+                 user_name:username,
+                 user_phone:tel,
+                 area1:area1,
+                 area2:area2,
+                 area3:area3,
+                 address:address,
+                 is_default:0
                 },
                 success:function(res){
                     console.log(res)

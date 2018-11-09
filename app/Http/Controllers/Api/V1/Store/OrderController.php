@@ -61,7 +61,7 @@ class OrderController extends Controller
             }
 
             DB::commit();
-            return $this->response->array(['message' => '添加成功', 'data' => []]);
+            return $this->response->array(['message' => '添加成功', 'data' => ['order_number' => $data['order_number']]]);
         } catch (Exception $e) {
             DB::rollback();
             return $this->response->array(['message' => '添加订单失败，请重试', 'data' => []]);
@@ -74,23 +74,35 @@ class OrderController extends Controller
         Order::where('id', $order)->update($data);
         return $this->response->array(['message' => '修改成功', 'data' => []]);
     }
+    
     public function index(Request $request)
     {
         $query = Order::query();
+
         $request->has('status')
             ? $query->where('status', $request->status)
             : '';
+
         $orders = $query->with(['orderInfo', 'address', 'orderInfo.product'])->paginate(10);
         return $this->response->array(['message' => 'success', 'data' => $orders]);
     }
+
     public function userIndex(User $user, Request $request)
     {
-        $data = Order::where('user_id', $this->user()->id)->with(['orderInfo', 'address', 'orderInfo.product'])->paginate(10);
+        $query = Order::query();
+
+        $request->has('status')
+                                ? $query->where('status', $request->status)
+                                : '';
+
+        $data = $query->where('user_id', $this->user()->id)->with(['orderInfo', 'address', 'orderInfo.product'])->paginate(10);
         return $this->response->array(['message' => 'success', 'data' => $data]);
     }
+
     public function show($order)
     {
         $data = Order::with(['orderInfo', 'address', 'orderInfo.product'])->find($order);
         return $this->response->array(['message' => 'success', 'data' => $data]);
     }
+
 }

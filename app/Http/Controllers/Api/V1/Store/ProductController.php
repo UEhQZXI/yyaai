@@ -133,17 +133,34 @@ class ProductController extends Controller
     }
 
     /**
-     * 查询新手专享商品
+     * 为您推荐板块
      *
      * @return mixed
      */
-    public function userExclusive()
+    public function userExclusive(Request $request)
     {
-        $products = Product::select(['id', 'title', 'description', 'original_price', 'current_price'])->get();
+        $products = Product::select(['id', 'title', 'description', 'original_price', 'current_price', 'image1', 'group_number'])->where('status', 1)->get(); 
+        
+        $groupNumber = "0";
+        foreach ($products as $key => $value) {
+            
+            if ($value->group_number == $groupNumber) {
+                $products->forget($key);
+            } else {
+                $groupNumber = $value->group_number; 
+            }
+        }
 
-        $products = $products->random(10);
+        if (sizeof($products) > 10) {
+            $products = $products->random(10);
+        }
+
+        if ($request->has('today')) {
+            $products = $products->random(5);
+        }
+
+        $products = $products->shuffle();
 
         return $this->response->array(['message' => 'success', 'data' => $products]);
     }
-
 }
