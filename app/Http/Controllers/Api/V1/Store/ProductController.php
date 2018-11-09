@@ -51,6 +51,9 @@ class ProductController extends Controller
      */
     public function update(ProductRequest $request, $product)
     {
+        if ($request->has('fileuploader-list-file')) {
+            unset($request['fileuploader-list-file']);
+        }
         Product::where('id', $product)
             ->update($request->all());
 
@@ -72,7 +75,7 @@ class ProductController extends Controller
             $query->where('category_id', $category_id);
         }
 
-        $products = $query->paginate(10);
+        $request->has('total') ? $products = $query->get() : $products = $query->paginate(10);
 
         // return $this->response->paginator($products, new ProductTransformer());
         return $this->response->array(['message' => 'success', 'data' => $products]);
@@ -133,17 +136,34 @@ class ProductController extends Controller
     }
 
     /**
-     * 查询新手专享商品
+     * 为您推荐板块
      *
      * @return mixed
      */
-    public function userExclusive()
+    public function userExclusive(Request $request)
     {
-        $products = Product::select(['id', 'title', 'description', 'original_price', 'current_price'])->get();
+        $products = Product::select(['id', 'title', 'description', 'original_price', 'current_price', 'image1', 'group_number'])->where('status', 1)->get();
 
-        $products = $products->random(10);
+        $groupNumber = "0";
+        foreach ($products as $key => $value) {
+
+            if ($value->group_number == $groupNumber) {
+                $products->forget($key);
+            } else {
+                $groupNumber = $value->group_number;
+            }
+        }
+
+        if (sizeof($products) > 10) {
+            $products = $products->random(10);
+        }
+
+        if ($request->has('today')) {
+            $products = $products->random(5);
+        }
+
+        $products = $products->shuffle();
 
         return $this->response->array(['message' => 'success', 'data' => $products]);
     }
-
 }

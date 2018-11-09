@@ -144,9 +144,6 @@ $api->version('v1', [
 
             $api->group(['namespace' => 'Store'], function ($api) {
 
-                $api->post('store/cart', 'CartController@store')
-                    ->name('api.store.cart.store');
-
                 // 添加商品到购物车
                 $api->post('store/cart', 'CartController@store')
                     ->name('api.store.cart.store');
@@ -194,21 +191,21 @@ $api->version('v1', [
                 //查询某个用户的订单
                 $api->get('store/user/orders', 'OrderController@userIndex');
 
-                //查询订单详情
-                
-
                 $api->get('store/pay/alipay/{order}', 'AliPayController@store')
                     ->name('api.store.pay.alipay.store');
 
             });
         });
     });
-
+//文件上传
+    $api->post('upload', 'Controller@upload')
+        ->name('api.Controller.upload');
 
     $api->group([
         'namespace' => 'Store',
     ], function ($api) {
-          $api->get('store/order/{order}', 'OrderController@show');
+        //查询订单详情
+        $api->get('store/order/{order}', 'OrderController@show');
         $api->post('store/pay/ali/notify', 'AliPayController@notify');
         $api->get('store/pay/ali/return', 'AliPayController@AliReturn');
 

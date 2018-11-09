@@ -56,7 +56,7 @@ class WechatPayController extends Controller
         }
         dd($data);
     }
-    
+
     public function notify(Request $request)
     {
         try{
@@ -75,10 +75,9 @@ class WechatPayController extends Controller
         } catch (Exception $e) {
             file_put_contents('wechat.txt', '支付失败:' . "\r\t\n" . $e->getMessage());
         }
-        
+
         return $pay->success()->send();
     }
-
     public function test()
     {
         $result = $this->wechat->find('reefg4rpb0f');

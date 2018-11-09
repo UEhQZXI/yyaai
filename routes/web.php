@@ -41,8 +41,20 @@ Route::group(['middleware' => 'adminlogin'], function () {
 
     //退出登陆
     Route::post('admin/logout', 'Admin\LoginController@logout');
+
+    // 商品管理
+	Route::get('admin/products/add', 'Admin\ProductController@store');
+	Route::get('admin/products/list', 'Admin\ProductController@index');
+	Route::get('admin/products/{product}/edit', 'Admin\ProductController@update');
+
+	// 订单管理
+	Route::get('admin/orders/list', 'Admin\OrderController@index');
+	Route::get('admin/orders/{order}/edit', 'Admin\OrderController@update');
 });
 
 //登陆
 Route::get('admin/login/view', 'Admin\LoginController@view');
 Route::post('admin/login', 'Admin\LoginController@login');
+
+
+
