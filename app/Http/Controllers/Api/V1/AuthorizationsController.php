@@ -34,14 +34,11 @@ class AuthorizationsController extends Controller
                     'password' => bcrypt(''),
                     'create_time' => time(),
                 ]);
-                $loginInfo['password'] = '';
-            } else {
-                $loginInfo['password'] = $info->password;
-            }
+            } 
             // 清楚验证码缓存
             \Cache::forget($request->verification_key);
             
-            $token = \Auth::guard('api')->attempt($loginInfo);
+            $token = \Auth::guard('api')->fromUser($info);
         } else {
             $loginInfo['password'] = $request->password;
             if (!$token = \Auth::guard('api')->attempt($loginInfo)) {
