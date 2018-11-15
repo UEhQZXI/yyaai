@@ -25,7 +25,7 @@ class AuthorizationRequest extends FormRequest
     {
         return [
             'phone' => 'required',
-            'password' => 'required|string|min:6',
+            'password' => 'string|min:6',
         ];
     }
 }

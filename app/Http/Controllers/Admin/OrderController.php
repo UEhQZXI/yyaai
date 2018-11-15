@@ -6,7 +6,7 @@ use App\Models\Store\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class OrderController extends Controller
+class OrderController extends MiddleController
 {
     public function index()
     {
