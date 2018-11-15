@@ -40,7 +40,7 @@ class CategorieController extends Controller
     public function index(Request $request)
     {
         $query = Categories::query();
-        
+
      	$request->has('pid')
      						? $query->where('pid', $request->pid)
      						: $query->where('pid', 0);
