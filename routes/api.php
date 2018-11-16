@@ -72,7 +72,14 @@ $api->version('v1', [
         $api->get('advisorys/{advisory}/replies', 'AdvisoryReplyController@index')
             ->name('api.advisorys.replies.index');
 
-        // qq快速登录回调
+        $api->group(['namespace' => 'Login'], function ($api) {
+            // qq快速登录回调
+            $api->get('login/qq/notify', 'QqController@notify');
+
+            //微博登陆
+            $api->get('login/weibo/notify', 'WeiboLoginController@notify');
+            $api->get('login/weibo/index', 'WeiboLoginController@index');
+        });
 
 
         /**

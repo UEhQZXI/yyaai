@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "834cc6b94fb119ae6235748cf5fc8372",
+    "content-hash": "e4e7f668acb65272dff708f7e06d5329",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -2916,6 +2916,49 @@
             ],
             "description": "Qq.com OAuth2 Provider for Laravel Socialite",
             "time": "2018-04-18T04:04:42+00:00"
+        },
+        {
+            "name": "socialiteproviders/weibo",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/Weibo.git",
+                "reference": "9df4737ad28f220cc97ac5590ab78c8de46825ee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SocialiteProviders/Weibo/zipball/9df4737ad28f220cc97ac5590ab78c8de46825ee",
+                "reference": "9df4737ad28f220cc97ac5590ab78c8de46825ee",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": "^5.6 || ^7.0",
+                "socialiteproviders/manager": "~3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\Weibo\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "xyxu",
+                    "email": "techxu@gmail.com"
+                }
+            ],
+            "description": "weibo.com OAuth2 Provider for Laravel Socialite",
+            "time": "2017-01-25T09:48:29+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

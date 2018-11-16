@@ -16,8 +16,15 @@ class Product extends Model
         return $this->belongsTo(Categories::class, 'category_id');
     }
 
-    public function getScoutKey()
+    // public function searchableAs()
+    // {
+    // 	return 'app_product';
+    // }
+    // 
+    public function toSearchableArray()
     {
-    	return $this->id;
+        $array = $this->toArray();
+
+        return $array;
     }
 }

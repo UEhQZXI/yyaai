@@ -30,21 +30,23 @@ class WechatPayController extends Controller
         $this->config['mch_id'] = env("WECHAT_MCH_ID", "");
         $this->config['key'] = env("WECHAT_KEY", "");
         $this->config['notify_url'] = env("WECHAT_NOTIFY", "");
-        // dd($this->config);
+        $this->config['return_url'] = 'http://m.iyaa180.com';
         $this->wechat = Pay::wechat($this->config);
     }
     public function index(Request $request)
     {
-        $info = Order::find($request->order_id);
-        if ($info->user_id != $this->user()->id)
-            return $this->array(['message' => 'error', 'data' => []]);
+        $info = Order::where('order_number', $request->order_id)->first(); 
+        // if ($info->user_id != $this->user()->id)
+        //     return $this->array(['message' => 'error', 'data' => []]);
         $order = [
             'out_trade_no' => $info->order_number,
             'body' => '医牙啊-商品购买',
             'total_fee' => $info->sum_price * 100,
         ];
         if ($request->has('pay_device') && $request->pay_device == 'wap') {
+            // dd($_SERVER['HTTP_REFERER']);
             $data = $this->wechat->wap($order);
+            return $data;
         } else if ($request->has('pay_device') && $request->pay_device == 'app') {
             $data = $this->wechat->app($order);
         } else {
@@ -54,7 +56,7 @@ class WechatPayController extends Controller
             \QrCode::format('png')->size(200)->generate($data->code_url, public_path($path));
             return $this->response->array(['message' => 'success', 'data' => ['qrcode' => $this->hostname . $path]]);
         }
-        dd($data);
+        // dd($data);
     }
 
     public function notify(Request $request)
