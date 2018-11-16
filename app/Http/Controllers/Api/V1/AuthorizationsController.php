@@ -7,6 +7,12 @@ use App\Models\User;
 
 class AuthorizationsController extends Controller
 {
+    /***
+     * 账号密码和短信验证码登录
+     *
+     * @param AuthorizationRequest $request
+     * @return array $token
+     */
     public function store(AuthorizationRequest $request)
     {
         $loginInfo['phone'] = $request->phone;
@@ -15,7 +21,7 @@ class AuthorizationsController extends Controller
             $verifyData = \Cache::get($request->verification_key);
 
             if (!$verifyData) {
-            return $this->response->error('验证码已失效', 422);
+                return $this->response->error('验证码已失效', 422);
             }
 
             if (!hash_equals($verifyData['login_code'], $request->verification_code)) {
@@ -35,12 +41,14 @@ class AuthorizationsController extends Controller
                     'create_time' => time(),
                 ]);
             } 
-            // 清楚验证码缓存
+            // 清除验证码缓存
             \Cache::forget($request->verification_key);
             
             $token = \Auth::guard('api')->fromUser($info);
         } else {
+
             $loginInfo['password'] = $request->password;
+
             if (!$token = \Auth::guard('api')->attempt($loginInfo)) {
                 return $this->response->errorUnauthorized('账号或密码错误');
             }
@@ -51,5 +59,10 @@ class AuthorizationsController extends Controller
             'token_type' => 'Bearer',
             'expires_in' => \Auth::guard('api')->factory()->getTTL() * 60
         ]]);
+    }
+
+    public function socialStore($type)
+    {
+
     }
 }

@@ -165,6 +165,7 @@ return [
 
         Yansongda\LaravelPay\PayServiceProvider::class,
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+        SocialiteProviders\Manager\ServiceProvider::class,
 
     ],
 
@@ -217,6 +218,7 @@ return [
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,//新添加
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'Pay' => Yansongda\LaravelPay\Facades\Pay::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 

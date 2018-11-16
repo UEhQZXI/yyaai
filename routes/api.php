@@ -71,8 +71,18 @@ $api->version('v1', [
         // 查询咨询 回复列表
         $api->get('advisorys/{advisory}/replies', 'AdvisoryReplyController@index')
             ->name('api.advisorys.replies.index');
+            
+        $api->group(['namespace' => 'Login'], function ($api) {
 
-        $api->get('wechat/login/csrftoken', 'WechatLoginController@CsrfToken');
+            // qq登录页面
+            $api->get('login/qq', 'QQController@index')
+                ->name('api.login.qq.index');
+
+            // qq快速登录回调
+            $api->get('login/qq/notify', 'QQController@notify')
+                ->name('api.login.qq.notify.notify');
+        });
+
 
         /**
          * 访问以下接口需要token认证
