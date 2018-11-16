@@ -22,7 +22,7 @@ img{
 .Ty_main {
   width: 100%;
   height: 100%;
-  background-color:#fff !important;
+  background-color:#dedede !important;
   overflow: hidden;
   position: relative;
 }
@@ -32,6 +32,22 @@ img{
   background-color: #fff;
   position: absolute;
   top: 0;
+  line-height: 50px;
+}
+.Ty_header a{
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #000;
+}
+.searchInput{
+    width:7.5rem;
+    margin: 0 auto;
+}
+.searchInput input{
+    margin-bottom: 0 !important;
+    border-radius:0.8rem;
+    text-align: left;
 }
 
 
@@ -39,28 +55,6 @@ img{
 
 
 
-.back{
-    width: 100%;
-    background-color: #fff;
-    position: relative;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-}
-.back a{
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #333
-}
-.back input{
-    width: 300px;
-    height: 35px;
-    border-radius:30px; 
-    margin-top: 10px;
-    margin-bottom: 0;
-    margin-left: 10px;
-}
 .tabNavs{
     width: 100%;
     overflow: hidden;
@@ -78,18 +72,30 @@ img{
 }
 #goodList{
     overflow: hidden;
+    width: 100%;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    margin-top: 0.4rem;
 }
 #goodList a{
-    width: 100%;
+    width: 48.5%;
     background-color: #fff;
     padding: 0.3rem;
-    overflow: hidden;
+    float: left;
     display: block;
+}
+#goodList a p{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+#goodList a:nth-child(odd){
+    margin-right: 0.24rem;
 }
 #goodList a img{
     width: 2.3rem;
     height:2.3rem;
-    float: left;
+    margin: 0 auto;
     border-radius:5px; 
 }
 #goodList a p.title{

@@ -14,9 +14,9 @@
 <div class="Ty_mall">
   
   <div class="Ty_header">
-      <div class="back">
-          <a href="index.html"><span class="mui-icon mui-icon-arrowleft"></span></a>
-          <span style="font-size: 0.4rem">商品列表</span>
+      <a href="index.html"><span class="mui-icon mui-icon-arrowleft"></span></a>
+      <div class="mui-input-row searchInput">
+        <input type="search" class="mui-input-clear search_input">
       </div>
   </div>
   <div class="Ty_main">
@@ -32,21 +32,17 @@
   </div>
 </div>
 
-<script type="text/html" id="tpl_list">
-  {{if list.length == 0}}
-       <p style="color:#000;margin:100px auto 0;text-align:center">无更多的商品信息</p>
-       <span>{{v.title}}</span>
-       <span>{{v.modal}}</span>
-  {{/if}}
-  {{each list v i}}   
-        <a href="searchGood.html?id={{v.id}}" data-id="{{v.id}}">
-            <img src="{{v.image1}}" alt="">
-            <p class="title">{{v.title}}</p>
-            <span style="color:red;margin-right:0.2rem;font-size:0.35rem;" class="price">&yen;{{v.current_price}}</span>
-            <span style="float:left;color:#aaa;">{{v.inventory}}人购买</span>
-            <span style="float:left;color:#aaa;margin-left:0.4rem;">上海</span>
-        </a>
-  {{/each}}
+<script type="text/html" id="tpl_searchlist">
+      {{if list.length == 0}}
+          <p style="margin:0 auto;text-align:center;margin-top:150px;">没有该商品</p>
+      {{/if}}
+      {{ each list v i}}
+          <a href="searchGood.html?id={{v.id}}" data-id="{{v.id}}">
+             <img src="{{v.image1}}" alt="">
+             <p>{{v.title}}</p>
+             <span style="color:red;">{{v.current_price}}</span>
+          </a>
+      {{/each}}
 </script>
 
 

@@ -17,10 +17,7 @@ class VerificationCodesController extends Controller
         $code = str_pad(random_int(1, 9999), 4, 0, STR_PAD_LEFT);
 
         $info = ['phone' => $phone, 'code' => $code];
-        $data = [
-                    'code' => $code,
-                    'product' => env('ALIYUN_SMS_PRODUCT')
-                ];
+        $data = ['code' => $code,'product' => env('ALIYUN_SMS_PRODUCT')];
 
         try {
             $template = 'SMS_4015599';

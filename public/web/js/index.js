@@ -27,5 +27,9 @@ mui('.mui-scroll-wrapper').scroll({
         console.log(res)
         $("#qianggou").html(template("today_r",{list:res.data}))
       }
-    });
+    })
+
+    $(".jd-header-search-input").on("tap",function(){
+        location.href = "search.html"
+    })
   })

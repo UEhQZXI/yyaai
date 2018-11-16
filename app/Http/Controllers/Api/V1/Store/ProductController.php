@@ -69,6 +69,11 @@ class ProductController extends Controller
      */
     public function index(Request $request, Product $product)
     {
+        if ($request->has('key')) {
+            $data = Product::search($request->key)->paginate(10);
+            return $this->response->array(['message' => 'success', 'data' => $data]);
+        }
+
         $query = $product->query();
 
         if ($category_id = $request->category_id) {
@@ -77,7 +82,6 @@ class ProductController extends Controller
 
         $request->has('total') ? $products = $query->get() : $products = $query->paginate(10);
 
-        // return $this->response->paginator($products, new ProductTransformer());
         return $this->response->array(['message' => 'success', 'data' => $products]);
     }
 
