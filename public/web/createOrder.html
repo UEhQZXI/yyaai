@@ -14,8 +14,8 @@
 <div class="Ty_mall">
   <div class="Ty_header">
        <div class="top">
-            <span>确认订单</span>
-            <a href="javascript:history.go(-1)"><span class="mui-icon mui-icon-arrowleft"></span></a>
+            <span class="conf">确认订单</span>
+            <a href="javascript:history.go(-1);" class="link"><span class="mui-icon mui-icon-arrowleft"></span></a>
        </div>
   </div>
   <div class="Ty_main">
@@ -77,8 +77,8 @@
   {{if row.length == 0}}
       <a href="addAddress.html?retUrl=createOrder.html" style="width:100%;height:2rem;text-align:center;display:block;line-height:2rem">您还没有默认收货地址,点击添加</a>
   {{/if}}
-  <!-- {{each row v i}}
-    {{if v.is_default == 1}} -->
+  <!-- {{each row v i}} -->
+    <!-- {{if v.is_default == 1}} -->
       <a href="address.html?retUrl=createOrder.html" data-id="{{v.id}}" class="addressid">
           <span class="mui-icon mui-icon-location add"></span>
           <span class="person">收货人:<span class="per">{{row[0].user_name}}</span></span>
@@ -87,7 +87,7 @@
           <span class="mui-icon mui-icon-arrowright right"></span>
       </a>
     <!-- {{/if}} -->
-    <!-- {{if !v.is_default == 1 && v.is_default == 0}}
+    <!-- {{if !v.is_default == 1}}
         <a href="address.html?retUrl=createOrder.html" data-id="{{v.id}}" class="addressid">
             <span class="mui-icon mui-icon-location add"></span>
             <span class="person">收货人:<span class="per">{{row[0].user_name}}</span></span>
@@ -96,7 +96,7 @@
             <span class="mui-icon mui-icon-arrowright right"></span>
         </a>
     {{/if}} -->
-  {{/each}}
+  <!-- {{/each}} -->
 </script>
 
 </body>

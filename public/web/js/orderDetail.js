@@ -48,39 +48,28 @@ $(function(){
     })
 
     
-  function isWeiXin(){
+//   function isWeiXin(){
 
-    var ua = window.navigator.userAgent.toLowerCase();
+//     var ua = window.navigator.userAgent.toLowerCase();
 
-        if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+//         if(ua.match(/MicroMessenger/i) == 'micromessenger'){
 
-            return true;
+//             return true;
 
-        }else{
+//         }else{
 
-            return false;
+//             return false;
 
-        }
+//         }
 
-    }
+//     }
 
     $("span.Pay").on("tap",function(){
         var orderId = $(".Orders").text()
-        if(isWeiXin()){          
-            $.ajax({
-                type:"GET",
-                url:"http://m.iyaa180.com/api/store/wechatpay/index",
-                data:{
-                    order_id:orderId
-                },
-                success:function(res){
-                    console.log(res)
-                }
-            })
-        }else{
-            location.href = "http://47.100.3.125/api/store/pay/alipay/" + orderId +"?token=" + toke
-        }
-      
+        var price = $(".pric").text()
+        console.log(orderId)
+        console.log(price)
+        location.href = "paymethod.html?price=" + price + "&&orderNum=" + orderId  
     })
 
 })

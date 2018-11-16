@@ -15,7 +15,7 @@ class OrderController extends Controller
     public function store(OrderRequest $request)
     {
         $data = $request->only(['address_id']);
-        $data['order_number'] = 'yy' . $_SERVER['REQUEST_TIME'] . uniqid();
+        $data['order_number'] = $this->orderNumber($this->user()->id);
         $data['user_id'] = $this->user()->id;
         $data['created_time'] = $data['updated_time'] = date('Y-m-d H:i:s');
         $data['status'] = $data['sum_price'] = 0;
@@ -66,6 +66,7 @@ class OrderController extends Controller
             DB::rollback();
             return $this->response->array(['message' => '添加订单失败，请重试', 'data' => []]);
         }
+
     }
     public function update(OrderRequest $request, $order)
     {
@@ -105,4 +106,11 @@ class OrderController extends Controller
         return $this->response->array(['message' => 'success', 'data' => $data]);
     }
 
+    private function orderNumber($user_id)
+    {
+        $today = date("Ymd");
+        $rand = strtoupper(substr(uniqid(sha1(time())),0,4));
+
+        return $today . $rand . str_pad($user_id, 4, '0', STR_PAD_LEFT);
+    }
 }

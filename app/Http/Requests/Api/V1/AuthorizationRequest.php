@@ -4,6 +4,7 @@ namespace App\Http\Requests\Api\V1;
 
 use Dingo\Api\Http\FormRequest;
 
+
 class AuthorizationRequest extends FormRequest
 {
     /**
@@ -25,7 +26,7 @@ class AuthorizationRequest extends FormRequest
     {
         return [
             'phone' => 'required',
-            'password' => 'required|string|min:6',
+            'password' => 'string|min:6',
         ];
     }
 }

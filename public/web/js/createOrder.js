@@ -10,6 +10,7 @@ $(function(){
 
     var total = localStorage.getItem("num")
     var pid = localStorage.getItem("productId")
+    var price 
     // 订单详情
     if(typeId == "cart"){
         $.ajax({
@@ -69,14 +70,20 @@ $(function(){
             success: function(res){
                 console.log(res)
                 if(res.status_code == 200){
+                    $.each(res.data,function(i,v){
+                        if(v.is_default == 1){
+                            console.log(v)
+                            console.log(i)
+                            res.data.splice(i,1)
+                            console.log(res.data)
+                            res.data.unshift(v)
+                            console.log(res.data)
+                        }
+                    })
                   $(".address").html(template("tpl_address",{row:res.data}))
                   for(var i=0;i<res.data.length;i++){
-                    console.log(res.data[i])
                      if(res.data[i].is_default == 1){                     
                         localStorage.setItem("address",res.data[i].id)
-                     }
-                     if(!res.data[i].is_default == 1){
-                        
                      }
                   }
                 }
@@ -125,7 +132,8 @@ $(function(){
             mui.toast("请填写收货地址")
             return false
         }
-
+        var price = $("span.qian").text()
+        console.log(price)
         if(typeId == "cart"){
             var address_id = localStorage.getItem("address")
             $.ajax({
@@ -140,24 +148,10 @@ $(function(){
                     cart_ids:ids
                 },
                 success:function(res){
-                    console.log(res)
+                    console.log(res.data)
                     var order_num = res.data.order_number
                     if(res.status_code == 200){
-                        if(isWeiXin()){
-                            alert(123)        
-                            $.ajax({
-                                type:"GET",
-                                url:"http://m.iyaa180.com/api/store/wechatpay/index",
-                                data:{
-                                    order_id:order_num
-                                },
-                                success:function(res){
-                                    console.log(res)
-                                }
-                            })
-                        }else{
-                            location.href = "http://47.100.3.125/api/store/pay/alipay/" + order_num +"?token=" + toke
-                        }
+                        location.href = "paymethod.html?price="+ price + "&orderNum=" + order_num
                     }
                 }
             })
@@ -180,22 +174,9 @@ $(function(){
                 success:function(res){
                     console.log(res)
                     var order_num = res.data.order_number
-                    if(res.status_code == 200){
-                        if(isWeiXin()){
-                            alert(123)          
-                            $.ajax({
-                                type:"GET",
-                                url:"http://m.iyaa180.com/api/store/wechatpay/index",
-                                data:{
-                                    order_id:order_num
-                                },
-                                success:function(res){
-                                    console.log(res)
-                                }
-                            })
-                        }else{
-                            location.href = "http://47.100.3.125/api/store/pay/alipay/" + order_num +"?token=" + toke
-                        }
+                    localStorage.setItem("orderNum",order_num)
+                    if(res.status_code == 200){        
+                        location.href = "paymethod.html?price="+ price + "&orderNum=" + order_num
                     }
                 }
             }) 
@@ -215,5 +196,14 @@ $(function(){
         })
 
     })
-
+    var addid = tools.getSearch("id")
+    $(".link").on("tap",function(){     
+        console.log(addid)
+        var pid = localStorage.getItem("Pid")
+        if(addid){
+            alert(123)
+           $(this).attr("href","http://m.iyaa180.com/web/searchGood.html?id="+pid)
+        }
+    })
+    
 })

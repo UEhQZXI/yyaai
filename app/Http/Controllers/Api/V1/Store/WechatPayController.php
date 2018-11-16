@@ -30,12 +30,12 @@ class WechatPayController extends Controller
         $this->config['mch_id'] = env("WECHAT_MCH_ID", "");
         $this->config['key'] = env("WECHAT_KEY", "");
         $this->config['notify_url'] = env("WECHAT_NOTIFY", "");
-        // dd($this->config);
+        $this->config['return_url'] = 'http://m.iyaa180.com';
         $this->wechat = Pay::wechat($this->config);
     }
     public function index(Request $request)
     {
-        $info = Order::find($request->order_id);
+        $info = Order::where('order_number', $request->order_id)->first(); 
         // if ($info->user_id != $this->user()->id)
         //     return $this->array(['message' => 'error', 'data' => []]);
         $order = [
@@ -44,20 +44,21 @@ class WechatPayController extends Controller
             'total_fee' => $info->sum_price * 100,
         ];
         if ($request->has('pay_device') && $request->pay_device == 'wap') {
+        	// dd($_SERVER['HTTP_REFERER']);
             $data = $this->wechat->wap($order);
+            return $data;
         } else if ($request->has('pay_device') && $request->pay_device == 'app') {
             $data = $this->wechat->app($order);
         } else {
             //扫码支付
             $data = $this->wechat->scan($order);
-
             $path = 'qrcode/' . $info->order_number . '.png';
             \QrCode::format('png')->size(200)->generate($data->code_url, public_path($path));
             return $this->response->array(['message' => 'success', 'data' => ['qrcode' => $this->hostname . $path]]);
-            // echo '<img src="'. $this->hostname . $path .'">';
         }
+        // dd($data);
     }
-    
+
     public function notify(Request $request)
     {
         try{
@@ -76,14 +77,12 @@ class WechatPayController extends Controller
         } catch (Exception $e) {
             file_put_contents('wechat.txt', '支付失败:' . "\r\t\n" . $e->getMessage());
         }
-        
+
         return $pay->success()->send();
     }
-
     public function test()
     {
-        // $result = $this->wechat->find('reefg4rpb0f');
-        // return ($result);
-        return view('hello');
+        $result = $this->wechat->find('reefg4rpb0f');
+        return ($result);
     }
 }

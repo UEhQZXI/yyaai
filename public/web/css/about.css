@@ -23,25 +23,7 @@
     margin: 0 !important;
     color: #333
 }
-a.ownUs{
-    width: 100%;
-    background-color: #fff;
-    height: 50px;
-    display: block;
-    line-height: 50px;
-    position: relative;
-    color: #333;
-    padding-left: 20px;
-}
-a.ownUs span{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 50px;
-    line-height: 50px;
-    color: #333;
-    display: block;
-}
+
 .about p.loginOut{
     width: 200px;
     height: 50px;
@@ -50,7 +32,6 @@ a.ownUs span{
     text-align: center;
     line-height: 50px;
     border-radius:5px; 
-    position: absolute;
-    bottom: 100px;
-    left: 25%;
+    margin: 0 auto;
+    margin-top: 300px !important;
 }

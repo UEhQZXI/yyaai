@@ -9,7 +9,7 @@ $(function(){
             var username = $("#name").val()
             var tel = $("#password").val() 
             var area = $("#city").text()
-            var  diqu = $("#address").val()
+            var diqu = $("#address").val()
             var code = $("#code").val()
 
             if(!username){
@@ -24,7 +24,7 @@ $(function(){
                 mui.toast("请填写地址")
                 return false
             }
-            if(!area){
+            if(!diqu){
                 mui.toast("请填写地址")
                 return false
             }
@@ -50,13 +50,13 @@ $(function(){
                 'Authorization': `Bearer ` + toke,
               },
                data:{
-                user_name:username,
-                user_phone:tel,
-                area1:area1,
-                area2:area2,
-                area3:area3,
-                address:diqu,
-                is_default:is_default
+                    user_name:username,
+                    user_phone:tel,
+                    area1:area1,
+                    area2:area2,
+                    area3:area3,
+                    address:diqu,
+                    is_default:is_default
                },
                success:function(res){
                    console.log(res)
@@ -79,6 +79,9 @@ $(function(){
                },
                error:function(res){
                    console.log(res)
+                   if(res.status == 500){
+                       mui.toast("请填写所属地区")
+                   }
                }
             })
         }else{
@@ -100,7 +103,7 @@ $(function(){
                 mui.toast("请填写地址")
                 return false
             }
-            if(!area){
+            if(!address){
                 mui.toast("请填写地址")
                 return false
             }
@@ -152,6 +155,12 @@ $(function(){
                              location.href = "address.html"
                             },600)
                         }
+                    }
+               },
+               error:function(res){
+                    console.log(res)
+                    if(res.status == 500){
+                        mui.toast("请填写所属地区")
                     }
                }
             })

@@ -43,7 +43,7 @@ class OrderRequest extends FormRequest
             default:
                 return [
                     'status' => 'int',
-                    'price' => 'int'
+                    'sum_price' => '',
                 ];
                 break;
         }

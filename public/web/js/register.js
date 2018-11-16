@@ -22,7 +22,7 @@ $(function () {
       if(count === 0){
         clearInterval(timer);
         //让按钮能点
-        $this.prop("disabled", false).removeClass("disabled").text("再次发送");
+        $this.prop("disabled", false).removeClass("disabled").text("重新发送");
       }
 
     }, 1000);

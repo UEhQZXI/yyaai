@@ -8,42 +8,83 @@
     <link rel="stylesheet" href="lib/mui/css/mui.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+    <link rel="stylesheet" href="css/iconfont.css">
 </head>
 <body>
     <div class="Login">
-        <div class="top">
-            <a href="user.html" class="go"><span class="mui-icon mui-icon-arrowleft"></span></a>
-            <span class="mall">登录天医商城</span>
-            <a href="register.html" class="regsiter">注册</a>
+        <div class="login_first">
+            <div class="top">
+                <a href="user.html" class="go"><span class="mui-icon mui-icon-arrowleft"></span></a>
+            </div>
+            <p class="mall">登录天医商城</p>
+            <div class="form_login">
+                <div class="form_item">
+                    <span class="iconfont">&#xe66f;</span>
+                    <div class="input_box">
+                        <input type="text" placeholder="输入手机号" class="user" maxlength="11">
+                        <i class="mui-icon mui-icon-closeempty user_delete"></i>
+                    </div>
+                </div>
+                <input type="button" value="获取验证码" class="code" disabled>
+            </div>
+            <div class="login_psd">
+                <span class="pull-left" style="margin-left:1rem;margin-top: 0.2rem;">账号密码登录</span>
+            </div>
+            <a href="Forget.html" class="pull-right" style="margin-right:1rem;margin-top: 0.2rem;color: #000;">忘记密码</a>
         </div>
-        <div class="form_login">
-            <div class="form_item">
-                <span class="mui-icon mui-icon-person"></span>
-                <div class="input_box">
-                     <input type="text" placeholder="手机/用户名" class="user">
-                     <i class="mui-icon mui-icon-closeempty user_delete"></i>
+        <!-- 验证码 -->
+        <div class="login_second" style="display: none">
+            <div class="top">
+                <span class="mui-icon mui-icon-arrowleft goo"></span>
+            </div>
+            <p class="mall">请输入验证码</p>
+            <span class="sendCode">验证码已通过短信发送至  <span class="tel">18290117631</span></span>
+            <div class="form_login">
+                <div class="form_item">
+                    <span class="iconfont">&#xe616;</span>
+                    <div class="input_box" style="position:relative">
+                        <input type="text" placeholder="输入验证码" class="codeV" maxlength="4">
+                        <button class="second"></button>
+                    </div>
                 </div>
             </div>
-            <div class="form_item">
-                <span class="mui-icon mui-icon-locked"></span>
-                <div class="input_box">
-                     <input type="password" placeholder="请输入密码" style="border:0 !important;"  class="psd">
-                     <i class="mui-icon mui-icon-closeempty psd_delete"></i>
+            <input type="button" value="登录" class="sendcode" disabled>
+        </div>
+        <!-- 密码登录 -->
+        <div class="login_three" style="display: none">
+            <div class="tops">
+                <a href="user.html" class="icons"><span class="mui-icon mui-icon-arrowleft edits"></span></a>
+                <span style="font-size: 0.4rem">登录天医商城</span>
+                <a href="register.html" class="reg">注册</a>
+            </div>
+            <div class="form_login">
+                <div class="form_item">
+                    <span class="mui-icon mui-icon-person"></span>
+                    <div class="input_box">
+                        <input type="text" placeholder="手机/用户名" class="users">
+                        <i class="mui-icon mui-icon-closeempty user_delete"></i>
+                    </div>
+                </div>
+                <div class="form_item">
+                    <span class="mui-icon mui-icon-locked"></span>
+                    <div class="input_box">
+                        <input type="password" placeholder="请输入密码" class="psds">
+                        <i class="mui-icon mui-icon-closeempty psd_delete"></i>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="remember_login">
-             <a href="Forget.html">忘记密码?</a>
-        </div>
-        <div class="login_btn">
-            <span class="login">登录</span>
+            <div class="login_btn">
+                <span class="login">登录</span>
+            </div>
         </div>
     </div>
 
-    <script src="lib/mui/js/mui.js"></script>
-    <script src="lib/lib-flexible/flexible.js"></script>
-    <script src="lib/zepto/zepto.min.js"></script>
-    <script src="js/common.js"></script>
-    <script src="js/login.js"></script>
+
+
+<script src="lib/mui/js/mui.js"></script>
+<script src="lib/lib-flexible/flexible.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/login.js"></script>
 </body>
 </html>

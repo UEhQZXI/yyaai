@@ -24,17 +24,26 @@ class UploadRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'type' => 'required|string|in:image,video',
-        ];
 
-        if ($this->type == 'image') {
-            $rules['file'] = 'required|mimes:jpg,jpeg,png,gif,bmp';
-        } else if ($this->type == 'video') {
-            $rules['file'] = 'required|mimes:mp4,avi,rmvb,mkv';
-        } else {
-            $rules['file'] = 'required|mimes:php';
-        }
+            // 'type' => 'required|string|in:image,video',
+        // if ($this->type == 'image') {
+        //     $rules['file'] = 'required|mimes:jpg,jpeg,png,gif,bmp';
+        // } else if ($this->type == 'video') {
+        //     $rules['file'] = 'required|mimes:mp4,avi,rmvb,mkv';
+        // } else {
+        //     $rules['file'] = 'required|mimes:txt';
+        // }
         
+            'type' => 'string',
+        ];
+//
+//        if ($this->type == 'image') {
+//            $rules['file'] = 'required|mimes:jpg,jpeg,png,gif,bmp';
+//        }
+//            $rules['file'] = 'required|mimes:mp4,avi,rmvb,mkv';
+//        } else {
+//            $rules['file'] = 'required|mimes:txt';
+//        }
         return $rules;
     }
 }

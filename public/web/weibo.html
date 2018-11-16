@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:wb="http://open.weibo.com/wb">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+	<a  id="shareBtn" href="javascript:void(0)"  target="_blank">分享</>
+</body>
+<script>
+	function weiboShare(){
+        var wb_shareBtn = document.getElementById("shareBtn")
+        wb_url = document.URL, //获取当前页面地址，也可自定义例：wb_url = "http://liuyanzhao.com"
+            wb_appkey = "694367508",//你的app key
+            wb_title = "",
+            wb_ralateUid = "5936412667",//微博id，获得你的用户名
+            wb_pic = "",
+            wb_language = "zh_cn";
+        wb_shareBtn.setAttribute("href","http://service.weibo.com/share/share.php?url="+wb_url+"&appkey="+wb_appkey+"&title="+wb_title+"&pic="+wb_pic+"&ralateUid="+wb_ralateUid+"&language="+wb_language+"");
+    	}
+	weiboShare()
+
+</script>
+</html>

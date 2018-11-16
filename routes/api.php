@@ -24,6 +24,10 @@ $api->version('v1', [
         'limit' => config('api.rate_limits.sign.limit'),
         'expires' => config('api.rate_limits.sign.expires'),
     ], function ($api) {
+         //文件上传
+        $api->post('upload', 'Controller@upload')
+                ->name('api.Controller.upload');
+                
         // 发送短信验证码
         $api->post('verificationCodes', 'VerificationCodesController@store')
             ->name('api.verificationCodes.store');
@@ -67,6 +71,8 @@ $api->version('v1', [
         // 查询咨询 回复列表
         $api->get('advisorys/{advisory}/replies', 'AdvisoryReplyController@index')
             ->name('api.advisorys.replies.index');
+
+        $api->get('wechat/login/csrftoken', 'WechatLoginController@CsrfToken');
 
         /**
          * 访问以下接口需要token认证
@@ -137,15 +143,8 @@ $api->version('v1', [
             $api->post('advisory/replies/{replies}/{childReplies?}', 'AdvisoryReplyReplyController@store')
                 ->name('api.advisory.replies.replies.store');
 
-            //文件上传
-            $api->post('upload', 'Controller@upload')
-                ->name('api.Controller.upload');
-
 
             $api->group(['namespace' => 'Store'], function ($api) {
-
-                $api->post('store/cart', 'CartController@store')
-                    ->name('api.store.cart.store');
 
                 // 添加商品到购物车
                 $api->post('store/cart', 'CartController@store')
@@ -194,23 +193,24 @@ $api->version('v1', [
                 //查询某个用户的订单
                 $api->get('store/user/orders', 'OrderController@userIndex');
 
-                //查询订单详情
-                $api->get('store/order/{order}', 'OrderController@show');
-
                 $api->get('store/pay/alipay/{order}', 'AliPayController@store')
                     ->name('api.store.pay.alipay.store');
 
             });
         });
     });
-
+//文件上传
+    $api->post('upload', 'Controller@upload')
+        ->name('api.Controller.upload');
 
     $api->group([
         'namespace' => 'Store',
     ], function ($api) {
-          
+        //查询订单详情
+        $api->get('store/order/{order}', 'OrderController@show');
         $api->post('store/pay/ali/notify', 'AliPayController@notify');
         $api->get('store/pay/ali/return', 'AliPayController@AliReturn');
+
         //添加分类
         $api->post('store/categorie', 'CategorieController@store');
         
@@ -235,7 +235,6 @@ $api->version('v1', [
 
         $api->get('wechatpay/index', 'WechatPayController@index');
 
-
         $api->get('store', 'CategorieController@store');
 
         $api->post('store/product', 'ProductController@store')
@@ -255,6 +254,7 @@ $api->version('v1', [
 
         $api->get('store/products/user/new', 'ProductController@userExclusive')
             ->name('api.store.product.userExclusive');
+
     });
 });
 
