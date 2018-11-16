@@ -4,8 +4,74 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "19c8795aa04edcc490fc3276c1ede2ab",
+=======
+    "content-hash": "8c6f1714e4dc5a7441da586d12d53da6",
+>>>>>>> 678353ca472679d7555b9218c05e39e04cb76c9f
     "packages": [
+        {
+            "name": "algolia/algoliasearch-client-php",
+            "version": "1.28.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/algolia/algoliasearch-client-php.git",
+                "reference": "c167ba3247b38b028fc05b1c58e8b5fb5e08d114"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/c167ba3247b38b028fc05b1c58e8b5fb5e08d114",
+                "reference": "c167ba3247b38b028fc05b1c58e8b5fb5e08d114",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-mbstring": "*",
+                "php": "^5.3 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
+                "satooshi/php-coveralls": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.0": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "AlgoliaSearch": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Algolia Team",
+                    "email": "contact@algolia.com"
+                },
+                {
+                    "name": "Ryan T. Catlin",
+                    "email": "ryan.catlin@gmail.com"
+                },
+                {
+                    "name": "Jonathan H. Wage",
+                    "email": "jonwage@gmail.com"
+                }
+            ],
+            "description": "Algolia Search API Client for PHP",
+            "homepage": "https://github.com/algolia/algoliasearch-client-php",
+            "time": "2018-11-06T10:48:00+00:00"
+        },
         {
             "name": "bacon/bacon-qr-code",
             "version": "1.0.3",
@@ -1176,6 +1242,7 @@
             "time": "2018-10-04T14:50:41+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "laravel/socialite",
             "version": "v3.2.0",
             "source": {
@@ -1187,6 +1254,19 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/socialite/zipball/7194c0cd9fb2ce449669252b8ec316b85b7de481",
                 "reference": "7194c0cd9fb2ce449669252b8ec316b85b7de481",
+=======
+            "name": "laravel/scout",
+            "version": "v6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/scout.git",
+                "reference": "08965e94714eb74aa69d0f3f51099cdb48be2898"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/scout/zipball/08965e94714eb74aa69d0f3f51099cdb48be2898",
+                "reference": "08965e94714eb74aa69d0f3f51099cdb48be2898",
+>>>>>>> 678353ca472679d7555b9218c05e39e04cb76c9f
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1196,6 +1276,7 @@
                 ]
             },
             "require": {
+<<<<<<< HEAD
                 "guzzlehttp/guzzle": "~6.0",
                 "illuminate/contracts": "~5.4",
                 "illuminate/http": "~5.4",
@@ -1206,10 +1287,28 @@
             "require-dev": {
                 "mockery/mockery": "~0.9",
                 "phpunit/phpunit": "~4.0|~5.0"
+=======
+                "illuminate/bus": "~5.4",
+                "illuminate/contracts": "~5.4",
+                "illuminate/database": "~5.4",
+                "illuminate/pagination": "~5.4",
+                "illuminate/queue": "~5.4",
+                "illuminate/support": "~5.4",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "algolia/algoliasearch-client-php": "^1.10",
+                "mockery/mockery": "~1.0",
+                "phpunit/phpunit": "~6.0"
+            },
+            "suggest": {
+                "algolia/algoliasearch-client-php": "Required to use the Algolia engine (^1.10)."
+>>>>>>> 678353ca472679d7555b9218c05e39e04cb76c9f
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
+<<<<<<< HEAD
                     "dev-master": "3.0-dev"
                 },
                 "laravel": {
@@ -1219,11 +1318,23 @@
                     "aliases": {
                         "Socialite": "Laravel\\Socialite\\Facades\\Socialite"
                     }
+=======
+                    "dev-master": "6.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Scout\\ScoutServiceProvider"
+                    ]
+>>>>>>> 678353ca472679d7555b9218c05e39e04cb76c9f
                 }
             },
             "autoload": {
                 "psr-4": {
+<<<<<<< HEAD
                     "Laravel\\Socialite\\": "src/"
+=======
+                    "Laravel\\Scout\\": "src/"
+>>>>>>> 678353ca472679d7555b9218c05e39e04cb76c9f
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1236,6 +1347,7 @@
                     "email": "taylor@laravel.com"
                 }
             ],
+<<<<<<< HEAD
             "description": "Laravel wrapper around OAuth 1 & OAuth 2 libraries.",
             "homepage": "https://laravel.com",
             "keywords": [
@@ -1243,6 +1355,15 @@
                 "oauth"
             ],
             "time": "2018-10-18T03:39:04+00:00"
+=======
+            "description": "Laravel Scout provides a driver based solution to searching your Eloquent models.",
+            "keywords": [
+                "algolia",
+                "laravel",
+                "search"
+            ],
+            "time": "2018-10-08T20:22:03+00:00"
+>>>>>>> 678353ca472679d7555b9218c05e39e04cb76c9f
         },
         {
             "name": "laravel/tinker",
