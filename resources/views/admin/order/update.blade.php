@@ -72,6 +72,32 @@
             </div>
         </div>
         <div class="detailed_style">
+            <!--下单用户信息-->
+            <div class="Receiver_style">
+                    <div class="title_name">
+                        下单用户信息
+                    </div>
+                    <div class="Info_style clearfix">
+                        <div class="col-xs-4">
+                            <label class="label_name" for="form-field-2"> 用户名： </label>
+                            <div class="o_content">
+                                {{$order->user->name}}
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="label_name" for="form-field-2"> 用户电话： </label>
+                            <div class="o_content">
+                                {{$order->user->phone}}
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="label_name" for="form-field-2"> 用户ID： </label>
+                            <div class="o_content">
+                                {{$order->user->id}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             <!--收件人信息-->
             <div class="Receiver_style">
                 <div class="title_name">

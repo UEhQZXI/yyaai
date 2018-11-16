@@ -44,7 +44,6 @@ class WechatPayController extends Controller
             'total_fee' => $info->sum_price * 100,
         ];
         if ($request->has('pay_device') && $request->pay_device == 'wap') {
-            // dd($_SERVER['HTTP_REFERER']);
             $data = $this->wechat->wap($order);
             return $data;
         } else if ($request->has('pay_device') && $request->pay_device == 'app') {

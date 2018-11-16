@@ -1,0 +1,96 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+html{
+  height: 100%;
+  background-color: #f5f5f5;
+}
+.myform{
+  border-bottom: 1px solid #e5e5e5;
+}
+.mui-input-row{
+  width: 8rem;
+  margin: 0 auto;
+  height: 1.2rem;
+}
+.mui-input-row input{
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 0 !important;
+  width: 90%;
+  float: right;
+  padding-left: 0 !important;
+  height: 1.2rem;
+}
+.mui-input-row i{
+  width: 10%;
+  display: inline-block;
+  height: 1.2rem;
+  line-height:1.2rem;
+  font-size: 0.5rem;
+}
+
+.register_btn span{
+  display: block;
+  width:7rem;
+  height: 1.2rem;
+  line-height:1.2rem;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 0.4rem;
+  color: #fff;
+  background-color: orange;
+  margin: 0 auto;
+}
+.register_btn{
+  background-color: #f5f5f5;
+  width: 100%;
+  padding-top: 0.9rem;
+}
+
+.vcode_wrap button.mui-btn {
+  width: 27%;
+  padding: 0;
+  margin: 0;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  font-size: 0.35rem;
+  border-radius:0.5rem; 
+}
+
+
+.lt_container{
+    background-color: #fff;
+}
+.lt_header{
+    height: 1.2rem;
+    line-height:1.2rem;
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid #e5e5e5;
+}
+.lt_header a.icon_left{
+    height: 1.2rem;
+    line-height:1.2rem;
+    color: #333;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.lt_header a.login{
+  position: absolute;
+  right: 0.4rem;
+  top: 0.23rem;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  width: 1.3rem;
+  height: 0.7rem;
+  line-height: 0.7rem;
+  color: #333;
+  font-size: 0.38rem;
+}
+.mui-input-row input{
+  font-size: 0.38rem;
+}

@@ -163,9 +163,8 @@ return [
         Dingo\Api\Provider\LaravelServiceProvider::class,
         App\Providers\DingoSerializerProvider::class,
 
-        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
-
         Yansongda\LaravelPay\PayServiceProvider::class,
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
         SocialiteProviders\Manager\ServiceProvider::class,
 
     ],
@@ -218,7 +217,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,//新添加
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
-
         'Pay' => Yansongda\LaravelPay\Facades\Pay::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 

@@ -12,14 +12,14 @@ class OrderController extends MiddleController
     {
         $query = Order::query();
 
-        $orders = $query->with(['orderInfo', 'address', 'orderInfo.product'])->get();
+        $orders = $query->with(['orderInfo', 'address', 'orderInfo.product', 'user'])->get();
 
         return view('admin.order.index')->with('orders', $orders);
     }
 
     public function update($order)
     {
-        $data = Order::with(['orderInfo', 'address', 'orderInfo.product'])->find($order);
+        $data = Order::with(['orderInfo', 'address', 'orderInfo.product', 'user'])->find($order);
 
         return view('admin.order.update')->with('order', $data);
     }

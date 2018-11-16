@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html,body{
+    background-color: #f0f3f5;
+    height:100%;
+}
+img{
+    display: block;
+    width: 100%;
+}
+.Ty_mall {
+  width: 100%;
+  height: 100%;
+  /* max-width: 640px;
+  min-width: 320px; */
+  margin: 0 auto;
+  position: relative;
+  padding-top:1.3333rem;
+}
+.Ty_main {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  /*可以保证，所有的内容全部都是在main内部*/
+  overflow: hidden;
+  position: relative;
+}
+
+
+.Ty_header {
+  width: 100%;
+  height: 1.3333rem;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+.Ty_header a.goback{ 
+    float: right;
+    height: 50px;
+    line-height: 50px;
+    margin-right: 10px;
+    color: #333;
+}
+
+.searchInput{
+    width: 7rem;
+    height: 1rem;
+    border-radius:0.5rem;
+    margin-left: 0.3rem;
+    float: left;
+    margin-top: 0.2rem;
+    margin-bottom: 0.0667rem;
+}
+.searchInput input{
+    width: 7rem;
+    height: 1rem;
+    margin: 0 !important;
+    text-align: left;
+    font-size: 14px;
+}
+.Ty_header button.sear{ 
+    float: right;
+    padding: 0 !important;
+    border: none;
+    margin-top: 15px;
+    margin-right: 0.2667rem;
+    color: #333;
+}
+
+
+.title{
+    margin-bottom: 10px;
+    margin-top: 8px;
+}
+.content{
+    width: 100%;
+}
+.content ul{
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px dashed #dedede;
+}
+.content ul li{
+    overflow: hidden;
+    height: 30px;
+    border-bottom:1px dashed #dedede;
+    line-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.content ul li span:nth-child(2){
+    height: 30px;
+    line-height: 30px;
+    display: block;
+}

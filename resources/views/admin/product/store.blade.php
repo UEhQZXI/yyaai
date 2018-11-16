@@ -25,7 +25,11 @@
     .c-red{
         color:red;
     }
-
+    /* .formControls {
+    float: left;
+    width: 90%;
+    margin-left: 10px;
+} */
 </style>
 @endsection
 @section('script')
@@ -36,14 +40,22 @@
     <script type="text/javascript" src="/admin/Widget/zTree/js/jquery.ztree.all-3.5.min.js"></script>
     <script type="text/javascript" src="/admin/Widget/Validform/5.3.2/Validform.min.js"></script>
     <script type="text/javascript" src="/admin/Widget/webuploader/0.1.5/webuploader.min.js"></script>
-    <script type="text/javascript" src="/admin/Widget/ueditor/1.4.3/ueditor.config.js"></script>
-    <script type="text/javascript" src="/admin/Widget/ueditor/1.4.3/ueditor.all.min.js"> </script>
-    <script type="text/javascript" src="/admin/Widget/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
     <script src="/admin/js/lrtk.js" type="text/javascript" ></script>
     <script type="text/javascript" src="/admin/js/H-ui.js"></script>
     <script type="text/javascript" src="/admin/js/H-ui.admin.js"></script>
     <script type="text/javascript" src="/admin/js/select2.full.min.js"></script>
     <script src="/js/upload.js"></script>
+    <script src="https://mall-ty-1252438738.cos.ap-shanghai.myqcloud.com/js/wangEditor.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var E = window.wangEditor;
+            var editor = new E('#editor')
+            editor.customConfig.linkImgCallback = function (url) {
+                console.log(editor.txt.html()) // url 即插入图片的地址
+            }
+            editor.create();
+        }
+    </script>
     <script>
         function selectCate(that, cid) {
             $('#category-name').val(that.getElementsByClassName('cate-name')[0].innerHTML);
@@ -276,9 +288,6 @@
             });
         });
 
-        // $(function(){
-        //     var ue = UE.getEditor('editor');
-        // });
         /******树状图********/
 
         var code;
@@ -420,40 +429,6 @@
                             <input type="text" class="input-text" value="" placeholder=""  name="model">
                         </div>
                     </div>
-                    {{--<div class="Add_p_s">--}}
-                        {{--<label class="form-label col-2">--}}
-                            {{--产&nbsp;&nbsp;&nbsp;&nbsp;地：--}}
-                        {{--</label>--}}
-                        {{--<div class="formControls col-2">--}}
-                            {{--<input type="text" class="input-text" value="" placeholder=""  name="">--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="Add_p_s">--}}
-                        {{--<label class="form-label col-2">--}}
-                            {{--材&nbsp;&nbsp;&nbsp;&nbsp;质：--}}
-                        {{--</label>--}}
-                        {{--<div class="formControls col-2">--}}
-                            {{--<input type="text" class="input-text" value="" placeholder=""  name="">--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="Add_p_s">--}}
-                        {{--<label class="form-label col-2">--}}
-                            {{--品&nbsp;&nbsp;&nbsp;&nbsp;牌：--}}
-                        {{--</label>--}}
-                        {{--<div class="formControls col-2">--}}
-                            {{--<input type="text" class="input-text" value="" placeholder=""  name="">--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="Add_p_s">--}}
-                        {{--<label class="form-label col-2">--}}
-                            {{--产品重量：--}}
-                        {{--</label>--}}
-                        {{--<div class="formControls col-2">--}}
-                            {{--<input type="text" class="input-text" value="" placeholder=""  name="">--}}
-                            {{--kg--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-
                     <div class="Add_p_s">
                         <label class="form-label col-2">
                             <span class="c-red">*</span>
@@ -521,25 +496,17 @@
                         </div>
                     </div>
                 </div>
-                {{--<div class="clearfix cl">--}}
-                    {{--<label class="form-label col-2">--}}
-                        {{--关键词：--}}
-                    {{--</label>--}}
-                    {{--<div class="formControls col-10">--}}
-                        {{--<input type="text" class="input-text" value="" placeholder=""  name="">--}}
-                    {{--</div>--}}
-                {{--</div>--}}
                 <div class="clearfix cl">
                     <label class="form-label col-2">
                         <span class="c-red">*</span>
                         图片上传：
                     </label>
                     <div class="formControls col-10">
-                        <form enctype="multipart/form-data">
+                    
                             <!-- file input -->
                             <input type="file" name="file">
 
-                        </form>
+                 
                         <input type="hidden" id="images1" name="image1" value="">
                         <input type="hidden" id="images2" name="image2" value="">
                         <input type="hidden" id="images3" name="image3" value="">
@@ -551,29 +518,16 @@
                 <div class="clearfix cl" style="color:red;text-align: center">
                         注：商品图片最多只能上传五张，至少上传一张。第一张图片会作为商品的封面图，多张图片可以拖拽排序！
                 </div>
-                {{--<div class="clearfix cl">--}}
-                    {{--<label class="form-label col-2">--}}
-                        {{--详细内容：--}}
-                    {{--</label>--}}
-                    {{--<div class="formControls col-10">--}}
-
-                        {{--<script id="editor" type="text/plain" style="width:100%;height:400px;"></script>--}}
-
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="clearfix cl">--}}
-                    {{--<label class="form-label col-2">--}}
-                        {{--允许评论：--}}
-                    {{--</label>--}}
-                    {{--<div class="formControls col-2 skin-minimal">--}}
-                        {{--<div class="check-box" style=" margin-top:9px">--}}
-                            {{--<input type="checkbox" id="checkbox-1">--}}
-                            {{--<label for="checkbox-1">--}}
-                                {{--&nbsp;--}}
-                            {{--</label>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
+                <div class="clearfix cl">
+                        <label class="form-label col-2">
+                            商品详情：
+                        </label>
+                        <div class="formControls col-10">
+    
+                            <div id="editor"></div>
+    
+                        </div>
+                </div>
                 <div class="clearfix cl" style="text-align: center;margin-top: 20px">
                     <div class="Button_operation">
                         <button onclick="product_save_submit();" class="btn btn-primary radius"
@@ -582,12 +536,6 @@
                             </i>
                             提交
                         </button>
-                        {{--<button onclick="article_save();" class="btn btn-secondary btn-warning"--}}
-                                {{--type="button">--}}
-                            {{--<i class="icon-save">--}}
-                            {{--</i>--}}
-                            {{--保存草稿--}}
-                        {{--</button>--}}
                         <button onclick="layer_close();" class="btn btn-default radius" type="button">
                             &nbsp;&nbsp;取消&nbsp;&nbsp;
                         </button>

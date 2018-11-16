@@ -63,7 +63,12 @@
                                 $(obj).parents("tr").find(".td-status").html('<span class="label label-danger radius">已取消</span>');
                                 $(obj).css('style', 'display:none');
                                 // console.log($(obj).prev().prev());
-                                obj.previousElementSibling.previousElementSibling.style.display = 'none';
+                                try {
+                                    obj.previousElementSibling.previousElementSibling.style.display = 'none';
+                                } catch (error) {
+                                    console.log(error);
+                                }
+                                
                                 $(obj).remove();
                                 layer.msg('订单已取消!',{icon:1,time:1000});
                             });
@@ -223,11 +228,11 @@
                         <tr>
                             <th width="25px"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></th>
                             <th width="120px">订单编号</th>
+                            <th width="180px">下单用户</th>
                             <th width="250px">购买商品</th>
                             <th width="100px">支付金额</th>
                             <th width="100px">订单创建时间</th>
                             <th width="100px">订单支付时间</th>
-                            {{--<th width="180px">所属类型</th>--}}
                             <th width="80px">数量</th>
                             <th width="70px">状态</th>
                             <th width="200px">操作</th>
@@ -238,6 +243,7 @@
                             <tr>
                                 <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
                                 <td>{{$order->order_number}}</td>
+                                <td>{{$order->user->name}}</td> 
                                 <td class="order_product_name">
                                     @foreach($order->orderInfo as $order_info)
                                         <a href="#"><img src="{{$order_info->product->image1}}"  title="{{$order_info->product->title}}"/></a>
@@ -248,7 +254,6 @@
                                 {{--<td>14</td>--}}
                                 <td>{{$order->created_time}}</td>
                                 <td>{{$order->pay_time}}</td>
-                                {{--<td>食品</td>--}}
                                 <?php $num = 0; ?>
                                 @foreach($order->orderInfo as $order_info)
                                    <?php $num += $order_info->num ?>
@@ -281,7 +286,9 @@
                                             <a onClick="Delivery_stop(this, '{{$order->id}}')"  href="javascript:;" title="发货"  class="btn btn-xs btn-success"><i class="fa fa-cubes bigger-120"></i></a>
                                     @endif
                                     <a title="订单详细"  href="/admin/orders/{{$order->id}}/edit"  class="btn btn-xs btn-info order_detailed" ><i class="fa fa-list bigger-120"></i></a>
+                                    @if($order->status !== 5)
                                     <a title="取消订单" href="javascript:;"  onclick="Order_form_del(this, '{{$order->id}}')" class="btn btn-xs btn-warning" ><i class="fa fa-trash  bigger-120"></i></a>
+                                    @endif 
                                 </td>
                             </tr>
                         @endforeach

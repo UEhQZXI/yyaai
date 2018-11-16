@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="touch-action: none"s>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>搜索列表</title>
+  <link rel="stylesheet" href="lib/mui/css/mui.css">
+  <link rel="stylesheet" href="css/searchList.css">
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+</head>
+<body>
+
+<div class="Ty_mall">
+  
+  <div class="Ty_header">
+      <a href="index.html"><span class="mui-icon mui-icon-arrowleft"></span></a>
+      <div class="mui-input-row searchInput">
+        <input type="search" class="mui-input-clear search_input">
+      </div>
+  </div>
+  <div class="Ty_main">
+    <div class="mui-scroll-wrapper">
+      <div class="mui-scroll">
+        <!--这里放置真实显示的DOM内容-->
+             <ul id="goodList">
+                 <!-- 模板 -->
+             </ul>
+        </div>      
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/html" id="tpl_searchlist">
+      {{if list.length == 0}}
+          <p style="margin:0 auto;text-align:center;margin-top:150px;">没有该商品</p>
+      {{/if}}
+      {{ each list v i}}
+          <a href="searchGood.html?id={{v.id}}" data-id="{{v.id}}">
+             <img src="{{v.image1}}" alt="">
+             <p>{{v.title}}</p>
+             <span style="color:red;">{{v.current_price}}</span>
+          </a>
+      {{/each}}
+</script>
+
+
+
+<script src="lib/mui/js/mui.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="lib/lib-flexible/flexible.js"></script>
+<script src="js/common.js"></script>
+<script src="js/searchList.js"></script>
+</body>
+</html>

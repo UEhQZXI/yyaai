@@ -72,9 +72,8 @@ function member_edit(id){
       url: '/admin/user/userinfo',
       data: {id: id},
       success: function (res) {
-        data = JSON.parse(res)
 
-        if (data.status_code == 10001) {
+        if ((typeof res) == 'string') {
           layer.msg('你没有权限进行此操作', {icon: 5,time: 3000});
         }
         $('input[name="name"]').val(res.name)

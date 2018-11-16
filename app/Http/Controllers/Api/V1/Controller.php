@@ -12,7 +12,6 @@ class Controller extends BaseController
 {
     use Helpers;
 
-    private $upload_host = 'http://m.iyaa180.com/uploads/';
     private $route_fillable  = [
     	'api/store/product', // 添加商品
     	// 'api/store/orders',  // 查询订单
@@ -48,7 +47,7 @@ class Controller extends BaseController
 	        	$dir = 'images';
 	        	$filename = time() . uniqid() . '.' . $extension;
 	        	$store_result = $photo->storeAs($dir, $filename, 'upload');
-	        	$path = env('APP_URL') . $dir . '/' . $filename;
+	        	$path = env('APP_URL_UPLOAD') . $dir . '/' . $filename;
 	        	return $this->response->array(['message' => '上传成功', 'data' => ['path' => $path]]);
 	    	}
     	} else {
@@ -58,7 +57,7 @@ class Controller extends BaseController
 	        	$dir = 'images';
 	        	$filename = time() . uniqid() . '.' . $extension;
 	        	$store_result = $photo->storeAs($dir, $filename, 'upload');
-	        	$path = env('APP_URL') . $dir . '/' . $filename;
+	        	$path = env('APP_URL_UPLOAD') . $dir . '/' . $filename;
 	        	return $this->response->array(['message' => '上传成功', 'data' => ['path' => $path]]);
     		}
     	}

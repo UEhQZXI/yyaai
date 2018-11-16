@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>个人中心</title>
+  <link rel="stylesheet" href="lib/mui/css/mui.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/user.css">
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+  <link rel="stylesheet" href="css/iconfont.css">
+</head>
+<body>
+
+<div class="Ty_mall" style="padding-top:0">
+  <div class="UserLogin">
+      <div>
+        <a href="login.html"><span class="mui-icon mui-icon-gear"></span></a>
+        <a href="login.html"><span class="mui-icon mui-icon-chatbubble"></span></a>
+      </div>
+      <div>
+         <a href="login.html">
+            <img src="images/user.jpg" alt="">
+         </a>
+      </div>
+      <a href="login.html" class="reg">登陆/注册</a>
+  </div>
+  <!-- 我的订单 -->
+  <div class="order">
+      <a class="check" href="login.html" data-id="1">
+            <span class="mui-icon mui-icon-compose"></span>
+            <span>我的订单</span>        
+            <span class="mui-icon mui-icon-arrowright"></span>
+            <span>查看全部订单</span>
+      </a>
+      <div class="delivery">
+            <ul class="mui-clearfix">
+                <li>
+                    <span class="iconfont">&#xe610;</span>
+                    <a href="myOder.html?id=1">待付款</a>
+                </li>
+                <li>
+                    <span class="iconfont">&#xe62e;</span>
+                    <a href="myOder.html?id=2">待发货</a>
+                </li>
+                <li>
+                    <span class="iconfont">&#xe601;</span>
+                    <a href="myOder.html?id=3">待收货</a>
+                </li>
+                <li>
+                    <span class="iconfont">&#xe60b;</span>
+                    <a href="myOder.html?id=4">已完成</a>
+                </li>
+            </ul>
+      </div>
+  </div>
+  <div class="collection">
+        <ul class="mui-table-view" style="border:none !important">
+            <li class="mui-table-view-cell">            
+                <a class="mui-navigate-right" href="login.html"> <span class="fa fa-circle-o"></span>我的收藏</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right" href="login.html">管理收货地址</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right" href="login.html">我的红包</a>
+            </li>
+        </ul>
+  </div>
+
+
+ 
+    
+
+  <div class="Ty_footer">
+    <ul class="mui-clearfix">
+      <li>
+        <a href="index.html">
+          <span class="fa fa-home"></span>
+          <p>首页</p>
+        </a>
+      </li>
+      <li>
+        <a href="category.html">
+          <span class="fa fa-bars"></span>
+          <p>分类</p>
+        </a>
+      </li>
+      <li>
+        <a href="cart.html">
+          <span class="fa fa-shopping-cart"></span>
+          <p>购物车</p>
+        </a>
+      </li>
+      <li class="now">
+        <a href="#" class="user">
+          <span class="fa fa-user"></span>
+          <p>我的</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+</div>
+
+
+<script src="lib/mui/js/mui.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/lib-flexible/flexible.js"></script>
+<script src="js/common.js"></script>
+<script src="js/user.js"></script>
+</body>
+</html>

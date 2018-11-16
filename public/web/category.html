@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="touch-action: none">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>商品分类</title>
+  <link rel="stylesheet" href="lib/mui/css/mui.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/category.css">
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+</head>
+<body>
+
+<div class="Ty_mall">
+  
+  <div class="Ty_header">
+    <p>分类</p>
+    <a href="search.html"><span class="mui-icon mui-icon-search"></span></a>
+  </div>
+
+  <div class="Ty_main">
+      <div class="Ty_category_l">
+            <div class="mui-scroll-wrapper">              
+                    <!--这里放置真实显示的DOM内容-->
+                    <ul id="classify"  class="mui-scroll">
+                       
+                    </ul>
+            </div>
+      </div>
+      <div class="Ty_category_r">
+            <div class="mui-scroll-wrapper">
+                        <!--这里放置真实显示的DOM内容-->
+                    <ul class="mui-scroll">
+                      
+                    </ul>
+            </div>
+      </div>
+  </div>
+
+  <div class="Ty_footer">
+    <ul class="mui-clearfix">
+      <li>
+        <a href="index.html">
+          <span class="fa fa-home"></span>
+          <p>首页</p>
+        </a>
+      </li>
+      <li class="now">
+        <a href="category.html">
+          <span class="fa fa-bars"></span>
+          <p>分类</p>
+        </a>
+      </li>
+      <li>
+        <a href="cart.html">
+          <span class="fa fa-shopping-cart"></span>
+          <p>购物车</p>
+        </a>
+      </li>
+      <li>
+        <a href="user.html" class="user">
+          <span class="fa fa-user"></span>
+          <p>我的</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+</div>
+
+
+<script type="text/html" id="tpl_l">
+  {{each list v i}}
+      <li data-id = {{v.id}} class="{{i==0?'now':''}}">
+          <a href="javascript:;" >{{v.name}}</a>
+      </li>
+  {{/each}}
+</script>
+
+<script type="text/html" id="tpl_r">
+  {{if row.length == 0}}
+     <p style="text-align:center;margin-top:150px;">该分类下没有商品信息</p>
+  {{/if}}
+  {{each row v i}}
+      <li data-id = {{v.id}}>
+          <a href="searchList.html?id={{v.id}}">
+            <img src="{{v.image}}" alt="">
+            <span>{{v.name}}</span>
+          </a>
+      </li>
+  {{/each}}
+</script>
+
+
+</body>
+<script src="lib/mui/js/mui.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="lib/lib-flexible/flexible.js"></script>
+<script src="js/common.js"></script>
+<script src="js/category.js"></script>
+</html>

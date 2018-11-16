@@ -1,0 +1,198 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+html,body {
+    height: 100%;
+    /* background-color: #dedede !important; */
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.Ty_mall {
+  width: 100%;
+  height: 100%;
+  /* max-width: 640px;
+  min-width: 320px; */
+  margin: 0 auto;
+  position: relative;
+  padding-top:1.3333rem;
+  padding-bottom: 55px;
+}
+
+.Ty_header {
+  width: 100%;
+  height: 1.3333rem;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+}
+
+.mui-search{
+  width: 6.5rem;
+  height: 0.8rem;
+  border-radius:0.5rem;
+  margin-top: 0.26rem;
+  margin-left:1.65rem; 
+}
+.mui-search input{
+  width: 300px;
+  height: 33px;
+  margin: 0 !important;
+}
+
+
+
+.Ty_nav{
+    width: 100%;
+}
+.Ty_nav ul li{
+    float: left;
+    width: 25%;
+    height: 0.6667rem;
+    text-align: center;
+    height: 0.9333rem;
+    line-height:0.9333rem;
+}
+.Ty_nav ul li a{
+   color: #000;
+   font-size: 0.36rem;
+}
+
+.color{
+    width: 100%;
+    height: 0.2667rem;
+    background-color: #f0f3f5
+}
+.Ty_product{
+  width: 100%;
+  background-color: #fff;
+}
+.hot{
+  width: 100%;
+  position: relative;
+}
+.hot a p{
+  text-align: center;
+  color: #000;
+  padding-top: 0.2667rem;
+  width:4.6rem;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.hot span.iconRight{
+  position: absolute;
+  right: 12px;
+  top: 5px;
+}
+.hot ul li{
+  float: left;
+  width: 50%;
+}
+.sales{
+  width: 100%;
+  position: relative;
+}
+.sales p{
+  text-align: center;
+  color: #000;
+}
+.sales span.iconRight{
+  position: absolute;
+  right: 12px;
+  top: 5px;
+}
+.sales ul li{
+  float: left;
+  width: 50%;
+}
+.Newgoods{
+  width: 100%;
+  position: relative;
+}
+.Newgoods p{
+  text-align: center;
+  color: #000;
+}
+.Newgoods span.iconRight{
+  position: absolute;
+  right: 12px;
+  top: 5px;
+}
+.Newgoods ul li{
+  float: left;
+  width: 50%;
+}
+
+
+.Ty_footer {
+  width: 100%;
+  height: 55px;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}
+
+
+.Ty_footer li {
+  float: left;
+  width: 25%;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.Ty_footer li.now a{
+  color: darkorange;
+}
+
+.Ty_footer li.now p {
+  color: darkorange;
+}
+
+.Ty_footer a {
+  color: #c3c3c3;
+}
+
+.Ty_footer p {
+  color:  #c3c3c3;
+  font-size: 12px;
+  margin: 0;
+}
+
+
+
+.Ty_main {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  /*可以保证，所有的内容全部都是在main内部*/
+  overflow: hidden;
+  position: relative;
+}
+/* #new{
+  overflow: hidden;
+}
+
+#new a{
+  float: left;
+  width: 50%;
+  color: #333;
+  text-align: center;
+} */
+
+.mui-slider{
+  width: 100%;
+  height: 5.5rem;
+}
+.mui-slider img{
+  width: 100%;
+  height: 100%;
+}
+

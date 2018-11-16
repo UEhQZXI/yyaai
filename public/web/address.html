@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <title>收货地址</title>
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <link rel="stylesheet" href="css/address.css">
+</head>
+<body>
+    <div class="address">
+        <div class="addressTop">
+            <a href="#" class="link"><span class="mui-icon mui-icon-arrowleft"></span></a>
+            <span style="font-size: 0.4rem;">管理收货地址</span> 
+        </div>
+        <div class="addressContent">
+            <ul id="addList">
+              
+            </ul>
+          
+        </div>
+        <a href="addAddress.html" class="Address">添加收货地址</a>
+    </div>
+
+
+
+    <script type="text/html" id="tpl_add">
+        {{ if list.length == 0}}
+            <p style="margin-top:150px;">暂无收货地址</p>
+        {{/if}}
+        
+        {{each list v i}}
+            <li data-id="{{v.id}}" class="addressLIst">
+                <span class="name">{{v.user_name}}</span>
+                <p class="tel">{{v.user_phone}}</p>
+                {{ if v.is_default == 1}}
+                <span id="default">默认</span>
+                {{/if}}
+                <div>
+                    <span>{{v.area1}}</span>
+                    <span>{{v.area2}}</span>
+                    <span>{{v.area3}}</span>
+                    <span>{{v.address}}</span>
+                </div>
+               <a href="editor.html?id={{v.id}}"><span class="mui-icon mui-icon-compose eadit"></span></a>
+            </li> 
+        {{/each}}
+     </script>
+
+
+
+    <script src="lib/mui/js/mui.js"></script>
+    <script src="lib/zepto/zepto.min.js"></script>
+    <script src="lib/artTemplate/template-web.js"></script>
+    <script src="lib/lib-flexible/flexible.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/address.js"></script>
+</body>
+</html>

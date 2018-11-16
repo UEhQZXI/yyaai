@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人资料</title>
+    <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/detail.css">
+</head>
+<body>
+    <div class="detail">
+        <div class="detailTop">
+            <a href="javascript:history.go(-1)"><span class="mui-icon mui-icon-arrowleft"></span></a>
+            <p>设置</p>
+        </div>
+        <div class="personInfo">
+            <img src="images/user.jpg" alt="">
+            <p>疾风剑豪</p>
+            <!-- <input type="file" accept="image/*" capture="camera"><br> -->
+            <form action="" method="post" enctype="multipart/form-data">
+                <input type="file" onchange="uploadImg(this,'behindeImg')" class="comFileBtn"  accept="image/*"/>
+            </form>
+            <span>收货地址:</span>
+        </div>
+    </div>
+
+
+    <script>
+
+        function uploadImg(that,imgName){
+            var reads= new FileReader();
+            var fileObj=that.files[0];
+            var imageType = /^image\//;
+            //是否是图片，如果input没加accept属性，这里也可以判断
+            if (!imageType.test(fileObj.type)) {
+                alert("请选择图片！");
+                return;
+            }
+            //读取完成
+            reads.readAsDataURL(fileObj);
+            reads.onload = function(e) {
+                //图片路径设置为读取的图片
+                $("#"+imgName).attr('src',e.target.result) ;
+            };
+        }
+
+        function crame(){
+            var pic = new FileReader()
+            var fileObj = new FilePic()
+            
+        }
+ 
+    </script>
+
+</body>
+<script src="lib/mui/js/mui.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/lib-flexible/flexible.js"></script>
+<script src="js/detail.js"></script>
+</html>

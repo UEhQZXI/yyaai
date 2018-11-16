@@ -71,14 +71,22 @@ $api->version('v1', [
         // 查询咨询 回复列表
         $api->get('advisorys/{advisory}/replies', 'AdvisoryReplyController@index')
             ->name('api.advisorys.replies.index');
+            
+        $api->group(['namespace' => 'Login'], function ($api) {
 
         $api->group(['namespace' => 'Login'], function ($api) {
-            // qq快速登录回调
-            $api->get('login/qq/notify', 'QqController@notify');
 
             //微博登陆
             $api->get('login/weibo/notify', 'WeiboLoginController@notify');
             $api->get('login/weibo/index', 'WeiboLoginController@index');
+
+            // qq登录页面
+            $api->get('login/qq', 'QQController@index')
+                ->name('api.login.qq.index');
+
+            // qq快速登录回调
+            $api->get('login/qq/notify', 'QQController@notify')
+                ->name('api.login.qq.notify.notify');
         });
 
 

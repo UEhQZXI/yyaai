@@ -22,6 +22,7 @@ class LoginController extends Controller
     		session(['info' => json_encode($info)]);
     		$actions = Action::where('role', $info->role)->with(['role'])->get();
     		session(['role' => json_encode($actions)]);
+            session(['time' => date('Y-m-d H:i:s')]);
     		return $this->response->array(['message' => '登陆成功', 'data' => ['info' => $info], 'status_code' => 200]);
     	} else {
     		return $this->response->array(['message' => '账号或密码错误', 'data' => [], 'status_code' => 401]);

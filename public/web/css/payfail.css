@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  html,body {
+      height: 100%;
+      background-color: #dedede !important;
+  }
+  
+  img {
+    width: 100%;
+    display: block;
+  }
+  
+  .Ty_mall {
+    width: 100%;
+    height: 100%;
+    /* max-width: 640px;
+    min-width: 320px; */
+    margin: 0 auto;
+    position: relative;
+    padding-top:50px;
+    padding-bottom: 50px;
+  }
+  
+  .Ty_header {
+    width: 100%;
+    height:50px;
+    background-color:#fe0236;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 0.4rem;
+  }
+  .Ty_header a{
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #fff
+  }
+  .Ty_main {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    /*可以保证，所有的内容全部都是在main内部*/
+    overflow: hidden;
+    position: relative;
+  }
+  .paying{
+    width: 100%;
+    height: 2rem;
+    background-color:#fe0236;
+    color: #fff;
+    padding-left: 1.5rem;
+    line-height: 2rem;
+  }
+  .paying span{
+      font-size: 13px;
+  }
+
+  .address{
+      background-color: #fff;
+      width: 100%;
+      height: 2rem;
+      position: relative;
+      margin-bottom: 10px;
+  }
+.address span:nth-child(1){
+    position: absolute;
+    top:0.7rem;
+    left: 0.6667rem;
+    color:#fd6902;
+}
+.address span:nth-child(2){
+    position: absolute;
+    top:0.4rem;
+    left: 1.8rem;
+    font-size: 0.35rem;
+}
+.address span:nth-child(3){
+    position: absolute;
+    top:0.4rem;
+    left:3.5rem;
+    font-size: 0.35rem;
+}
+.address p{
+    position: absolute;
+    top:1.1rem;
+    left: 1.8rem;
+    font-size: 0.33rem;
+    margin-bottom: 0 !important;
+    color:#333;
+}
+
+.order{
+    background-color: #fff;
+    padding-top: 0.4rem;
+    overflow: hidden;
+    padding-bottom: 0.6667rem;
+}
+.order p.mall{
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+    color: #333;
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 0.2667rem;
+    font-size: 0.4rem
+}
+.order img{
+    width: 2.1rem;
+    height: 2.1rem;
+    float: left;
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+}
+
+.detail{
+    height: 100%;
+    width:7rem;
+    float: left;
+    position: relative;
+}
+.detail span.logo{
+    width:5.2rem;
+    height: auto;
+    display: block;
+}
+.detail span.price{
+    position: absolute;
+    top: 0rem;
+    right: 0.2667rem;
+}
+.detail span.num{
+    position: absolute;
+    right:  0.2667rem;
+    top: 1.5rem;
+}
+p.totalPrice{
+  float: right;
+  margin-top: 1.3333rem;
+  margin-bottom: 0 !important;
+  margin-right:0.85em;
+  color: #000;
+  font-size: 0.36rem;
+}
+p.totalPrice span{
+  color: #d65e13;
+}
+.Ty_footer {
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+}
+.Ty_footer span:nth-child(2){
+    float: right;
+    width: 1.7rem;
+    height: 0.6667rem;
+    border: 1px solid orange;
+    border-radius:0.4rem;
+    text-align: center;
+    line-height: 0.6667rem;
+    margin-top: 0.33rem;
+    margin-right: 0.4rem;
+}
+.Ty_footer span:nth-child(1){
+    float: right;
+    width: 1.7rem;
+    height: 0.6667rem;
+    border: 1px solid #dedede;
+    border-radius:0.4rem;
+    text-align: center;
+    line-height: 0.6667rem;
+    margin-top: 0.33rem;
+    margin-right: 0.4rem;
+}
+.Ty_footer span.see{
+    float: right;
+    width: 1.7rem;
+    height: 0.6667rem;
+    border: 1px solid #dedede;
+    border-radius:0.4rem;
+    text-align: center;
+    line-height: 0.6667rem;
+    margin-top: 0.33rem;
+    margin-right: 0.4rem;
+}
+
+.orderNumber{
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 0.4rem;
+}
+.orderNumber span{
+    color: #000;
+    font-size: 0.4rem;
+    display: block;
+    margin-bottom: 0.2667rem;
+}
+.orderNumber p{
+    font-size: 0.33rem;
+}

@@ -10,7 +10,9 @@ class MiddleController extends Controller
 	protected $fillable_route = array(
 		'admin/role/updateview/*',
 		'admin/user/updateview/*',
-		'admin/user/update/*'
+		'admin/user/update/*',
+        'admin/orders/*/edit',
+        'admin/products/*/edit'
 	);
 
     public function __construct(Request $request)

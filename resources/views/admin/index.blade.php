@@ -4,7 +4,7 @@
 <div class="page-content clearfix">
  <div class="alert alert-block alert-success">
   <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
-  <i class="icon-ok green"></i>欢迎使用<strong class="green">后台管理系统<small>(v1.2)</small></strong>,你本次登陆时间为2016年7月12日13时34分，登陆IP:192.168.1.110.  
+  <i class="icon-ok green"></i>欢迎使用<strong class="green">天医商城后台管理系统<small>(v1.0.0)</small></strong>,你本次登陆时间为{{ session('time') }}，登陆IP:{{ $ip }}.  
  </div>
  <div class="state-overview clearfix" style="height:3rem">
                   <div class="col-lg-3 col-sm-6">
@@ -14,7 +14,7 @@
                              <i class="icon-user"></i>
                           </div>
                           <div class="value">
-                              <h1>34522</h1>
+                              <h1>{{ $user_num }}</h1>
                               <p>商城用户</p>
                           </div>
                           </a>
@@ -26,8 +26,8 @@
                               <i class="icon-tags"></i>
                           </div>
                           <div class="value">
-                              <h1>140</h1>
-                              <p>分销记录</p>
+                              <h1>{{ $store_num }}</h1>
+                              <p>商品数量</p>
                           </div>
                       </section>
                   </div>
@@ -37,7 +37,7 @@
                               <i class="icon-shopping-cart"></i>
                           </div>
                           <div class="value">
-                              <h1>345</h1>
+                              <h1>{{ $order_num }}</h1>
                               <p>商城订单</p>
                           </div>
                       </section>
@@ -48,7 +48,7 @@
                               <i class="icon-bar-chart"></i>
                           </div>
                           <div class="value">
-                              <h1>￥34,500</h1>
+                              <h1>￥{{ $price_sum }}</h1>
                               <p>交易记录</p>
                           </div>
                       </section>

@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    background-color: #fff;
+}
+.searchGood{
+    width: 100%;
+    background-color: #fff;
+}
+.top{
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    line-height: 50px;
+    border-bottom: 1px solid #dedede
+}
+.top a.left{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #333;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html,body{
+    background-color: #f0f3f5;
+    height:100%;
+}
+img{
+    display: block;
+    width: 100%;
+}
+.Ty_mall {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom:50px;
+}
+.Ty_main {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  /*可以保证，所有的内容全部都是在main内部*/
+  overflow: hidden;
+  position: relative;
+}
+.Ty_header {
+  width: 100%;
+  height:50px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  line-height: 50px;
+}
+.Ty_header a{
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #333;
+    font-size: 0.4rem
+}
+.Ty_header span:nth-child(2){
+    font-size: 0.4rem
+}
+
+.mui-scroll{
+    text-align: left;
+}
+.Ty_footer{
+    background-color: #fff;
+    height: 50px;
+    overflow: hidden;
+}
+.Ty_footer button{
+    margin-top: 0.2rem;
+}
+
+.Ty_footer a span{
+   font-size: 0.6rem;
+   color: #ccc;
+   margin-left: 0.45rem;
+   padding-top: 0.38rem;
+}
+
+.showlist{
+    position: absolute;
+    overflow: hidden;
+    bottom:0;
+    z-index: 999;
+    width: 100%;
+    background-color: #fff;
+    border-radius:0.2667rem 0.2667rem 0 0;
+    z-index: 888;
+    height: 10rem;
+}
+.Join{
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.Join a span{
+    font-size: 0.6rem;
+   color: #ccc;
+   margin-left: 0.45rem;
+   padding-top: 0.38rem;
+}
+.Join button.add_car{
+    margin-right: 20px;
+    margin-top: 0.2rem;
+}
+.Join button.buy{
+    margin-right: 20px;
+    margin-top: 0.2rem;
+}
+ .showlist .mui-icon{
+    position: absolute;
+    top: 0.1333rem;
+    right: 0.1333rem;
+} 
+span.title{
+    padding-top: 0.18rem;
+    padding-bottom: 0.18rem;
+    padding-left: 0.1333rem;
+    padding-right: 0.1333rem;
+    background-color:#f6f6f6;
+    border:1px solid #f6f6f6; 
+    text-align:center;
+    line-height:0.8rem;
+    border-radius:0.2667rem;
+    overflow: hidden;
+}
+span.title.now{
+    border-color:red; 
+    color:red;
+    background-color: #faf8fa;
+    box-sizing: content-box;
+}
+.ying{
+    width: 100%;
+    background-color: #000;
+    opacity: 0.6;
+    height: 100%;
+    position: absolute;
+    bottom: 50px;
+    z-index: 666;
+    display: none;
+}
+.mui-slider-item img{
+    height: 450px;
+    width: 100%;
+}
+.mui-slider{
+    width: 100%;
+    height: 280px;
+}
+.mui-slider img{
+    width: 100%;
+    height: 100%;
+}
+.share{
+    background-color:#fff;;
+    width: 120px;
+    overflow: hidden;
+    position: absolute;
+    right: 5px;
+    z-index: 999;
+    height: 135px;
+    display: none;
+}
+.share li{
+    height: 40px;
+}
+.share span{
+    float: left;
+    display: block;
+    width: 40%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+}
+.share a{
+    color:#000;
+    font-size: 0.33rem;
+    display: block;
+    width: 60%;
+    float: right;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.share p{
+    color:#000;
+    font-size: 0.33rem;
+    display: block;
+    width: 60%;
+    float: right;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 0 !important;
+}
+.choose{
+    height: 180px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    display: none;
+    z-index: 999;
+}
+.choose a{
+    width: 25%;
+    display: block;
+    float: left;
+    font-size:1.1rem;
+    text-align: center;
+    height: 180px;
+    line-height: 180px;
+}

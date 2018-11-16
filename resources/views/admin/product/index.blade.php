@@ -87,11 +87,11 @@
         $(".table_menu_list").width($(window).width()-260);
         $(".table_menu_list").height($(window).height()-215);
         //当文档窗口发生改变时 触发
-        $(window).resize(function(){
-            $(".widget-box").height($(window).height()-215);
-            $(".table_menu_list").width($(window).width()-260);
-            $(".table_menu_list").height($(window).height()-215);
-        })
+        // $(window).resize(function(){
+        //     $(".widget-box").height($(window).height()-215);
+        //     $(".table_menu_list").width($(window).width()-260);
+        //     $(".table_menu_list").height($(window).height()-215);
+        // })
 
         $(document).ready(function() {
             $.ajax({
@@ -130,7 +130,7 @@
                     },
                     success: function (data) {
                         if (data.status_code == 200) {
-                            $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="btn btn-xs " onClick="member_start(this,id)" href="javascript:;" title="上架"><i class="icon-ok bigger-120"></i></a>');
+                            $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="btn btn-xs " onClick="member_start(this, '+id+')" href="javascript:;" title="上架"><i class="icon-ok bigger-120"></i></a>');
                             $(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已下架</span>');
                             $(obj).remove();
 
@@ -152,7 +152,7 @@
                     },
                     success: function (data) {
                         if (data.status_code == 200) {
-                            $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="btn btn-xs btn-success" onClick="member_stop(this,id)" href="javascript:;" title="下架"><i class="icon-ok bigger-120"></i></a>');
+                            $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="btn btn-xs btn-success" onClick="member_stop(this, '+id+')" href="javascript:;" title="下架"><i class="icon-ok bigger-120"></i></a>');
                             $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已上架</span>');
                             $(obj).remove();
                             layer.msg('商品已上架!',{icon: 6,time:1000});

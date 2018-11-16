@@ -12,10 +12,12 @@
 */
 
 Route::get('/', function () {
-	return ['message' => '此地不宜久留~ (｡ŏ_ŏ)走开！', 'code' => 2333];
+	return redirect('http://m.iyaa180.com/web/index.html');
 });
 
-Route::get('/test', 'Admin\LoginController@test');
+Route::get('/test', function () {
+	return view('test');
+});
 
 Route::group(['middleware' => 'adminlogin'], function () {
 	Route::get('admin/index', 'Admin\IndexController@index');

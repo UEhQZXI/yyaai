@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    display: block;
+}
+.add{
+    width: 100%;
+}
+.addTop{
+    width: 100%;
+    background-color: #ffffff;
+    height: 1.3rem;
+    text-align: center;
+    position: relative;
+    line-height:1.3rem;
+    font-size: 0.35rem
+}
+.addTop a{
+    color: #333;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.addContent button{
+    background-color: orange;
+    height: 1rem;
+    width:6.5rem;
+    margin: 0.7rem auto;
+    display: block;
+    color: #fff !important;
+    border-radius:0.8rem; 
+}
+
+
+.mui-input-row input{
+    font-size: 0.4rem;
+}
+.mui-input-row label{
+    font-size: 14px;
+}
+
+._citys{
+    /* background-color: #000; */
+    height: 100% !important;
+}
+#PoPy{
+    height: 50% !important;
+}
