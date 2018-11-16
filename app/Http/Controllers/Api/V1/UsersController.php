@@ -37,7 +37,7 @@ class UsersController extends Controller
             'create_time' => time(),
         ]);
 
-        // 清楚验证码缓存
+        // 清除验证码缓存
         \Cache::forget($request->verification_key);
 
         return $this->response->array(['message' => 'success', 'data' => [

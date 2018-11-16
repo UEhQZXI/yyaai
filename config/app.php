@@ -166,6 +166,7 @@ return [
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
         Yansongda\LaravelPay\PayServiceProvider::class,
+        SocialiteProviders\Manager\ServiceProvider::class,
 
     ],
 
@@ -219,6 +220,7 @@ return [
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
 
         'Pay' => Yansongda\LaravelPay\Facades\Pay::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 
