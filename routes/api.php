@@ -72,6 +72,9 @@ $api->version('v1', [
         $api->get('advisorys/{advisory}/replies', 'AdvisoryReplyController@index')
             ->name('api.advisorys.replies.index');
 
+        // qq快速登录回调
+
+
         /**
          * 访问以下接口需要token认证
          */
