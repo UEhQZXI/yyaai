@@ -72,7 +72,16 @@ $api->version('v1', [
         $api->get('advisorys/{advisory}/replies', 'AdvisoryReplyController@index')
             ->name('api.advisorys.replies.index');
 
-        // qq快速登录回调
+        $api->group(['namespace' => 'Login'], function ($api) {
+
+            // qq登录页面
+            $api->get('login/qq', 'QQController@index')
+                ->name('api.login.qq.index');
+
+            // qq快速登录回调
+            $api->get('login/qq/notify', 'QQController@notify')
+                ->name('api.login.qq.notify.notify');
+        });
 
 
         /**
