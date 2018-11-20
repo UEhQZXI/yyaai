@@ -43,7 +43,7 @@ $(function(){
                 },
                 error:function(res){
                     if(res.status == 422){
-                        mui.toast("验证码发送过于频繁,请稍后再试");
+                        mui.toast(res.message);
                     }
                 }
             })
