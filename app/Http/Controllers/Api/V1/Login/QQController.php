@@ -22,23 +22,15 @@ class QQController extends Controller
 
         $user = User::where('qq_id', $qqId)->first();
 
-        // 没有用户创建一个用户
-        if (!$user) {
-            $user = User::create([
-                'name' => $qqUser->nickname,
-                'avatar' => $qqUser->avatar,
-            ]);
-        }
+        // 没有用户，先让用户绑定手机号码进行判断
+        if (!$user)
+            return view('wap.login.bindPhone')
+                ->with([
+                    'qqId' => $qqUser->id,
+                    'name' => $qqUser->nickname,
+                    'avatar' => $qqUser->avatar
+                ]);
 
-        // 没有绑定手机号先绑定手机号码
-        if (!$user->phone) {
-
-            // 获取token
-            $token = \Auth::guard('api')->fromUser($user);
-
-            // 返回到绑定手机号页面
-            return view('wap.login.bindPhone')->with('token', $token);
-        }
 
         // 绑定手机后直接返回token
         $token = \Auth::guard('api')->fromUser($user);

@@ -27,15 +27,36 @@ class UsersController extends Controller
             return $this->response->errorUnauthorized('验证码错误');
         }
 
-        // 生成随机用户名
-        $name = '牙牙_'.str_random(1).mt_rand(1, 99).str_random(4);
+        // 是否是绑定手机号码的操作
+        if ($request->filled('action')) {
+            // 先判断当前手机号码是否被绑定过QQ
+            $socialId = User::select('qq_id')->where('phone', $verifyData['phone'])->first();
 
-        $user = User::create([
-            'name' => $name,
-            'phone' => $verifyData['phone'],
-            'password' => bcrypt($request->password),
-            'create_time' => time(),
-        ]);
+            // 没有绑定过qq，
+            if (!$socialId) {
+
+                $user = User::updateOrCreate([
+                    'phone' => $verifyData['phone'],
+                    'name' => $request->name,
+                    'avatar' => $request->avatar,
+                    'qq_id' => $request->qqId
+                ]);
+            } else {
+                return $this->response->error('该手机号码已绑定其他账号', 422);
+            }
+
+        } else {
+
+            // 生成随机用户名
+            $name = '牙牙_'.str_random(1).mt_rand(1, 99).str_random(4);
+
+            $user = User::create([
+                'name' => $name,
+                'phone' => $verifyData['phone'],
+                'password' => bcrypt($request->password),
+                'create_time' => time(),
+            ]);
+        }
 
         // 清除验证码缓存
         \Cache::forget($request->verification_key);
