@@ -41,11 +41,13 @@ class UsersController extends Controller
                     'qq_id' => $request->qqId
                 ]);
             } elseif (!$socialId->qq_id) {
-                $user = User::where('phone', $verifyData['phone'])->update([
+                User::where('phone', $verifyData['phone'])->update([
                     'name' => $request->name,
                     'avatar' => $request->avatar,
                     'qq_id' => $request->qqId
                 ]);
+
+                $user = User::where('phone', $verifyData['phone'])->first();
             } else {
                 return $this->response->error('该手机号码已绑定其他账号', 422);
             }
