@@ -23,21 +23,31 @@ class VerificationCodeRequest extends FormRequest
      */
     public function rules()
     {
-        if ($this->action == 'login') {
-            $rule = [
-                'phone' => [
+        switch ($this->action) {
+            case 'login':
+                return $rule = [
+                    'phone' => [
                         'required',
                         'regex:/^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/'
-                ]];
-        } else {
-            $rule = [
-                'phone' => [
+                    ]];
+                break;
+            case 'bindPhone':
+                return $rule = [
+                    'phone' => [
+                        'required',
+                        'regex:/^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/'
+                    ]];
+                break;
+            default:
+                return $rule = [
+                    'phone' => [
                         'required',
                         'regex:/^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/',
                         'unique:app_users'
-                ]];
+                    ]];
+                break;
+
         }
-        return $rule;
     }
 
     public function attributes()
