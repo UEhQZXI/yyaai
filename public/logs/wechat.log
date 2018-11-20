@@ -1026,3 +1026,5 @@
 
 2018-11-14 11:58:40 > INFO > Starting To Pay A Wechat Wap Order ["https://api.mch.weixin.qq.com/",{"appid":"wx81885922a85a8519","mch_id":"1490055842","nonce_str":"IDv14kQBnZkRHUpT","notify_url":"http://m.iyaa180.com/api/store/wechatpay/notify","sign":"","trade_type":"MWEB","spbill_create_ip":"180.170.59.198","out_trade_no":"2018111436CC0010","body":"医牙啊-商品购买","total_fee":8910}] 
 
+2018-11-19 16:55:09 > INFO > Starting To Pay A Wechat Wap Order ["https://api.mch.weixin.qq.com/",{"appid":"wx81885922a85a8519","mch_id":"1490055842","nonce_str":"nWebxF2iTuRZ6Vop","notify_url":"http://m.iyaa180.com/api/store/wechatpay/notify","sign":"","trade_type":"MWEB","spbill_create_ip":"180.170.59.198","out_trade_no":"201811193B9B0005","body":"医牙啊-商品购买","total_fee":5850}] 
+

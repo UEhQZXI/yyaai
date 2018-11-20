@@ -16,13 +16,14 @@
   <div class="Ty_header">
       <a href="index.html"><span class="mui-icon mui-icon-arrowleft"></span></a>
       <div class="mui-input-row searchInput">
-        <input type="search" class="mui-input-clear search_input">
+           <input type="search" class="search_input" style="position:relative;">
+           <span class="mui-icon mui-icon-closeempty" id="close"></span>
       </div>
   </div>
   <div class="Ty_main">
     <div class="mui-scroll-wrapper">
       <div class="mui-scroll">
-        <!--这里放置真实显示的DOM内容-->
+        <div class="loading"></div>
              <ul id="goodList">
                  <!-- 模板 -->
              </ul>
@@ -40,7 +41,8 @@
           <a href="searchGood.html?id={{v.id}}" data-id="{{v.id}}">
              <img src="{{v.image1}}" alt="">
              <p>{{v.title}}</p>
-             <span style="color:red;">{{v.current_price}}</span>
+             <span style="color:red;">&yen;  {{v.current_price}}</span>
+             <span style="color:#ccc;float:right">上海</span>
           </a>
       {{/each}}
 </script>
