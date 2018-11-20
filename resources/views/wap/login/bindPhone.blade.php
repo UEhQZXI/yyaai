@@ -60,7 +60,7 @@
             <input type="hidden" id="qqName" value="{{ $name ?? '' }}">
             <input type="hidden" id="qqAvatar" value="{{ $avatar ?? '' }}">
         </div>
-        <input type="button" value="确定" class="bind-phone" style="border: 0;" disabled>
+        <input type="button" value="确定" class="sendcode bind-phone" style="border: 0;" disabled>
     </div>
 </div>
 <script src="/lib/mui/js/mui.js?t={{ time() }}"></script>

@@ -51,6 +51,43 @@ $(function(){
         }
     });
 
+    $(".bind-phone").on("input", function () {
+        var key = localStorage.getItem("key");
+        var vCode = $("#sms_code").val();
+        var qqId = $("#qqId").val();
+        var name = $("#qqName").val();
+        var avatar = $("#qqAvatar").val();
+        $.ajax({
+            type:"POST",
+            url:"http://47.100.3.125/api/users",
+            data:{
+                verification_key:key,
+                verification_code:vCode,
+                action:'bindPhone',
+                qqId:qqId,
+                name:name,
+                avatar:avatar
+            },
+            success:function(res){
+
+                if(res.status_code == 200){
+                    localStorage.setItem("token",res.data.access_token);
+                    setTimeout(function(){
+                        mui.toast("登录成功")
+                    },300);
+                    setTimeout(function(){
+                        location.href = "/my"
+                    },800);
+                }
+
+                if (res.status == 422) {
+                    mui.toast(res.message);
+                }
+
+            }
+        });
+    });
+
     $(".bind-phone").on("tap", function () {
         var key = localStorage.getItem("key");
         var vCode = $("#sms_code").val();
