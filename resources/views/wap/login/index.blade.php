@@ -113,7 +113,7 @@
         <a href="" class="login-select weixin-login"></a>
     </div>
     <div style="width: 100%;text-align: center">
-        <a href="javascript:void(0);" class="login-select" style="color:#999">QQ</a>
+        <a href="/api/login/qq" class="login-select" style="color:#999">QQ</a>
         <a href="javascript:void(0);" class="login-select" style="color:#999">微信</a>
     </div>
 @endsection
