@@ -103,7 +103,7 @@
         <div class="wrap loginPage">
             <div class="login-type">
                 <div class="quick-login" style="display:">
-                    <h4 class="txt-otherLogin">其他登录方式</h4>
+                    <h4 class="txt-otherLogin" style="font-size: 0.35rem">其他登录方式</h4>
                 </div>
             </div>
         </div>
