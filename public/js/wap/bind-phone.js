@@ -24,6 +24,7 @@ $(function(){
                 url:"http://47.100.3.125/api/verificationCodes",
                 data:{
                     phone:phone,
+                    action:'bindPhone'
                 },
                 success:function(res){
                     console.log(res)
