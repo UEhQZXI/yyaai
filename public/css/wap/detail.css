@@ -1,0 +1,21 @@
+
+.detailTop{
+    background-color: #fff;
+    width: 100%;
+    overflow: hidden;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+    border-bottom:1px solid #dedede; 
+}
+.detailTop a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #333
+}
+.detailTop p{
+    margin: 0 !important;
+    color: #333
+}

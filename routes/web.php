@@ -11,13 +11,38 @@
 |
 */
 
-Route::get('/', function () {
-	return redirect('http://m.iyaa180.com/web/index.html');
+Route::view('/', 'wap.index.index');
+
+Route::prefix('my')->group(function () {
+    Route::view('/', 'wap.my.index');
+    Route::view('orders', 'wap.my.order');
+    Route::view('address', 'wap.my.address.index');
+    Route::view('address/edit', 'wap.my.address.update');
+    Route::view('address/new', 'wap.my.address.store');
+    Route::view('collection', 'wap.my.collection');
+    Route::view('setting', 'wap.my.setting');
+    Route::view('needLogin', 'wap.my.notLogin');
 });
 
-Route::get('/test', function () {
-	return view('test');
+
+Route::prefix('order')->group(function () {
+    Route::view('detail', 'wap.order.detail');
+    Route::view('new', 'wap.order.store');
 });
+
+
+Route::prefix('good')->group(function () {
+    Route::view('detail', 'wap.good.detail');
+    Route::view('search', 'wap.good.search');
+    Route::view('search/list', 'wap.good.searchList');
+});
+
+Route::view('cart', 'wap.cart.index');
+Route::view('category', 'wap.category.index');
+Route::view('login', 'wap.login.index');
+Route::view('register', 'wap.register.index');
+Route::view('pay', 'wap.pay.index');
+Route::view('forgetPwd', 'wap.login.forgetPass');
 
 Route::group(['middleware' => 'adminlogin'], function () {
 	Route::get('admin/index', 'Admin\IndexController@index');
@@ -57,6 +82,12 @@ Route::group(['middleware' => 'adminlogin'], function () {
 //登陆
 Route::get('admin/login/view', 'Admin\LoginController@view');
 Route::post('admin/login', 'Admin\LoginController@login');
+
+Route::get('/bind', function () {
+    return view('wap.login.bindPhone');
+});
+
+
 
 
 

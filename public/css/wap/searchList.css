@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html,body{
+    background-color: #f0f3f5;
+    height:100%;
+}
+img{
+    display: block;
+    width: 100%;
+}
+.Ty_mall {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding-top:50px;
+  padding-bottom: 0 !important;
+}
+.Ty_main {
+  width: 100%;
+  height: 100%;
+  background-color:#dedede !important;
+  overflow: hidden;
+  position: relative;
+}
+.Ty_header {
+  width: 100%;
+  height:50px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  line-height: 50px;
+}
+.Ty_header a{
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #000;
+}
+.searchInput{
+    width:7.5rem;
+    margin: 0 auto;
+}
+.searchInput input{
+    margin-bottom: 0 !important;
+    border-radius:0.8rem;
+    text-align: left;
+}
+
+
+
+
+
+
+.tabNavs{
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    padding-top: 10px;
+}
+.tabNavs a{
+    float: left;
+    width: 25%;
+    text-align: center;
+    color: #333;
+}
+.tabNavs a.now{
+   color: orange;
+}
+#goodList{
+    overflow: hidden;
+    width: 100%;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    margin-top: 0.4rem;
+}
+#goodList a{
+    width: 48.5%;
+    background-color: #fff;
+    padding: 0.3rem;
+    float: left;
+    display: block;
+}
+#goodList a p{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+#goodList a:nth-child(odd){
+    margin-right: 0.24rem;
+}
+#goodList a img{
+    width: 2.3rem;
+    height:2.3rem;
+    margin: 0 auto;
+    border-radius:5px; 
+}
+#goodList a p.title{
+    font-size: 0.35rem;
+    color: #000;
+    width:6.5rem;
+    padding-left: 0.2rem;
+    float: left;
+    margin-top: 0.2rem;
+}
+#goodList span.price{
+    color: #f23030;
+    float: left;
+    margin-left: 0.2rem;
+}

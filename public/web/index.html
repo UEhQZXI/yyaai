@@ -439,28 +439,21 @@ height: 0em;
   <script src="js/index.js?t=1541556091"></script> 
   <!-- <script src="https://wl.jd.com/unify.min.js"></script> --> 
   <script>
-  window.onscroll = function () {//为了保证兼容性，这里取两个值，哪个有值取哪一个　　var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    //scrollTop就是触发滚轮事件时滚轮的高度
+  window.onscroll = function () {
     var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    // console.log(scrollTop);
     if (scrollTop > 3) {
       document.getElementsByClassName('mjd-header')[0].style.backgroundColor = "#ff8c00";
     }
-    
     if (scrollTop > 100) {
       document.getElementsByClassName('m-back-to-top')[0].style.bottom = "80px";
     }
-    
     if (scrollTop < 100) {
       document.getElementsByClassName('m-back-to-top')[0].style.bottom = "-200px";
     }
-
     if (scrollTop < 3 || scrollTop == 0) {
       document.getElementsByClassName('mjd-header')[0].style.backgroundColor = "transparent";
     }
-
   }
-
   const ScrollTop2 = (number = 0, time) => {
     if (!time) {
         document.body.scrollTop = document.documentElement.scrollTop = number;
@@ -485,91 +478,6 @@ document.getElementById('msShortcutMenu').onclick = function () {
 document.getElementById('msCancelBtn').onclick = function () {
   window.location.href = 'category.html';
 };
-  // window.onload=function(){
-	// 			s();
-	// 		};
-  // mui.init({
-  //   gestureConfig: {
-  //     tap: true, //默认为true
-  //     doubletap: false, //默认为false
-  //     longtap: false, //默认为false
-  //     swipe: true, //默认为true
-  //     drag: true, //默认为true
-  //     hold: false,//默认为false，不监听
-  //     release: false//默认为false，不监听
-  //   }
-  // });
-  // var tm = document.getElementsByClassName('_body')[0];
-  // tm.addEventListener("swipeup", function (e) {
-  //   // s();
-  //   var y = e.detail.deltaY;
-  //   if (y < 0) {
-  //     document.getElementsByClassName('mjd-header')[0].style.backgroundColor = "#ff8c00";
-  //   }
-  //   console.log("你正在向上滑动");
-  //   console.log(e);
-  // });
-
-  // tm.addEventListener("swipedown", function (e) {
-  //   // s();
-  //   window.scrollTo(0, 1);
-  //   var y = e.detail.deltaY;
-  //   if (y > 0) {
-  //     document.getElementsByClassName('mjd-header')[0].style.backgroundColor = "rgba(255, 140, 0, 0)";
-  //     console.log('yyy');
-  //   }
-  //   console.log("你正在向下滑动");
-  //   console.log(e);
-  // });
-//   let startY = 0;
-// const scrollBox = document.querySelector('.scroll-box');
-
-// document.body.addEventListener('touchstart', (e) => {
-//   startY = e.touches[0].pageY;
-// }, { passive: false });
-
-// document.body.addEventListener('touchmove', (e) => {
-//   // s();  
-//   const moveY = e.touches[0].pageY;
-//   const top = scrollBox.scrollTop;
-//   const ch = scrollBox.clientHeight;
-//   const sh = scrollBox.scrollHeight;
-//   if (!isChildTarget(e.target, scrollBox)) {
-//     e.preventDefault();
-//   } else if ((top === 0 && moveY > startY) || (top + ch === sh && moveY < startY)) {
-//     e.preventDefault();
-//   }
-// }, { passive: false });
-// function isChildTarget(child, parent, justChild = false) { 
-//   // justChild为true则只判断是否为子元素，若为false则判断是否为本身或者子元素 默认为false
-//   let parentNode;
-//   if (justChild) {
-//     parentNode = child.parentNode;
-//   } else {
-//     parentNode = child;
-//   }
-
-//   if (child && parent) {
-//     while (parentNode) {
-//       if (parent === parentNode) {
-//         return true;
-//       }
-//       parentNode = parentNode.parentNode;
-//     }
-//   }
-//   return false;
-// }
-
-// function s()
-// {
-//   if(document.documentElement.scrollHeight <= document.documentElement.clientHeight) {
-// 					bodyTag = document.getElementsByTagName('body')[0];
-// 					bodyTag.style.height = document.documentElement.clientWidth / screen.width * screen.height + 'px';
-// 				}
-// 				setTimeout(function() {
-// 					window.scrollTo(0, 1)
-// 				}, 0);
-// }
 </script> 
  </body>
 </html>
