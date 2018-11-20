@@ -94,7 +94,7 @@ class ProductController extends Controller
     {
         $product = Product::where('id', $product)->first();
 
-        if (!$product->exists) {
+        if (!$product) {
             return $this->response->error('商品过期不存在', 422);
         }
 
@@ -146,7 +146,9 @@ class ProductController extends Controller
      */
     public function userExclusive(Request $request)
     {
-        $products = Product::select(['id', 'title', 'description', 'original_price', 'current_price', 'image1', 'group_number'])->where('status', 1)->get();
+        $products = Product::select(['id', 'title', 'description', 'original_price', 'current_price', 'image1', 'group_number'])
+            ->where('status', 1)
+            ->get();
 
         $groupNumber = "0";
         foreach ($products as $key => $value) {

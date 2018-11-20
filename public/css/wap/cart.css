@@ -1,0 +1,154 @@
+
+.Ty_header {
+    width: 100%;
+    height: 1.3333rem;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+  }
+  .Ty_main{
+      background-color: #f4f4f4;
+  }
+  .Ty_header p{
+      text-align: center;
+      color: #000;
+      font-size: 0.4rem;
+      margin-bottom: 0 !important;
+      height: 1.3333rem;
+      line-height:1.3333rem;
+  }
+  .Ty_header a{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 45px;
+      text-align: center;
+      height: 1.3333rem;
+      line-height:1.3333rem;
+      color: #333;
+  }
+  div.mui-slider-handle{
+      height: 3rem !important;
+      border-radius:0.2rem; 
+  }
+  .mui-slider-right{
+     height: 3rem !important;
+     margin-top: 11px;
+  }
+  .mui-scroll li{
+      padding-bottom: 0 !important;
+      padding-left: 15px !important;
+  }
+.mui-table-view li .ck{
+    position: absolute;
+    left: 0.25rem;
+}
+.mui-table-view li .img_box img{
+    position: absolute;
+    left: 0.6667rem;
+}
+
+.totalPrice{
+    background-color: #dedede;
+    height: 1.35rem;
+    position: fixed;
+    bottom: 50px;
+    width: 100%;
+}
+.totalPrice .pay{
+    position: absolute;
+    right: 0.25rem;
+    top: 0;
+}
+.totalPrice .pay a{
+    display: inline-block;
+    width: 2rem;
+    height: 0.8rem;
+    text-align: center;
+    line-height:0.8rem;
+    background-color: orange;
+    margin-top: 0.27rem;
+    color: #fff;
+    border-radius:0.5rem; 
+    margin-left: 0.4rem;
+}
+.totalPrice label{
+    width: 100px;
+    height: 50px;
+    padding-top: 0.45rem;
+}
+.totalPrice input{
+    padding-top: 0.1333rem;  
+}
+
+.edit{
+    top: 200px;
+    background-color: orange;
+    width: 200px;
+    height: 100px;
+}
+
+.revise{
+    background-color: #fff;
+    width: 7.0667rem;
+    display: none;
+    position: absolute;
+    left: 1.7rem;
+    top: 4.6667rem;
+    overflow: hidden;
+    border-radius:0.2667rem;
+    z-index: 999;
+}
+.revise p{
+    text-align: center;
+    color: #000;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    font-size: 0.5333rem;
+}
+.revise .choose{
+    width: 100%;
+    margin-top: 0.6667rem;
+    overflow: hidden;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    margin-top: 1.3rem;
+}
+.revise .choose span{
+    width: 50%;
+    float: left;
+    text-align: center;
+    color: #000;
+    font-size: 0.4rem;
+}
+.revise .choose span:nth-child(1){
+    border: 1px solid #000;
+    border-bottom: none;
+    border-left:none;
+}
+.revise .choose span:nth-child(2){
+    border: 1px solid #000;
+    border-right: none;
+    border-bottom:none;
+    border-left:none; 
+}
+.revise .mui-numbox{
+    float: right;
+    margin-right: 0.2667rem;
+}
+.revise span.number{
+    font-size: 0.45rem;
+    margin-top: 0.3rem;
+    display: inline-block;
+    margin-left: 0.2667rem;
+}
+.mui-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+    background-color: rgba(0,0,0,.3);
+    display: none;
+}

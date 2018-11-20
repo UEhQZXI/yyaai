@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html,body{
+    background-color: #f0f3f5;
+    height:100%;
+}
+img{
+    display: block;
+    width: 100%;
+}
+li{
+  cursor: pointer;
+}
+.Ty_mall {
+  width: 100%;
+  height: 100%;
+  /* max-width: 640px;
+  min-width: 320px; */
+  margin: 0 auto;
+  position: relative;
+  padding-top:1.3333rem;
+  padding-bottom: 55px;
+}
+.Ty_main {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  /*可以保证，所有的内容全部都是在main内部*/
+  overflow: hidden;
+  position: relative;
+}
+
+
+.Ty_header {
+  width: 100%;
+  height: 1.3333rem;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+}
+
+.Ty_footer {
+    width: 100%;
+    height: 55px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+  }
+  
+  
+  .Ty_footer li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    padding-top: 10px;
+  }
+  
+  .Ty_footer li.now a{
+    color: darkorange;
+  }
+  
+  .Ty_footer li.now p {
+    color: darkorange;
+  }
+  
+  .Ty_footer a {
+    color: #c3c3c3;
+  }
+  
+  .Ty_footer p {
+    color:  #c3c3c3;
+    font-size: 12px;
+    margin: 0;
+  }

@@ -1,0 +1,274 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html,body{
+    background-color: #f4f4f4;
+    height:100%;
+}
+img{
+    display: block;
+    width: 100%;
+}
+li{
+    list-style: none;
+}
+.Ty_mall {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding-top:80px;
+  }
+  .Ty_main {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    overflow: hidden;
+    position: relative;
+    margin-top: 8px;
+  }
+  
+  .Ty_header {
+    width: 100%;
+    height:80px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    border-bottom: 1px solid #dedede;
+    text-align: center
+  }
+  .Ty_header a{
+      position: absolute;
+      top: 10px;
+      left: 0;
+    
+  }
+.top span{
+    font-size: 16px;
+}
+
+.top a span{
+    font-size: 18px;
+}
+.orderList{
+    overflow: hidden;
+    margin-top: 15px;
+}
+.orderList ul li{
+    float: left;
+    width: 20%;
+    text-align: center;
+    /* margin-top: 20px; */
+}
+.orderList ul li.now{
+   color: orange;
+}
+.orange{
+    width: 0.55rem;
+    height: 2px;
+    background-color: orange;
+    position: absolute;
+    top: 1.88rem;
+    left: 0.7rem;
+}
+
+
+
+.loading {
+    width: 40px;
+    height: 40px;
+    border: 3px solid orange;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 200px;
+    animation: play 1s ease-in-out infinite;
+  }
+  
+  
+  @keyframes play {
+    from{
+      transform: translateX(-50%) rotate(0deg);
+    }
+    to{
+      transform: translateX(-50%) rotate(360deg);
+    }
+  }
+.content{
+    margin-bottom: 10px;
+}
+.goodTotal{
+    position: relative;
+}
+span.mall{
+    margin-bottom: 0.2rem;
+    display: inline-block;
+    margin-left: 0.2667rem !important;
+    font-size: 0.4rem;
+}
+span.status{
+    position: absolute;
+    right:0.6rem;
+    color:red;
+}
+span.price{
+   position: absolute;
+   right:0rem;
+    
+  }
+p.goods{
+    width:4.2rem;
+    float: left;
+    margin-left: 0.3rem;
+    font-size: 0.35rem;
+    color: #000;
+}
+span.nums{
+    position: absolute;
+    right:0rem;
+    top: 0.6rem;
+}
+.payment{
+    overflow: hidden;
+}
+
+.payment .content{
+    background-color: #fff;
+    padding:0.3rem;
+    margin-left: 0.3rem;
+    margin-right:0.3rem;
+    border-radius:0.1333rem; 
+    overflow: hidden;
+}
+.payment .content img{
+    width: 2.1rem;
+    height: 2.1rem;
+    float: left;
+}
+
+.payment .content span.delete{
+  float: right;
+  width: 1.8rem;
+  height: 0.7rem;
+  border: 1px solid #dedede;
+  border-radius: 0.5rem;
+  text-align: center;
+  line-height:0.7rem;
+  display: block;
+}
+
+span.pay{
+    float: right;
+    width: 1.8rem;
+    height: 0.7rem;
+    border: 1px solid orange;
+    border-radius: 0.5rem;
+    text-align: center;
+    line-height:0.7rem;
+    display: block;
+    margin-left: 0.4rem;
+    color: orange;
+}
+
+.all{
+    overflow: hidden;
+}
+
+.all .content{
+    background-color: #fff;
+    padding:0.3rem;
+    margin-left: 0.3rem;
+    margin-right:0.3rem;
+    border-radius:10px; 
+    overflow: hidden;
+}
+.all .content img{
+    width: 2.1rem;
+    height: 2.1rem;
+    float: left;
+}
+
+.all .content span.delete{
+    float: right;
+    width: 1.8rem;
+    height: 0.7rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    line-height:0.7rem;
+    display: block;
+    margin-left: 0.4rem;
+    border: 1px solid #dedede;
+    z-index: 888;
+}
+span.wuliu{
+    float: right;
+    width: 1.8rem;
+    height: 0.7rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    line-height:0.7rem;
+    display: block;
+    margin-left: 0.4rem;
+    border: 1px solid #dedede;
+}
+
+.delivery_good{
+    overflow: hidden;
+}
+
+.delivery_good .content{
+    background-color: #fff;
+    padding:0.3rem;
+    margin-left: 0.3rem;
+    margin-right:0.3rem;
+    border-radius:10px; 
+    overflow: hidden;
+}
+.delivery_good .content img{
+    width: 2.1rem;
+    height: 2.1rem;
+    float: left;
+}
+
+p.numb{
+    text-align: right;
+    color: #000;
+    font-size: 0.32rem;
+}
+
+.collect{
+    overflow: hidden;
+}
+
+.collect .content{
+    background-color: #fff;
+    padding:0.3rem;
+    margin-left: 0.3rem;
+    margin-right:0.3rem;
+    border-radius:0.1333rem; 
+    overflow: hidden;
+}
+.collect .content img{
+    width: 2.1rem;
+    height: 2.1rem;
+    float: left;
+}
+.evaluate{
+    overflow: hidden;
+}
+
+.evaluate .content{
+    background-color: #fff;
+    padding:0.3rem;
+    margin-left: 0.3rem;
+    margin-right:0.3rem;
+    border-radius:0.1333rem; 
+    overflow: hidden;
+}
+.evaluate .content img{
+    width: 2.1rem;
+    height: 2.1rem;
+    float: left;
+}
