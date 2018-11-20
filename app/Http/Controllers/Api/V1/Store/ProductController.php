@@ -94,7 +94,7 @@ class ProductController extends Controller
     {
         $product = Product::where('id', $product)->first();
 
-        if (!$product->exists) {
+        if (!$product) {
             return $this->response->error('商品过期不存在', 422);
         }
 

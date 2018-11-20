@@ -226,3 +226,13 @@ span.title.now{
     height: 180px;
     line-height: 180px;
 }
+.san{
+    width: 0;
+    height: 0;
+    border-width: 13px;
+    border-style: solid;
+    border-color:  transparent transparent orange transparent;
+    position: absolute;
+    top: -20px;
+    right: 10px;
+}

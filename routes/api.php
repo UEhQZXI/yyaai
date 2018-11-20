@@ -71,8 +71,6 @@ $api->version('v1', [
         // 查询咨询 回复列表
         $api->get('advisorys/{advisory}/replies', 'AdvisoryReplyController@index')
             ->name('api.advisorys.replies.index');
-            
-        $api->group(['namespace' => 'Login'], function ($api) {
 
         $api->group(['namespace' => 'Login'], function ($api) {
 

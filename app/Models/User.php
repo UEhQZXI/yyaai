@@ -12,7 +12,7 @@ class User extends Authenticatable implements JWTSubject
 {
     public $table = 'app_users';
     public $primaryKey = 'id';
-    protected $fillable = ['phone', 'name', 'password', 'avatar', 'sex', 'birthday', 'address', 'description'];
+    protected $fillable = ['phone', 'name', 'password', 'avatar', 'sex', 'birthday', 'address', 'description', 'weibo_id', 'qq_id'];
 
     /**
      * 关联案例表

@@ -300,4 +300,21 @@ $(function(){
          }
      })
   })
+
+    // 第三方登录
+    $("#one").on("tap",function(){
+        location.href = "http://m.iyaa180.com/api/login/weibo/index"
+    })
+
+    $("#two").on("tap",function(){
+        location.href = "http://m.iyaa180.com/api/login/weibo/index"
+    })
+
+    $("#three").on("tap",function(){
+        location.href = "http://m.iyaa180.com/api/login/weibo/index"
+    }) 
+
+
+
+
 })
