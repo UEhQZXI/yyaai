@@ -33,7 +33,7 @@ class UsersController extends Controller
             $socialId = User::select('qq_id')->where('phone', $verifyData['phone'])->first();
 
             // 没有绑定过qq，
-            if (!$socialId) {
+            if (!$socialId || !$socialId->qq_id) {
 
                 $user = User::updateOrCreate([
                     'phone' => $verifyData['phone'],
