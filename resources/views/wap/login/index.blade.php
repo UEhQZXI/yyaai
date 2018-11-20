@@ -109,7 +109,7 @@
         </div>
     </section>
     <div style="width: 100%;text-align: center">
-        <a href="" class="login-select qq-login"></a>
+        <a href="/api/login/qq" class="login-select qq-login"></a>
         <a href="" class="login-select weixin-login"></a>
     </div>
     <div style="width: 100%;text-align: center">
