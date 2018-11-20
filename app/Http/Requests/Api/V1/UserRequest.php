@@ -25,6 +25,12 @@ class UserRequest extends FormRequest
     {
         switch ($this->method()) {
             case 'POST':
+                if ($this->action == 'bindPhone') {
+                    return [
+                        'verification_key' => 'required|string',
+                        'verification_code' => 'required|string',
+                    ];
+                }
                 return [
                     'password' => 'required|string|min:6',
                     'verification_key' => 'required|string',

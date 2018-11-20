@@ -142,7 +142,7 @@ $(function(){
       })
       
     $(".codeV").on("input",function(){
-        var code =  $(".codeV").val()
+        var code =  $(".codeV").val();
         if(code.length==4){
            $(".sendcode").val("登录中").attr("disabled",)
            login()

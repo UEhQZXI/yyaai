@@ -52,7 +52,7 @@
             <div class="form_item">
                 <span class="iconfont">&#xe616;</span>
                 <div class="input_box" style="position:relative">
-                    <input id="sms_code" type="text" placeholder="请输入验证码" class="codeV" maxlength="4">
+                    <input id="sms_code" type="text" placeholder="请输入验证码" class="codeV bind-phone" maxlength="4">
                     <button class="second"></button>
                 </div>
             </div>
@@ -60,7 +60,7 @@
             <input type="hidden" id="qqName" value="{{ $name ?? '' }}">
             <input type="hidden" id="qqAvatar" value="{{ $avatar ?? '' }}">
         </div>
-        <input type="button" value="确定" class="sendcode bind-phone" style="border: 0;" disabled>
+        <input type="button" value="确定" class="sendcode" style="border: 0;" disabled>
     </div>
 </div>
 <script src="/lib/mui/js/mui.js?t={{ time() }}"></script>

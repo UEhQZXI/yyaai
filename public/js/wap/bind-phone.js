@@ -52,6 +52,10 @@ $(function(){
     });
 
     $(".bind-phone").on("input", function () {
+        var code =  $(".codeV").val();
+        if(code.length != 4){
+            return false;
+        }
         var key = localStorage.getItem("key");
         var vCode = $("#sms_code").val();
         var qqId = $("#qqId").val();
@@ -88,7 +92,7 @@ $(function(){
         });
     });
 
-    $(".bind-phone").on("tap", function () {
+    $(".sendcode").on("tap", function () {
         var key = localStorage.getItem("key");
         var vCode = $("#sms_code").val();
         var qqId = $("#qqId").val();
