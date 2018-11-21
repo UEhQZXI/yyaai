@@ -23,29 +23,26 @@ class VerificationCodeRequest extends FormRequest
      */
     public function rules()
     {
-        switch ($this->action) {
-            case 'login':
-                return $rule = [
-                    'phone' => [
-                        'required',
-                        'regex:/^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/'
-                    ]];
-                break;
-            case 'bindPhone':
-                return $rule = [
-                    'verification_key' => 'required',
-                    'verification_code' => 'required'
-                ];
-                break;
-            default:
-                return $rule = [
-                    'phone' => [
-                        'required',
-                        'regex:/^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/',
-                        'unique:app_users'
-                    ]];
-                break;
-
+        if (in_array($this->action, ['login', 'bindPhone'])) {
+            return $rule = [
+                'phone' => [
+                    'required',
+                    'regex:/^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/'
+                ]
+            ];
+        } elseif ($this->action == 'phoneLogin') {
+            return $rule = [
+                'verification_key' => 'required',
+                'verification_code' => 'required'
+            ];
+        } else {
+            return $rule = [
+                'phone' => [
+                    'required',
+                    'regex:/^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\d{8}$/',
+                    'unique:app_users'
+                ]
+            ];
         }
     }
 
