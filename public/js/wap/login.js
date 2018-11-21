@@ -152,7 +152,6 @@ $(function(){
     function login(){
       var goodId = tools.getSearch("goodId");
       var phone = $(".tel").text()
-      localStorage.setItem("name",phone)
       var key = localStorage.getItem("key")
       var code = $(".codeV").val()
       if(code == ""){
@@ -166,12 +165,12 @@ $(function(){
               phone:phone,
               verification_key:key,
               verification_code:code,
-              login_type:"phone_login"
+              action:"phoneLogin"
           },
           success:function(res){
             console.log(res)
             if(res.status_code == 200){
-                localStorage.setItem("token",res.data.access_token)
+                localStorage.setItem("token",res.data.access_token);
                 setTimeout(function(){
                   mui.toast("登录成功")
                 },300)
