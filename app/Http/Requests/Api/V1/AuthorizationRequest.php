@@ -24,9 +24,16 @@ class AuthorizationRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'phone' => 'required',
-            'password' => 'string|min:6',
-        ];
+        if ($this->action == 'phoneLogin') {
+            return [
+                'verification_key' => 'required',
+                'verification_code' => 'required'
+            ];
+        } else {
+            return [
+                'phone' => 'required',
+                'password' => 'string|min:6',
+            ];
+        }
     }
 }
