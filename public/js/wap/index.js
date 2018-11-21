@@ -5,9 +5,9 @@ mui('.mui-scroll-wrapper').scroll({
 mui(".mui-slider").slider({
     interval: 3000
 });
-console.log('token');
-console.log(localStorage.getItem("token"));
+
 if (!localStorage.getItem("token")) {
+    console.log(1111111);
     $(".wode").attr('href', 'javascript:void(0);');
     $("#msShortcutMenu").on('click', function () {
         window.location.href = '/login';
