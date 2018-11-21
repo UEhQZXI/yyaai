@@ -151,11 +151,11 @@ $(function(){
     
     function login(){
       var goodId = tools.getSearch("goodId");
-      var phone = $(".tel").text()
-      var key = localStorage.getItem("key")
-      var code = $(".codeV").val()
+      var phone = $(".user").text();
+      var key = localStorage.getItem("key");
+      var code = $(".codeV").val();
       if(code == ""){
-        mui.toast("请输入验证码")
+        mui.toast("请输入验证码");
         return false
       }else{
         $.ajax({
