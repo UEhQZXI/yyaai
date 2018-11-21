@@ -17,7 +17,7 @@ class AuthorizationsController extends Controller
     {
         $loginInfo['phone'] = $request->phone;
 
-        if ($request->has('login_type') && $request->login_type == 'phone_login') {
+        if ($request->has('action') && $request->action == 'phoneLogin') {
             $verifyData = \Cache::get($request->verification_key);
 
             if (!$verifyData) {
