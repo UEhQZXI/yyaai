@@ -83,7 +83,7 @@ class UsersController extends Controller
     public function me()
     {
 //        return $this->user();
-        $user = User::select(['id', 'name', 'avatar', 'sex', 'birthday', 'address', 'description', 'integral', 'fans', 'created_at', 'updated_at'])->where('id', $this->user()->id)->get();
+        $user = User::select(['id', 'name', 'avatar', 'sex', 'birthday', 'address', 'description', 'integral', 'fans', 'created_at', 'updated_at'])->where('id', $this->user()->id)->first();
 
         return $this->response->array(['message' => 'success', 'data' => $user]);
     }
