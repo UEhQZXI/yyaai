@@ -125,7 +125,7 @@ $(function(){
       }
 
       $(".second").on("tap",function(){
-        var phone = $(".tel").text()
+        var phone = $(".user").val()
         $.ajax({
           type:"POST",
           url:"http://47.100.3.125/api/verificationCodes",
