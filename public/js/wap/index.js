@@ -7,13 +7,13 @@ mui(".mui-slider").slider({
 });
 
 if (!localStorage.getItem("token")) {
-    console.log(1111111);
-    $(".wode").attr('href', 'javascript:void(0);');
+    $(".user").attr('href', '/login');
     $("#msShortcutMenu").on('click', function () {
         window.location.href = '/login';
     });
-    $(".wode").on('click', function () {
-        window.location.href = '/login';
+} else {
+    $("#msShortcutMenu").on('click', function () {
+        window.location.href = '/my';
     });
 }
 

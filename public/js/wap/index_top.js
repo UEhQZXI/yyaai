@@ -31,9 +31,7 @@ const ScrollTop2 = (number = 0, time) => {
         }
     }, spacingTime);
 };
-document.getElementById('msShortcutMenu').onclick = function () {
-    window.location.href = '/my';
-};
+
 document.getElementById('msCancelBtn').onclick = function () {
     window.location.href = '/category';
 };
