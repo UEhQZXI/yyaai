@@ -38,6 +38,7 @@ class QQController extends Controller
         // token写入本地缓存
         $this->localStorage('token', $token);
         $this->localStorage('name', $user->name ?? $user->phone);
+        $this->localStorage('avatar', $user->avatar);
 
         return view('wap.my.index');
     }

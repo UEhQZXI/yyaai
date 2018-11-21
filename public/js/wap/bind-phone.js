@@ -76,6 +76,8 @@ $(function(){
 
                 if(res.status_code == 200){
                     localStorage.setItem("token",res.data.access_token);
+                    localStorage.setItem("name",name);
+                    localStorage.setItem("avatar",avatar);
                     setTimeout(function(){
                         mui.toast("登录成功")
                     },300);
@@ -113,6 +115,8 @@ $(function(){
 
                 if(res.status_code == 200){
                     localStorage.setItem("token",res.data.access_token);
+                    localStorage.setItem("name",name);
+                    localStorage.setItem("avatar",avatar);
                     setTimeout(function(){
                         mui.toast("登录成功")
                     },300);
