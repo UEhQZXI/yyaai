@@ -26,7 +26,7 @@ class AuthorizationsController extends Controller
                 return $this->response->errorUnauthorized('验证码错误');
             }
 
-            $info = User::where('phone', $request->phone)->first();
+            $info = User::where('phone', $verifyData['phone'])->first();
 
             if (!$info) {
                 // 生成随机用户名
