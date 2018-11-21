@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="jd-category-content">
-            <div id="branchScroll" style="overflow:hidden;height:823px;width:325px" class="jd-category-content-wrapper">
+            <div id="branchScroll" style="overflow:hidden;height:823px;" class="jd-category-content-wrapper">
                 <div id="branchList" style="transform:translateY(0px)">
                     <div class="jd-category-div cur">
                         <ul class="jd-category-style-1">
@@ -60,6 +60,16 @@
 @endsection
 @endsection
 @section('script')
+    <script>
+        window.onload = function () {
+            $("#category3").height($(document.body).height());
+            $("#branchScroll").height($(document.body).height());
+        }
+        window.onresize = function () {
+            $("#category3").height($(document.body).height());
+            $("#branchScroll").height($(document.body).height());
+        }
+    </script>
     <script type="text/html" id="tpl_l">
         @verbatim
         {{ each list v i }}
