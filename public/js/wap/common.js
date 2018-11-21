@@ -5,16 +5,16 @@ if (!localStorage.getItem("token")) {
 var pathname = window.location.pathname;
 switch (pathname) {
     case '/':
-        $('.shouye').addClass('now');
+        $('.shouye').attr('src', '/images/wap/footer/index-c.png');
         break;
     case '/category':
-        $('.fenlei').addClass('now');
+        $('.fenlei').attr('src', '/images/wap/footer/cate-c.png');
         break;
     case '/cart':
-        $('.gouwuche').addClass('now');
+        $('.gouwuche').attr('src', '/images/wap/footer/cart-c.png');
         break;
     case '/my':
-        $('.wode').addClass('now');
+        $('.wode').attr('src', '/images/wap/footer/my-c.png');
         break;
 }
 var tools = {
