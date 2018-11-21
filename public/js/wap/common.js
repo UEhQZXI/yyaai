@@ -1,3 +1,9 @@
+if (!localStorage.getItem("token")) {
+    $(".wode").attr('href', 'javascript:void(0);');
+    $(".wode").on('click', function () {
+        window.location.href = '/login';
+    });
+}
 
 var pathname = window.location.pathname;
 switch (pathname) {

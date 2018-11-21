@@ -15,7 +15,7 @@
             </div>
             <div class="userName">
                 <a href="#">
-                    <img src="images/user.jpg" alt="">
+                    <img id="user-avatar" src="" alt="">
                     <span></span>
                 </a>
             </div>

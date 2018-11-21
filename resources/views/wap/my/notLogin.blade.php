@@ -4,6 +4,7 @@
 @endsection
 @section('css')
     <link rel="stylesheet" href="/css/wap/user.css">
+    <link rel="stylesheet" href="/css/wap/iconfont.css">
 @endsection
 @section('content')
     <div class="Ty_mall" style="padding-top:0">
