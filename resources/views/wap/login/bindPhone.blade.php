@@ -46,6 +46,7 @@
         <div class="top">
             <span class="mui-icon mui-icon-arrowleft goo"></span>
         </div>
+        <p class="mall" style="text-align: center;font-size: .5rem;color: #222;">请输入短信验证码</p>
         {{--<p class="mall">请输入验证码</p>--}}
         {{--<span class="sendCode">验证码已通过短信发送至  <span class="tel">未知的手机号码</span></span>--}}
         <div class="form_login">
