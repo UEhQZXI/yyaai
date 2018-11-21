@@ -15,8 +15,6 @@ class AuthorizationsController extends Controller
      */
     public function store(AuthorizationRequest $request)
     {
-        $loginInfo['phone'] = $request->phone;
-
         if ($request->has('action') && $request->action == 'phoneLogin') {
             $verifyData = \Cache::get($request->verification_key);
 
@@ -47,6 +45,7 @@ class AuthorizationsController extends Controller
             $token = \Auth::guard('api')->fromUser($info);
         } else {
 
+            $loginInfo['phone'] = $request->phone;
             $loginInfo['password'] = $request->password;
 
             if (!$token = \Auth::guard('api')->attempt($loginInfo)) {
