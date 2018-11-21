@@ -35,7 +35,7 @@
     <div class="Login">
         <div class="login_first">
             <div class="top">
-                <a href="javascript:history.go(-1);" class="go"><span class="mui-icon mui-icon-arrowleft"></span></a>
+                <a href="/" class="go"><span class="mui-icon mui-icon-arrowleft"></span></a>
             </div>
             <p class="mall" style="text-align: center;font-size: .5rem;color: #222;">登录天医商城</p>
             <div class="form_login">
@@ -58,6 +58,7 @@
             <div class="top">
                 <span class="mui-icon mui-icon-arrowleft goo"></span>
             </div>
+            <p class="mall" style="text-align: center;font-size: .5rem;color: #222;">请输入短信验证码</p>
             {{--<p class="mall">请输入验证码</p>--}}
             {{--<span class="sendCode">验证码已通过短信发送至  <span class="tel">未知的手机号码</span></span>--}}
             <div class="form_login">
@@ -69,7 +70,7 @@
                     </div>
                 </div>
             </div>
-            <input type="button" value="登录" class="sendcode" disabled>
+            <input type="button" value="登录" class="sendcode" style="border: 0" disabled>
         </div>
         <!-- 密码登录 -->
         <div class="login_three" style="display: none">

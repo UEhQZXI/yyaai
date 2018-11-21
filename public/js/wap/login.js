@@ -94,19 +94,19 @@ $(function(){
               }
             },
             error:function(res){
-              console.log(res)
+              console.log(res);
               if(res.status == 422){
                 mui.toast("验证码发送过于频繁,请稍后再试")
               }
             }
           })
         }   
-    })
+    });
 
       $(".goo").on("tap",function(){
-          $(".login_second").hide()
-          $(".login_first").show()
-      })
+          $(".login_second").hide();
+          $(".login_first").show();
+      });
 
       function sendCode(){
         var count = 60;

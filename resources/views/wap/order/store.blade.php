@@ -13,7 +13,7 @@
         <div class="Ty_header">
             <div class="top">
                 <span class="conf">确认订单</span>
-                <a href="javascript:history.go(-1);" class="link"><span class="mui-icon mui-icon-arrowleft"></span></a>
+                <a href="/cart" class="link"><span class="mui-icon mui-icon-arrowleft"></span></a>
             </div>
         </div>
         <div class="Ty_main">
