@@ -5,6 +5,7 @@ $(function(){
 
     if (!$token) {
         $(".cart-null").show();
+        $(".cart-footer").hide();
         localStorage.removeItem("name");
         localStorage.removeItem("token");
         return false;
