@@ -339,7 +339,7 @@
         <div class="cart-footer-left1">
             <div id="gs" style="float: left;" data-action="off" onclick="selectAll(this)">
                 <div  class="cart-footer-left1-left" >
-                    <a id="select-all-btn" href="javacript:void(0);" class="select-btn-off"></a>
+                    <a id="select-all-btn" href="javacript:void(0);" onclick="return false;"  class="select-btn-off"></a>
                 </div>
                 <div class="cart-footer-left1-middle">
                     <span class="select-all-text">全选</span>
@@ -419,10 +419,10 @@
                     </div>
                     <div id="smooth-good-{{v.id}}" class="good-content" ontouchmove="touchmove(this, {{v.id}})" ontouchstart="touchstart(this, {{v.id}})">
                         <div data-id="{{v.id}}" data-action="off" class="good-select-btn" onclick="selectGood(this)">
-                            <a href="javacript:void(0);" class="select-btn-off"></a>
+                            <a href="javacript:void(0);" onclick="return false;"  class="select-btn-off"></a>
                         </div>
                         <div class="good-img">
-                            <a href="javascript:void(0);" style="background-image: url({{v.product.image1}});"></a>
+                            <a href="javascript:void(0);" onclick="return false;"  style="background-image: url({{v.product.image1}});"></a>
                         </div>
                         <div class="good-full">
                             <div class="good-full-title">
@@ -438,13 +438,13 @@
                                     </div>
                                 </div>
                                 <div data-id="{{v.id}}" data-flag="add" class="add-btn" onclick="changeNum(this)">
-                                    <a href="javascript:void(0);"></a>
+                                    <a href="javascript:void(0);" onclick="return false;" ></a>
                                 </div>
                                 <div class="good-number">
                                     <input id="gd-num-{{v.id}}" data-id="{{v.id}}" data-flag="input" type="number" value="{{v.product_number}}" max="9999" min="1" onblur="changeNum(this)">
                                 </div>
                                 <div data-id="{{v.id}}" data-flag="sub" class="sub-btn" onclick="changeNum(this)">
-                                    <a href="javascript:void(0);"></a>
+                                    <a href="javascript:void(0);" onclick="return false;" ></a>
                                 </div>
                             </div>
                         </div>
@@ -454,6 +454,9 @@
                     </div>
                 </div>
             {{/each}}
+            <div style="width: 100%;height: 3.3rem;">
+
+            </div>
         @endverbatim
     </script>
     <script src="/js/wap/cart.js?t={{ time() }}"></script>
