@@ -1,0 +1,909 @@
+/* SVN.committedRevision=43d9712 */@font-face {
+    font-family:"global";src:url("../public/global/fonts/global.eot?43d9712");src:url("../public/global/fonts/global.eot?43d9712?#iefix") format("embedded-opentype"),url("../public/global/fonts/global.woff?43d9712") format("woff"),url("../public/global/fonts/global.ttf") format("truetype"),url("../public/global/fonts/global.svg#global") format("svg");font-weight:normal;font-style:normal
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+@	font-face {
+    font-family: "global";
+    src: url("../public/global/fonts/global.svg#global") format("svg")
+}
+}[data-icon]:before {
+    content: attr(data-icon)
+}[class^="gicon-"],[class*=" gicon-"] {
+     font-family: "global";
+     speak: none;
+     font-style: normal;
+     font-weight: normal;
+     font-variant: normal;
+     text-transform: none;
+     line-height: 1;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale
+ } [class^="gicon-"] *,[class*=" gicon-"] * {
+       font-family: sans-serif
+   }
+
+.gicon-back:before {
+    content: "\f100"
+}
+
+.gicon-clear:before {
+    content: "\f106"
+}
+
+.gicon-direction:before {
+    content: "\f107"
+}
+
+.gicon-history:before {
+    content: "\f101"
+}
+
+.gicon-location:before {
+    content: "\f108"
+}
+
+.gicon-right_arrow:before {
+    content: "\f102"
+}
+
+.gicon-search:before {
+    content: "\f103"
+}
+
+.gicon-simple_shop:before {
+    content: "\f104"
+}
+
+.gicon-sort:before {
+    content: "\f105"
+}
+
+.touchweb-com_header.header_flex .search_wrap {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.touchweb_com-recommendApps {
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+    background: rgba(244,94,94,0.9);
+    z-index: 99999
+}
+
+.touchweb_com-recommendApps+.touchweb-com_header.detail {
+    margin-top: 11.73333333%
+}
+
+@media screen and (min-width:640px) {
+    .touchweb_com-recommendApps+.touchweb-com_header.detail {
+        margin-top: 75.09333333px
+    }
+}
+
+.touchweb_com-recommendApps .box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 5px 2.66666667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.touchweb_com-recommendApps .box .icon_close {
+    position: relative;
+    display: block;
+    width: 14px;
+    height: 15px;
+    margin-right: 3.33333333%;
+    background: url("../../mglobal/images/close_28x30.png?43d9712") no-repeat center center;
+    background-size: cover
+}
+
+.touchweb_com-recommendApps .box .btn_download {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+.touchweb_com-recommendApps .box .btn_download .openCont {
+    width: 100%;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+.touchweb_com-recommendApps .box .btn_download .openCont .logo {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-right: 2%
+}
+
+.touchweb_com-recommendApps .box .btn_download .openCont .logo img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+.touchweb_com-recommendApps .box .btn_download .openCont .content {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.touchweb_com-recommendApps .box .btn_download .openCont .content .name {
+    height: 20px;
+    line-height: 20px;
+    font-size: 1.3rem;
+    color: #fff
+}
+
+.touchweb_com-recommendApps .box .btn_download .openCont .content .sale_text {
+    line-height: 14px;
+    color: #fff;
+    font-size: 1rem
+}
+
+.touchweb_com-recommendApps .box .btn_download .icon_open {
+    width: 50px;
+    height: 24px;
+    line-height: 24px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    color: #f45e5e;
+    text-align: center;
+    background-color: #fff
+}
+
+.touchweb_com-recommendApps:after {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 11.73333333%
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: Arial,'Microsoft YaHei'
+}
+
+.touchweb-com_header {
+    position: relative;
+    z-index: 150;
+    height: 44px;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.touchweb-com_header.title {
+    border-bottom: 1px solid #e5e5e5
+}
+
+.touchweb-com_header.header_flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+.touchweb-com_header.header_flex .left {
+    position: static
+}
+
+.touchweb-com_header.header_flex .search_wrap {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.touchweb-com_header.header_flex .rightBox {
+    position: static
+}
+
+.touchweb-com_header .left {
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 23px;
+    height: 30px;
+    text-align: center;
+    padding: 0 5px
+}
+
+.touchweb-com_header .left.icon-back {
+    color: #ff3c3c;
+    font-size: 2.3rem;
+    line-height: 30px
+}
+
+.touchweb-com_header .left .icon-home {
+    color: #ff3c3c;
+    font-size: 2rem;
+    line-height: 30px
+}
+
+.touchweb-com_header .left.leftSub {
+    left: 40px
+}
+
+.touchweb-com_header .header_area {
+    display: block;
+    min-width: 2em;
+    height: 44px;
+    line-height: 44px;
+    margin-left: 5px;
+    overflow: hidden;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear
+}
+
+.touchweb-com_header h1 {
+    width: 50%;
+    height: 44px;
+    line-height: 44px;
+    margin: 0 auto;
+    font-size: 1.7rem;
+    text-align: center;
+    font-weight: normal;
+    color: #000;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.touchweb-com_header .title_image {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    width: 50%;
+    height: 44px;
+    overflow: hidden;
+    margin: 0 auto;
+    text-align: center
+}
+
+.touchweb-com_header .title_image img {
+    display: block;
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5)
+}
+
+.touchweb-com_header .rightBox {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 100%;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+    font-size: 0
+}
+
+.touchweb-com_header .right {
+    display: block;
+    position: relative;
+    font-size: 1.4rem;
+    text-align: center;
+    vertical-align: middle;
+    color: #ff3c3c
+}
+
+.touchweb-com_header .right .right_text:nth-last-of-type(1) {
+    display: block;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 10px;
+    font-size: 1.4rem;
+    color: #979797
+}
+
+.touchweb-com_header .right .right_text.rbtn_box {
+    height: 28px;
+    line-height: 28px;
+    margin-right: 5px;
+    padding: 0 10px;
+    border: 1px solid #ff3c3c;
+    border-radius: 4px;
+    background-color: #ff3c3c;
+    color: #fff;
+    font-size: 1.4rem
+}
+
+.touchweb-com_header .right .right_text.rbtn_box:active {
+    background-color: #ff0909
+}
+
+.touchweb-com_header .right [class^="icon-"],.touchweb-com_header .right [class*=" icon-"] {
+    display: block;
+    min-width: 34px;
+    line-height: 28px;
+    margin-top: 2px;
+    color: #ff3c3c;
+    font-size: 2rem
+}
+
+.touchweb-com_header .right [class^="icon-"]:nth-last-of-type(1),.touchweb-com_header .right [class*=" icon-"]:nth-last-of-type(1) {
+    margin-top: 0;
+    padding: 0;
+    font-size: 2.4rem;
+    color: #ff3c3c
+}
+
+.touchweb-com_header .right .icon_text {
+    display: block;
+    line-height: 12px;
+    margin-bottom: 2px;
+    font-size: 1rem
+}
+
+.touchweb-com_header .right .icon_text:nth-of-type(1) {
+    line-height: 44px;
+    margin: 0;
+    padding: 0 10px;
+    font-size: 1.4rem;
+    color: #979797
+}
+
+.touchweb-com_header .right .sumClass {
+    min-width: 6px;
+    height: 12px;
+    line-height: 12px;
+    border-radius: 12px;
+    background-color: #ff3c3c;
+    color: #fff;
+    font-size: 1rem;
+    position: absolute;
+    z-index: 1;
+    right: 2px;
+    top: 2px;
+    display: inline-block;
+    padding: 0 3px
+}
+
+.touchweb-com_header .more_list {
+    position: absolute;
+    z-index: 950;
+    right: 5px;
+    top: 50px;
+    width: 135px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: rgba(51,51,51,0.8);
+    border-radius: 5px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-flex-direction: column;
+    flex-direction: column
+}
+
+.touchweb-com_header .more_list.hide {
+    display: none
+}
+
+.touchweb-com_header .more_list:after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: -12px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-bottom-color: rgba(51,51,51,0.8)
+}
+
+.touchweb-com_header .more_list .moreA {
+    position: relative;
+    display: block;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 10px 0 17px;
+    color: #fff;
+    font-size: 1.4rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.touchweb-com_header .more_list .moreA:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    height: 1px;
+    background-color: rgba(255,255,255,0.1)
+}
+
+.touchweb-com_header .more_list .moreA:active {
+    background-color: rgba(0,0,0,0.6)
+}
+
+.touchweb-com_header .more_list .moreA:first-child {
+    border-radius: 5px 5px 0 0
+}
+
+.touchweb-com_header .more_list .moreA:last-child {
+    border-radius: 0 0 5px 5px
+}
+
+.touchweb-com_header .more_list .moreA:last-child:after {
+    display: none
+}
+
+.touchweb-com_header .more_list .moreA .icon {
+    display: inline-block;
+    width: 20px;
+    height: 44px;
+    line-height: 44px;
+    margin-right: 15px;
+    text-align: center;
+    font-size: 2.2rem;
+    color: #fff;
+    vertical-align: top
+}
+
+.touchweb-com_header.search_show .left {
+    display: none
+}
+
+.touchweb-com_header.search_show .header_area {
+    width: 0;
+    min-width: 0;
+    margin-left: 0
+}
+
+.touchweb-com_header.search_show .search_box {
+    margin: 0 75px 0 33px
+}
+
+.touchweb-com_header.search_show .search_box .icon_back {
+    display: block
+}
+
+.touchweb-com_header.search_show .search_txt {
+    padding-right: 10px
+}
+
+.touchweb-com_header.search_show .btn_search {
+    visibility: visible;
+    opacity: 1
+}
+
+.touchweb-com_header.search_show .rightBox {
+    display: none
+}
+
+.touchweb-com_header.search_show .touchweb_components-searchList {
+    display: block;
+    top: 45px
+}
+
+.touchweb-com_header.search_show+.search_fixed_mask {
+    display: block
+}
+
+.touchweb-com_header .search_wrap {
+    height: 30px;
+    padding: 7px 0
+}
+
+.touchweb-com_header .search_box {
+    position: relative;
+    height: 30px;
+    margin: 0 5px 0 10px;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear
+}
+
+.touchweb-com_header .search_box .search_txt {
+    width: 100%;
+    height: 30px;
+    padding: 5px 5px 5px 30px;
+    border-radius: 14px;
+    border: 1px solid #c6c6c6;
+    background-color: #fff;
+    color: #000;
+    font-size: 1.2rem;
+    line-height: 18px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.touchweb-com_header .search_box .search_txt::-webkit-search-cancel-button,.touchweb-com_header .search_box .search_txt::-webkit-search-results-button {
+    -webkit-appearance: none
+}
+
+.touchweb-com_header .search_box .icon_back {
+    display: none;
+    position: absolute;
+    left: -33px;
+    top: 0;
+    width: 23px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 5px;
+    text-align: center;
+    font-size: 2.3rem;
+    color: #ff3c3c
+}
+
+.touchweb-com_header .search_box .icon-search,.touchweb-com_header .search_box .icon_delete {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center
+}
+
+.touchweb-com_header .search_box .icon-search {
+    position: absolute;
+    right: auto;
+    left: 5px;
+    width: 25px;
+    color: #a6a6a6;
+    font-size: 2rem
+}
+
+.touchweb-com_header .search_box .icon_delete {
+    display: none;
+    width: 22px;
+    color: #ccc;
+    font-size: 1.4rem
+}
+
+.touchweb-com_header .btn_search {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    width: 55px;
+    height: 30px;
+    line-height: 30px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: #ff3c3c;
+    box-shadow: 0 0 1px rgba(0,0,0,0.1) inset;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear
+}
+
+.touchweb_components-searchList {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear
+}
+
+.touchweb_components-searchList .tags {
+    padding-bottom: 10px;
+    background-color: #f5f5f5
+}
+
+.touchweb_components-searchList .tags:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.touchweb_components-searchList .tags .item {
+    float: left;
+    width: 29.6875%;
+    height: 30px;
+    line-height: 28px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 10px 0 0 2.34375%;
+    padding: 0 10px;
+    border: 1px solid #dcdcdc;
+    -webkit-border-radius: 14px;
+    border-radius: 14px;
+    background-color: #fff;
+    color: #666;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.touchweb_components-searchList .tags .item:nth-child(3n) {
+    margin-left: 3.125%
+}
+
+.touchweb_components-searchList ul {
+    border-top: 1px solid #e5e5e5
+}
+
+.touchweb_components-searchList li {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 44px;
+    margin-left: 10px;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.touchweb_components-searchList li a {
+    display: block;
+    height: 44px;
+    line-height: 44px;
+    color: #666;
+    font-size: 1.4rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.touchweb_components-searchList li a.link_text {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.touchweb_components-searchList li a.link_text .text,.touchweb_components-searchList li a.link_text .text_category {
+    display: block;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.touchweb_components-searchList li a.link_text .text_category {
+    color: #999
+}
+
+.touchweb_components-searchList li a.link_text .text_category strong {
+    color: #666
+}
+
+.touchweb_components-searchList li a.link_text .icon_arrow {
+    display: block;
+    width: 30px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 2rem;
+    color: #999;
+    vertical-align: top
+}
+
+.touchweb_components-searchList li a.link_tag {
+    max-width: 20%;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 7.5px;
+    padding: 0 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    color: #999
+}
+
+.touchweb_components-searchList li a.link_tag:last-child {
+    margin-right: 10px
+}
+
+.touchweb_components-searchList li a .icon {
+    display: block;
+    width: 16px;
+    height: 44px;
+    line-height: 44px;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 1.6rem;
+    color: #c6c6c6;
+    vertical-align: top
+}
+
+.touchweb_components-searchList .clear_history {
+    height: 44px;
+    line-height: 44px;
+    display: block;
+    color: #999;
+    font-size: 1.4rem;
+    text-align: center
+}
+
+.touchweb_components-searchList.show {
+    display: block;
+    top: 44px
+}
+
+.touchweb_components-searchList.show ul {
+    max-height: 2.64rem;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch
+}
+
+
+.touchweb_page-backTop {
+    position: fixed;
+    right: 10px;
+    bottom: 60px;
+    z-index: 180;
+    width: 36px;
+    height: 36px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.6)
+}
+
+.touchweb_com-backTop {
+    display: none;
+    position: fixed;
+    right: 10px;
+    bottom: 60px;
+    z-index: 180;
+    width: 36px;
+    height: 36px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.6)
+}
+
+.touchweb_com-backTop.show {
+    display: block
+}
+
+.touchweb_com-backTop a {
+    position: relative;
+    display: block;
+    height: 36px
+}
+
+.touchweb_com-backTop a:before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 15px;
+    width: 12px;
+    height: 12px;
+    border-left: 1px solid #fff;
+    border-top: 1px solid #fff;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.pop_box {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 900
+}
+
+
+@font-face {
+    font-family:"touchweb";src:url("../fonts/touchweb.eot?43d9712");src:url("../fonts/touchweb.eot?43d9712?#iefix") format("embedded-opentype"),url("../fonts/touchweb.woff?43d9712") format("woff"),url("../fonts/touchweb.ttf") format("truetype"),url("../fonts/touchweb.svg#touchweb") format("svg");font-weight:normal;font-style:normal
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+@	font-face {
+    font-family: "touchweb";
+    src: url("../fonts/touchweb.svg#touchweb") format("svg")
+}
+}[data-icon]:before {
+     content: attr(data-icon)
+ }[class^="icon-"],[class*=" icon-"] {
+      font-family: "touchweb";
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale
+  } [class^="icon-"] *,[class*=" icon-"] * {
+        font-family: sans-serif
+    }
+.icon-back:before {
+    content: "\f104"
+}

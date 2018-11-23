@@ -3,7 +3,11 @@
 mui('.mui-scroll-wrapper').scroll({
     indicators:false
   });
-  
+
+$("#msCancelBtn").on('click', function () {
+    window.location.href = '/';
+});
+
 $(function(){
     
     // 渲染一级分类
