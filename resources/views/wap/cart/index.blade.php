@@ -407,7 +407,7 @@
             {{/if}}
 
             {{each list v i}}
-                <div data-id="{{v.id}}" class="cart-good-box sequence{{v.id}}" {{if i == list.length -1}} style="margin-bottom: 3.3rem" {{/if}}>
+                <div data-id="{{v.id}}" class="cart-good-box sequence{{v.id}}">
                     <div class="good-box-top">
                         <div class="good-title-info">
                             <span class="maijia-img"></span>
@@ -459,8 +459,5 @@
     <script src="/js/wap/cart.js?t={{ time() }}"></script>
     <script src="https://mall-ty-1252438738.cos.ap-shanghai.myqcloud.com/lib/layer_mobile/layer.js"></script>
     <script>
-        $("#count-m").bind("input propertychange",function(event){
-            console.log(11111111)
-        });
     </script>
 @endsection
